@@ -33,6 +33,6 @@ cat "${GRAFAIN_DIR}/config/genesis.json.orig" \
   | jq ". + {\"app_state\" : $APP_STATE}" \
   > "${GRAFAIN_DIR}/config/genesis.json"
 
-sed -ie "/^\s*cors_allowed_origins /s/=.*$/= [\"*\"]/" ${GRAFAIN_DIR}/config/config.toml
-sed -ie "/^\s*allow_duplicate_ip /s/=.*$/= true/" ${GRAFAIN_DIR}/config/config.toml
-sed -ie "/^\s*index_all_tags /s/=.*$/= true/" ${GRAFAIN_DIR}/config/config.toml
+sed -ie "/^\s*cors_allowed_origins /s/=.*$/= [\"*\"]/" "${GRAFAIN_DIR}/config/config.toml"
+sed -ie "/^\s*allow_duplicate_ip /s/=.*$/= true/" "${GRAFAIN_DIR}/config/config.toml"
+sed -ie "/^\s*index_all_tags /s/=.*$/= true/" "${GRAFAIN_DIR}/config/config.toml"
