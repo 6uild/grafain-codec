@@ -41,6 +41,18 @@
     "store-codec-version": "git -C go/src/github.com/6uild/grafain log --pretty=oneline --decorate --max-count=1 > src/generated/codec_version.txt",
     "protoc": "./scripts/weave.sh && yarn pack-proto && yarn define-proto && yarn format && yarn store-codec-version"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn lint"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@iov/bcp": "^1.1.0",
     "@iov/crypto": "^1.1.0",
@@ -85,6 +97,8 @@
     "webpack-cli": "^3.3.8"
   },
   "devDependencies": {
-    "@iov/keycontrol": "^1.1.0"
+    "@iov/keycontrol": "^1.1.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^8.1.4"
   }
 }
