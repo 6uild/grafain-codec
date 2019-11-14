@@ -2,7 +2,6 @@ import {
   Address,
   Algorithm,
   Amount,
-  ChainId,
   LightTransaction,
   PubkeyBundle,
   SendTransaction,
@@ -208,28 +207,6 @@ export interface Artifact {
 export interface ArtifactByOwnerQuery {
   readonly owner: Address;
 }
-export interface ChainAddressPair {
-  readonly chainId: ChainId;
-  readonly address: Address;
-}
-export interface BnsUsernameNft {
-  readonly id: string;
-  readonly owner: Address;
-  readonly targets: readonly ChainAddressPair[];
-}
-export interface BnsUsernamesByUsernameQuery {
-  readonly username: string;
-}
-export interface BnsUsernamesByOwnerQuery {
-  readonly owner: Address;
-}
-export declare type BnsUsernamesQuery = BnsUsernamesByUsernameQuery | BnsUsernamesByOwnerQuery;
-export declare function isBnsUsernamesByUsernameQuery(
-  query: BnsUsernamesQuery,
-): query is BnsUsernamesByUsernameQuery;
-export declare function isBnsUsernamesByOwnerQuery(
-  query: BnsUsernamesQuery,
-): query is BnsUsernamesByOwnerQuery;
 export declare type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;
 export interface PrivkeyBundle {
   readonly algo: Algorithm;

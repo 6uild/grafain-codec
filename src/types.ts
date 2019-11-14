@@ -262,40 +262,6 @@ export interface Artifact {
 export interface ArtifactByOwnerQuery {
   readonly owner: Address;
 }
-
-// username NFT
-
-export interface ChainAddressPair {
-  readonly chainId: ChainId;
-  readonly address: Address;
-}
-
-export interface BnsUsernameNft {
-  readonly id: string;
-  readonly owner: Address;
-  readonly targets: readonly ChainAddressPair[];
-}
-
-export interface BnsUsernamesByUsernameQuery {
-  readonly username: string;
-}
-
-export interface BnsUsernamesByOwnerQuery {
-  readonly owner: Address;
-}
-
-export type BnsUsernamesQuery = BnsUsernamesByUsernameQuery | BnsUsernamesByOwnerQuery;
-
-export function isBnsUsernamesByUsernameQuery(
-  query: BnsUsernamesQuery,
-): query is BnsUsernamesByUsernameQuery {
-  return typeof (query as BnsUsernamesByUsernameQuery).username !== "undefined";
-}
-
-export function isBnsUsernamesByOwnerQuery(query: BnsUsernamesQuery): query is BnsUsernamesByOwnerQuery {
-  return typeof (query as BnsUsernamesByOwnerQuery).owner !== "undefined";
-}
-
 // Rest
 
 export type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;

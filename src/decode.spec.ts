@@ -27,7 +27,6 @@ import {
   decodePubkey,
   decodeToken,
   decodeUserData,
-  decodeUsernameNft,
   parseMsg,
   parseTx,
 } from "./decode";
@@ -66,27 +65,6 @@ import {
 const { fromHex, toUtf8 } = Encoding;
 
 describe("Decode", () => {
-  it("decodes username NFT", () => {
-    const nft: codecImpl.username.IToken & Keyed = {
-      _id: toUtf8("alice"),
-      owner: fromHex("0e95c039ef14ee329d0e09d84f909cf9eb5ef472"),
-      targets: [
-        {
-          blockchainId: "wonderland",
-          address: "12345W",
-        },
-      ],
-    };
-    const decoded = decodeUsernameNft(nft, "iov-testchain" as ChainId);
-    expect(decoded.id).toEqual("alice");
-    expect(decoded.owner).toEqual(Bech32.encode("tiov", fromHex("0e95c039ef14ee329d0e09d84f909cf9eb5ef472")));
-    expect(decoded.targets.length).toEqual(1);
-    expect(decoded.targets[0]).toEqual({
-      chainId: "wonderland" as ChainId,
-      address: "12345W" as Address,
-    });
-  });
-
   it("decode pubkey", () => {
     const decoded = codecImpl.crypto.PublicKey.decode(pubBin);
     const pubkey = decodePubkey(decoded);

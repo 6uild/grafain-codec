@@ -19,9 +19,8 @@ tests-firefox)
   "$SCRIPT_DIR/mode_tests-default.sh" ;;
 tests-safari)
   "$SCRIPT_DIR/mode_tests-safari.sh" ;;
-lint-docs)
+lint)
   "$SCRIPT_DIR/mode_lint.sh"
-  "$SCRIPT_DIR/mode_docs.sh"
   ;;
 *)
   echo "Invalid MODE"; exit 1 ;;

@@ -31,7 +31,7 @@ matrix:
     - os: linux
       env: MODE=tests-safari
     - os: osx
-      env: MODE=lint-docs
+      env: MODE=lint
     - os: osx
       env: MODE=tests-default
     - os: osx
@@ -56,18 +56,6 @@ before_script:
 
 script:
 - ./scripts/travis/main.sh
-
-before_deploy:
-  - touch .nojekyll
-  - sed -i '/docs/d' .gitignore
-
-deploy:
-  provider: pages
-  local_dir: docs/
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master AND os = linux AND type = push
 
 branches:
   only:

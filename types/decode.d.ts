@@ -13,7 +13,6 @@ import * as Long from "long";
 import * as codecImpl from "./generated/codecimpl";
 import {
   Artifact,
-  BnsUsernameNft,
   CashConfiguration,
   ElectionRule,
   Electorate,
@@ -31,10 +30,6 @@ import { IovBech32Prefix } from "./util";
 export declare function asIntegerNumber(maybeLong: Long | number | null | undefined): number;
 export declare function ensure<T>(maybe: T | null | undefined, msg?: string): T;
 export declare function decodeNumericId(id: Uint8Array): number;
-export declare function decodeUsernameNft(
-  nft: codecImpl.username.IToken & Keyed,
-  registryChainId: ChainId,
-): BnsUsernameNft;
 export declare function decodeArtifact(
   artf: codecImpl.artifact.IArtifact, // & Keyed,
   registryChainId: ChainId,

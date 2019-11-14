@@ -14,12 +14,6 @@ export {
 } from "./conditions";
 export { grafainSwapQueryTag } from "./tags";
 export {
-  // Usernames
-  ChainAddressPair,
-  BnsUsernamesByOwnerQuery,
-  BnsUsernamesByUsernameQuery,
-  BnsUsernamesQuery,
-  BnsUsernameNft,
   Artifact,
   CreateArtifactTX,
   isCreateArtifactTX,

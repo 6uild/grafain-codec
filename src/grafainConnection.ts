@@ -64,7 +64,6 @@ import {
   decodePubkey,
   decodeToken,
   decodeUserData,
-  decodeUsernameNft,
   decodeVote,
 } from "./decode";
 import * as codecImpl from "./generated/codecimpl";
@@ -73,14 +72,10 @@ import { grafainSwapQueryTag } from "./tags";
 import {
   Artifact,
   ArtifactByOwnerQuery,
-  BnsUsernameNft,
-  BnsUsernamesQuery,
   Decoder,
   ElectionRule,
   Electorate,
   GrafainTx,
-  isBnsUsernamesByOwnerQuery,
-  isBnsUsernamesByUsernameQuery,
   isGrafainTx,
   Keyed,
   Proposal,
@@ -688,22 +683,6 @@ export class GrafainConnection implements AtomicSwapConnection {
     const parser = createParser(codecImpl.gov.Vote, "vote:");
     const votes = results.map(parser).map(vote => decodeVote(this.prefix, vote));
     return votes;
-  }
-
-  public async getUsernames(query: BnsUsernamesQuery): Promise<readonly BnsUsernameNft[]> {
-    let results: readonly Result[];
-    if (isBnsUsernamesByUsernameQuery(query)) {
-      results = (await this.query("/usernames", toUtf8(query.username))).results;
-    } else if (isBnsUsernamesByOwnerQuery(query)) {
-      const rawAddress = decodeBnsAddress(query.owner).data;
-      results = (await this.query("/usernames/owner", rawAddress)).results;
-    } else {
-      throw new Error("Unsupported query");
-    }
-
-    const parser = createParser(codecImpl.username.Token, "tokens:");
-    const nfts = results.map(parser).map(nft => decodeUsernameNft(nft, this.chainId()));
-    return nfts;
   }
 
   public async getArtifacts(query: ArtifactByOwnerQuery): Promise<readonly Artifact[]> {

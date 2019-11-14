@@ -29,9 +29,7 @@ import * as codecImpl from "./generated/codecimpl";
 import {
   ActionKind,
   Artifact,
-  BnsUsernameNft,
   CashConfiguration,
-  ChainAddressPair,
   CreateArtifactTX,
   CreateEscrowTx,
   CreateMultisignatureTx,
@@ -115,24 +113,6 @@ function decodeVersionedIdArray(versionedId: Uint8Array): VersionedId {
   };
 }
 
-function decodeChainAddressPair(pair: codecImpl.username.IBlockchainAddress): ChainAddressPair {
-  return {
-    chainId: ensure(pair.blockchainId, "blockchainId") as ChainId,
-    address: ensure(pair.address, "address") as Address,
-  };
-}
-
-export function decodeUsernameNft(
-  nft: codecImpl.username.IToken & Keyed,
-  registryChainId: ChainId,
-): BnsUsernameNft {
-  const rawOwnerAddress = ensure(nft.owner, "owner");
-  return {
-    id: fromUtf8(nft._id),
-    owner: encodeBnsAddress(addressPrefix(registryChainId), rawOwnerAddress),
-    targets: ensure(nft.targets, "targets").map(decodeChainAddressPair),
-  };
-}
 export function decodeArtifact(
   artf: codecImpl.artifact.IArtifact, // & Keyed,
   registryChainId: ChainId,
