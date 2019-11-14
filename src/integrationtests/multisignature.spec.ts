@@ -16,9 +16,9 @@ import { Uint64 } from "@iov/encoding";
 import { Ed25519HdWallet, HdPaths, UserProfile } from "@iov/keycontrol";
 import BN from "bn.js";
 
+import { multisignatureIdToAddress } from "../conditions";
 import { grafainCodec } from "../grafainCodec";
 import { GrafainConnection } from "../grafainConnection";
-import { multisignatureIdToAddress } from "../conditions";
 import { CreateMultisignatureTx, MultisignatureTx, Participant } from "../types";
 
 const CASH = "CASH" as TokenTicker;

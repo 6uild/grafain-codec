@@ -52,7 +52,6 @@ import { broadcastTxSyncSuccess, Client as TendermintClient, v0_31 } from "@iov/
 import equal from "fast-deep-equal";
 import { Stream, Subscription } from "xstream";
 
-import { grafainCodec } from "./grafainCodec";
 import { swapToAddress } from "./conditions";
 import { ChainData, Context } from "./context";
 import {
@@ -69,6 +68,7 @@ import {
   decodeVote,
 } from "./decode";
 import * as codecImpl from "./generated/codecimpl";
+import { grafainCodec } from "./grafainCodec";
 import { grafainSwapQueryTag } from "./tags";
 import {
   Artifact,
