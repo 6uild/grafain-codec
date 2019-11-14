@@ -62,12 +62,12 @@ export SKIP_BUILD=1
 
 if [[ "$MODE" == "tests-chrome" ]]; then
   fold_start "test-chrome"
-  yarn run lerna run test-chrome
+  yarn run test-chrome
   fold_end
 elif [[ "$MODE" == "tests-firefox" ]]; then
   # A version of Firefox is preinstalled on Linux VMs and can be used via xvfb
   fold_start "test-firefox"
-  xvfb-run --auto-servernum yarn run lerna run test-firefox
+  xvfb-run --auto-servernum yarn run test-firefox
   fold_end
 else
   #
