@@ -10,6 +10,7 @@ import {
   UnsignedTransaction,
 } from "@iov/bcp";
 import { Encoding } from "@iov/encoding";
+// eslint-disable-next-line @typescript-eslint/camelcase
 import { TxBytes, v0_31 } from "@iov/tendermint-rpc";
 
 import { parseTx } from "./decode";
@@ -39,6 +40,7 @@ export const grafainCodec: TxCodec = {
   // identifier is usually some sort of hash of bytesToPost, chain-dependent
   identifier: (tx: SignedTransaction): TransactionId => {
     const transactionBytes = (grafainCodec.bytesToPost(tx) as unknown) as TxBytes;
+    // eslint-disable-next-line @typescript-eslint/camelcase
     const hash = v0_31.hashTx(transactionBytes);
     return Encoding.toHex(hash).toUpperCase() as TransactionId;
   },

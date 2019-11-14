@@ -46,9 +46,10 @@ import { asArray, firstEvent, lastValue, toListPromise } from "@iov/stream";
 import BN from "bn.js";
 import Long from "long";
 
+import { CreateArtifactTX } from "../types";
+import { decodeNumericId } from "./decode";
 import { grafainCodec } from "./grafainCodec";
 import { GrafainConnection } from "./grafainConnection";
-import { decodeNumericId } from "./decode";
 import { grafainSwapQueryTag } from "./tags";
 import {
   ActionKind,
@@ -75,7 +76,6 @@ import {
   VoteTx,
 } from "./types";
 import { encodeBnsAddress, identityToAddress } from "./util";
-import { CreateArtifactTX } from "../types";
 
 const { fromHex, toHex } = Encoding;
 
@@ -626,12 +626,10 @@ describe("BnsConnection", () => {
       const nonce = await connection.getNonce({ pubkey: faucet.pubkey });
       const signed = await profile.signTransaction(sendTx, grafainCodec, nonce);
 
-      await connection
-        .postTx(grafainCodec.bytesToPost(signed))
-        .then(
-          () => fail("promise must be rejected"),
-          error => expect(error).toMatch(/field \\"Amount\\": invalid currency: UNKNOWN/i),
-        );
+      await connection.postTx(grafainCodec.bytesToPost(signed)).then(
+        () => fail("promise must be rejected"),
+        error => expect(error).toMatch(/field \\"Amount\\": invalid currency: UNKNOWN/i),
+      );
 
       connection.disconnect();
     });
@@ -796,9 +794,11 @@ describe("BnsConnection", () => {
       expect(contractId).toBeDefined();
 
       // Update multisignature
-      const participantsUpdated: readonly Participant[] = (await Promise.all(
-        [15, 16, 17].map(i => profile.createIdentity(wallet.id, registryChainId, HdPaths.iov(i))),
-      )).map(id => ({
+      const participantsUpdated: readonly Participant[] = (
+        await Promise.all(
+          [15, 16, 17].map(i => profile.createIdentity(wallet.id, registryChainId, HdPaths.iov(i))),
+        )
+      ).map(id => ({
         address: identityToAddress(id),
         weight: 6,
       }));
@@ -1541,10 +1541,12 @@ describe("BnsConnection", () => {
 
       {
         // finds transaction using sentFromOrTo and minHeight = initialHeight
-        const results = (await connection.searchTx({
-          sentFromOrTo: recipientAddress,
-          minHeight: initialHeight,
-        })).filter(isConfirmedTransaction);
+        const results = (
+          await connection.searchTx({
+            sentFromOrTo: recipientAddress,
+            minHeight: initialHeight,
+          })
+        ).filter(isConfirmedTransaction);
         expect(results.length).toBeGreaterThanOrEqual(1);
         const mostRecentResultTransaction = results[results.length - 1].transaction;
         if (!isSendTransaction(mostRecentResultTransaction)) {
@@ -1555,10 +1557,12 @@ describe("BnsConnection", () => {
 
       {
         // finds transaction using sentFromOrTo and maxHeight = 500 million
-        const results = (await connection.searchTx({
-          sentFromOrTo: recipientAddress,
-          maxHeight: 500_000_000,
-        })).filter(isConfirmedTransaction);
+        const results = (
+          await connection.searchTx({
+            sentFromOrTo: recipientAddress,
+            maxHeight: 500_000_000,
+          })
+        ).filter(isConfirmedTransaction);
         expect(results.length).toBeGreaterThanOrEqual(1);
         const mostRecentResultTransaction = results[results.length - 1].transaction;
         if (!isSendTransaction(mostRecentResultTransaction)) {
@@ -1569,10 +1573,12 @@ describe("BnsConnection", () => {
 
       {
         // finds transaction using sentFromOrTo and maxHeight = initialHeight + 10
-        const results = (await connection.searchTx({
-          sentFromOrTo: recipientAddress,
-          maxHeight: initialHeight + 10,
-        })).filter(isConfirmedTransaction);
+        const results = (
+          await connection.searchTx({
+            sentFromOrTo: recipientAddress,
+            maxHeight: initialHeight + 10,
+          })
+        ).filter(isConfirmedTransaction);
         expect(results.length).toBeGreaterThanOrEqual(1);
         const mostRecentResultTransaction = results[results.length - 1].transaction;
         if (!isSendTransaction(mostRecentResultTransaction)) {
@@ -2165,9 +2171,11 @@ describe("BnsConnection", () => {
     expect(txBySender.length).toBeGreaterThanOrEqual(1);
     expect(txBySender[txBySender.length - 1].transactionId).toEqual(transactionId);
 
-    const txByRecipient = (await connection.searchTx({
-      tags: [grafainSwapQueryTag(querySwapRecipient)],
-    })).filter(isConfirmedTransaction);
+    const txByRecipient = (
+      await connection.searchTx({
+        tags: [grafainSwapQueryTag(querySwapRecipient)],
+      })
+    ).filter(isConfirmedTransaction);
     expect(txByRecipient.length).toEqual(1);
     expect(txByRecipient[0].transactionId).toEqual(transactionId);
 

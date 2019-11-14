@@ -47,6 +47,7 @@ import {
 } from "@iov/bcp";
 import { Encoding, Uint53 } from "@iov/encoding";
 import { concat, DefaultValueProducer, dropDuplicates, fromListPromise, ValueAndUpdates } from "@iov/stream";
+// eslint-disable-next-line @typescript-eslint/camelcase
 import { broadcastTxSyncSuccess, Client as TendermintClient, v0_31 } from "@iov/tendermint-rpc";
 import equal from "fast-deep-equal";
 import { Stream, Subscription } from "xstream";
@@ -615,6 +616,7 @@ export class GrafainConnection implements AtomicSwapConnection {
 
   public watchBlockHeaders(): Stream<BlockHeader> {
     return this.tmClient.subscribeNewBlockHeader().map(tmHeader => {
+      // eslint-disable-next-line @typescript-eslint/camelcase
       const blockId = Encoding.toHex(v0_31.hashBlock(tmHeader)).toUpperCase() as BlockId;
       return {
         id: blockId,
@@ -705,8 +707,7 @@ export class GrafainConnection implements AtomicSwapConnection {
   }
 
   public async getArtifacts(query: ArtifactByOwnerQuery): Promise<readonly Artifact[]> {
-    let results: readonly Result[];
-    results = (await this.query("/artifacts", toUtf8(query.owner))).results;
+    const results = (await this.query("/artifacts", toUtf8(query.owner))).results;
 
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
     const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));
@@ -714,8 +715,7 @@ export class GrafainConnection implements AtomicSwapConnection {
   }
 
   public async getAllArtifacts(): Promise<readonly Artifact[]> {
-    let results: readonly Result[];
-    results = (await this.query("/artifacts?prefix", Uint8Array.from([]))).results;
+    const results = (await this.query("/artifacts?prefix", Uint8Array.from([]))).results;
 
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
     const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));

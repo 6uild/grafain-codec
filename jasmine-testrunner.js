@@ -17,7 +17,7 @@ jasmine.jasmine.DEFAULT_TIMEOUT_INTERVAL = 15 * 1000;
 
 // setup reporter
 const { SpecReporter } = require("jasmine-spec-reporter");
-let configuration = {
+const configuration = {
   suite: {
     displayNumber: true,
   },
