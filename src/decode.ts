@@ -141,8 +141,8 @@ export function decodeArtifact(
   return {
     // id: fromUtf8(nft._id),
     owner: encodeBnsAddress(addressPrefix(registryChainId), rawOwnerAddress),
-    image: ensure(artf.image, "image") as string,
-    checksum: ensure(artf.checksum, "checksum") as string,
+    image: ensure(artf.image, "image"),
+    checksum: ensure(artf.checksum, "checksum"),
   };
 }
 
