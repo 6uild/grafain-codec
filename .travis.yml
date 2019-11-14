@@ -24,7 +24,7 @@ env:
     - MODE=tests-chrome
     - MODE=tests-firefox
     - MODE=tests-safari
-    - MODE=lint-docs
+    - MODE=lint
 
 matrix:
   exclude:
