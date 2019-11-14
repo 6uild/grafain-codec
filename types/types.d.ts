@@ -9,7 +9,7 @@ import {
   SwapAbortTransaction,
   SwapClaimTransaction,
   SwapOfferTransaction,
-  TimestampTimeout
+  TimestampTimeout,
 } from "@iov/bcp";
 import { As } from "type-tagger";
 export interface CashConfiguration {
@@ -79,22 +79,22 @@ export interface VersionedId {
 export declare enum ProposalExecutorResult {
   NotRun = 0,
   Succeeded = 1,
-  Failed = 2
+  Failed = 2,
 }
 export declare enum ProposalResult {
   Undefined = 0,
   Accepted = 1,
-  Rejected = 2
+  Rejected = 2,
 }
 export declare enum ProposalStatus {
   Submitted = 0,
   Closed = 1,
-  Withdrawn = 2
+  Withdrawn = 2,
 }
 export declare enum VoteOption {
   Yes = 0,
   No = 1,
-  Abstain = 2
+  Abstain = 2,
 }
 export declare enum ActionKind {
   CreateTextResolution = "gov_create_text_resolution",
@@ -103,7 +103,7 @@ export declare enum ActionKind {
   Send = "cash_send",
   SetValidators = "validators_apply_diff",
   UpdateElectionRule = "gov_update_election_rule",
-  UpdateElectorate = "gov_update_electorate"
+  UpdateElectorate = "gov_update_electorate",
 }
 export interface TallyResult {
   readonly totalYes: number;
@@ -116,23 +116,21 @@ export interface CreateTextResolutionAction {
   readonly resolution: string;
 }
 export declare function isCreateTextResolutionAction(
-  action: ProposalAction
+  action: ProposalAction,
 ): action is CreateTextResolutionAction;
 export interface ExecuteProposalBatchAction {
   readonly kind: ActionKind.ExecuteProposalBatch;
   readonly messages: readonly ProposalAction[];
 }
 export declare function isExecuteProposalBatchAction(
-  action: ProposalAction
+  action: ProposalAction,
 ): action is ExecuteProposalBatchAction;
 export interface ReleaseEscrowAction {
   readonly kind: ActionKind.ReleaseEscrow;
   readonly escrowId: number;
   readonly amount: Amount;
 }
-export declare function isReleaseEscrowAction(
-  action: ProposalAction
-): action is ReleaseEscrowAction;
+export declare function isReleaseEscrowAction(action: ProposalAction): action is ReleaseEscrowAction;
 export interface SendAction {
   readonly kind: ActionKind.Send;
   readonly sender: Address;
@@ -140,16 +138,12 @@ export interface SendAction {
   readonly amount: Amount;
   readonly memo?: string;
 }
-export declare function isSendAction(
-  action: ProposalAction
-): action is SendAction;
+export declare function isSendAction(action: ProposalAction): action is SendAction;
 export interface SetValidatorsAction {
   readonly kind: ActionKind.SetValidators;
   readonly validatorUpdates: Validators;
 }
-export declare function isSetValidatorsAction(
-  action: ProposalAction
-): action is SetValidatorsAction;
+export declare function isSetValidatorsAction(action: ProposalAction): action is SetValidatorsAction;
 export interface UpdateElectionRuleAction {
   readonly kind: ActionKind.UpdateElectionRule;
   readonly electionRuleId: number;
@@ -158,16 +152,14 @@ export interface UpdateElectionRuleAction {
   readonly votingPeriod: number;
 }
 export declare function isUpdateElectionRuleAction(
-  action: ProposalAction
+  action: ProposalAction,
 ): action is UpdateElectionRuleAction;
 export interface UpdateElectorateAction {
   readonly kind: ActionKind.UpdateElectorate;
   readonly electorateId: number;
   readonly diffElectors: Electors;
 }
-export declare function isUpdateElectorateAction(
-  action: ProposalAction
-): action is UpdateElectorateAction;
+export declare function isUpdateElectorateAction(action: ProposalAction): action is UpdateElectorateAction;
 /** The action to be executed when the proposal is accepted */
 export declare type ProposalAction =
   | CreateTextResolutionAction
@@ -231,14 +223,12 @@ export interface BnsUsernamesByUsernameQuery {
 export interface BnsUsernamesByOwnerQuery {
   readonly owner: Address;
 }
-export declare type BnsUsernamesQuery =
-  | BnsUsernamesByUsernameQuery
-  | BnsUsernamesByOwnerQuery;
+export declare type BnsUsernamesQuery = BnsUsernamesByUsernameQuery | BnsUsernamesByOwnerQuery;
 export declare function isBnsUsernamesByUsernameQuery(
-  query: BnsUsernamesQuery
+  query: BnsUsernamesQuery,
 ): query is BnsUsernamesByUsernameQuery;
 export declare function isBnsUsernamesByOwnerQuery(
-  query: BnsUsernamesQuery
+  query: BnsUsernamesQuery,
 ): query is BnsUsernamesByOwnerQuery;
 export declare type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;
 export interface PrivkeyBundle {
@@ -260,9 +250,7 @@ export interface CreateArtifactTX extends LightTransaction {
   readonly image: string;
   readonly checksum: string;
 }
-export declare function isCreateArtifactTX(
-  tx: LightTransaction
-): tx is CreateArtifactTX;
+export declare function isCreateArtifactTX(tx: LightTransaction): tx is CreateArtifactTX;
 export interface Participant {
   readonly address: Address;
   readonly weight: number;
@@ -273,9 +261,7 @@ export interface CreateMultisignatureTx extends LightTransaction {
   readonly activationThreshold: number;
   readonly adminThreshold: number;
 }
-export declare function isCreateMultisignatureTx(
-  tx: LightTransaction
-): tx is CreateMultisignatureTx;
+export declare function isCreateMultisignatureTx(tx: LightTransaction): tx is CreateMultisignatureTx;
 export interface UpdateMultisignatureTx extends LightTransaction {
   readonly kind: "grafain/update_multisignature_contract";
   readonly contractId: Uint8Array;
@@ -283,9 +269,7 @@ export interface UpdateMultisignatureTx extends LightTransaction {
   readonly activationThreshold: number;
   readonly adminThreshold: number;
 }
-export declare function isUpdateMultisignatureTx(
-  tx: LightTransaction
-): tx is UpdateMultisignatureTx;
+export declare function isUpdateMultisignatureTx(tx: LightTransaction): tx is UpdateMultisignatureTx;
 export interface CreateEscrowTx extends LightTransaction {
   readonly kind: "grafain/create_escrow";
   readonly sender: Address;
@@ -295,24 +279,18 @@ export interface CreateEscrowTx extends LightTransaction {
   readonly timeout: TimestampTimeout;
   readonly memo?: string;
 }
-export declare function isCreateEscrowTx(
-  tx: LightTransaction
-): tx is CreateEscrowTx;
+export declare function isCreateEscrowTx(tx: LightTransaction): tx is CreateEscrowTx;
 export interface ReleaseEscrowTx extends LightTransaction {
   readonly kind: "grafain/release_escrow";
   readonly escrowId: number;
   readonly amounts: readonly Amount[];
 }
-export declare function isReleaseEscrowTx(
-  tx: LightTransaction
-): tx is ReleaseEscrowTx;
+export declare function isReleaseEscrowTx(tx: LightTransaction): tx is ReleaseEscrowTx;
 export interface ReturnEscrowTx extends LightTransaction {
   readonly kind: "grafain/return_escrow";
   readonly escrowId: number;
 }
-export declare function isReturnEscrowTx(
-  tx: LightTransaction
-): tx is ReturnEscrowTx;
+export declare function isReturnEscrowTx(tx: LightTransaction): tx is ReturnEscrowTx;
 export interface UpdateEscrowPartiesTx extends LightTransaction {
   readonly kind: "grafain/update_escrow_parties";
   readonly escrowId: number;
@@ -320,9 +298,7 @@ export interface UpdateEscrowPartiesTx extends LightTransaction {
   readonly arbiter?: Address;
   readonly recipient?: Address;
 }
-export declare function isUpdateEscrowPartiesTx(
-  tx: LightTransaction
-): tx is UpdateEscrowPartiesTx;
+export declare function isUpdateEscrowPartiesTx(tx: LightTransaction): tx is UpdateEscrowPartiesTx;
 export interface CreateProposalTx extends LightTransaction {
   readonly kind: "grafain/create_proposal";
   readonly title: string;
@@ -340,17 +316,13 @@ export interface CreateProposalTx extends LightTransaction {
   /** The author of the proposal must be included in the list of transaction signers. */
   readonly author: Address;
 }
-export declare function isCreateProposalTx(
-  transaction: LightTransaction
-): transaction is CreateProposalTx;
+export declare function isCreateProposalTx(transaction: LightTransaction): transaction is CreateProposalTx;
 export interface VoteTx extends LightTransaction {
   readonly kind: "grafain/vote";
   readonly proposalId: number;
   readonly selection: VoteOption;
 }
-export declare function isVoteTx(
-  transaction: LightTransaction
-): transaction is VoteTx;
+export declare function isVoteTx(transaction: LightTransaction): transaction is VoteTx;
 export declare type GrafainTx =
   | SendTransaction
   | SwapOfferTransaction
@@ -365,12 +337,8 @@ export declare type GrafainTx =
   | UpdateEscrowPartiesTx
   | CreateProposalTx
   | VoteTx;
-export declare function isGrafainTx(
-  transaction: LightTransaction
-): transaction is GrafainTx;
+export declare function isGrafainTx(transaction: LightTransaction): transaction is GrafainTx;
 export interface MultisignatureTx extends LightTransaction {
   readonly multisig: readonly number[];
 }
-export declare function isMultisignatureTx(
-  transaction: LightTransaction
-): transaction is MultisignatureTx;
+export declare function isMultisignatureTx(transaction: LightTransaction): transaction is MultisignatureTx;

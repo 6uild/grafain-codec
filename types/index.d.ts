@@ -8,7 +8,7 @@ export {
   electionRuleIdToAddress,
   escrowIdToAddress,
   multisignatureIdToAddress,
-  swapToAddress
+  swapToAddress,
 } from "./conditions";
 export { grafainSwapQueryTag } from "./tags";
 export {
@@ -71,6 +71,6 @@ export {
   UpdateElectorateAction,
   isUpdateElectorateAction,
   GrafainTx,
-  isGrafainTx
+  isGrafainTx,
 } from "./types";
 export { pubkeyToAddress } from "./util";

@@ -5,5 +5,5 @@ import { GrafainConnection } from "./grafainConnection";
  */
 export declare function createGrafainConnector(
   url: string,
-  expectedChainId?: ChainId
+  expectedChainId?: ChainId,
 ): ChainConnector<GrafainConnection>;

@@ -22,7 +22,7 @@ import {
   TokenTicker,
   TransactionId,
   TransactionQuery,
-  UnsignedTransaction
+  UnsignedTransaction,
 } from "@iov/bcp";
 import { Stream } from "xstream";
 import {
@@ -36,7 +36,7 @@ import {
   Proposal,
   Result,
   Validator,
-  Vote
+  Vote,
 } from "./types";
 export interface QueryResponse {
   readonly height?: number;
@@ -76,10 +76,7 @@ export declare class GrafainConnection implements AtomicSwapConnection {
   getAllTokens(): Promise<readonly Token[]>;
   getAccount(query: AccountQuery): Promise<Account | undefined>;
   getNonce(query: AddressQuery | PubkeyQuery): Promise<Nonce>;
-  getNonces(
-    query: AddressQuery | PubkeyQuery,
-    count: number
-  ): Promise<readonly Nonce[]>;
+  getNonces(query: AddressQuery | PubkeyQuery, count: number): Promise<readonly Nonce[]>;
   /**
    * All matching swaps that are open (from app state)
    */
@@ -96,31 +93,21 @@ export declare class GrafainConnection implements AtomicSwapConnection {
    * This includes an open swap beind claimed/aborted as well as a new matching swap being offered
    */
   watchSwaps(query: AtomicSwapQuery): Stream<AtomicSwap>;
-  getTx(
-    id: TransactionId
-  ): Promise<
-    ConfirmedAndSignedTransaction<UnsignedTransaction> | FailedTransaction
-  >;
+  getTx(id: TransactionId): Promise<ConfirmedAndSignedTransaction<UnsignedTransaction> | FailedTransaction>;
   searchTx(
-    query: TransactionQuery
-  ): Promise<
-    readonly (ConfirmedTransaction<LightTransaction> | FailedTransaction)[]
-  >;
+    query: TransactionQuery,
+  ): Promise<readonly (ConfirmedTransaction<LightTransaction> | FailedTransaction)[]>;
   /**
    * A stream of all transactions that match the tags from the present moment on
    */
-  listenTx(
-    query: TransactionQuery
-  ): Stream<ConfirmedTransaction<LightTransaction> | FailedTransaction>;
+  listenTx(query: TransactionQuery): Stream<ConfirmedTransaction<LightTransaction> | FailedTransaction>;
   /**
    * Does a search and then subscribes to all future changes.
    *
    * It returns a stream starting the array of all existing transactions
    * and then continuing with live feeds
    */
-  liveTx(
-    query: TransactionQuery
-  ): Stream<ConfirmedTransaction<LightTransaction> | FailedTransaction>;
+  liveTx(query: TransactionQuery): Stream<ConfirmedTransaction<LightTransaction> | FailedTransaction>;
   getBlockHeader(height: number): Promise<BlockHeader>;
   watchBlockHeaders(): Stream<BlockHeader>;
   /**

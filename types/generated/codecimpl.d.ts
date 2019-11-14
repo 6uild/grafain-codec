@@ -214,10 +214,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: grafain.ITx,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: grafain.ITx, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Tx message, length delimited. Does not implicitly {@link grafain.Tx.verify|verify} messages.
@@ -225,10 +222,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: grafain.ITx,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: grafain.ITx, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Tx message from the specified reader or buffer.
@@ -238,10 +232,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): grafain.Tx;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): grafain.Tx;
 
     /**
      * Decodes a Tx message from the specified reader or buffer, length delimited.
@@ -250,9 +241,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): grafain.Tx;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.Tx;
 
     /**
      * Verifies a Tx message.
@@ -274,10 +263,7 @@ export namespace grafain {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: grafain.Tx,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: grafain.Tx, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Tx to JSON.
@@ -308,9 +294,7 @@ export namespace grafain {
      * @param [properties] Properties to set
      * @returns ExecuteBatchMsg instance
      */
-    public static create(
-      properties?: grafain.IExecuteBatchMsg
-    ): grafain.ExecuteBatchMsg;
+    public static create(properties?: grafain.IExecuteBatchMsg): grafain.ExecuteBatchMsg;
 
     /**
      * Encodes the specified ExecuteBatchMsg message. Does not implicitly {@link grafain.ExecuteBatchMsg.verify|verify} messages.
@@ -318,10 +302,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: grafain.IExecuteBatchMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: grafain.IExecuteBatchMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ExecuteBatchMsg message, length delimited. Does not implicitly {@link grafain.ExecuteBatchMsg.verify|verify} messages.
@@ -331,7 +312,7 @@ export namespace grafain {
      */
     public static encodeDelimited(
       message: grafain.IExecuteBatchMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -342,10 +323,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): grafain.ExecuteBatchMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): grafain.ExecuteBatchMsg;
 
     /**
      * Decodes an ExecuteBatchMsg message from the specified reader or buffer, length delimited.
@@ -354,9 +332,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): grafain.ExecuteBatchMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.ExecuteBatchMsg;
 
     /**
      * Verifies an ExecuteBatchMsg message.
@@ -370,9 +346,7 @@ export namespace grafain {
      * @param object Plain object
      * @returns ExecuteBatchMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): grafain.ExecuteBatchMsg;
+    public static fromObject(object: { [k: string]: any }): grafain.ExecuteBatchMsg;
 
     /**
      * Creates a plain object from an ExecuteBatchMsg message. Also converts values to other types if specified.
@@ -382,7 +356,7 @@ export namespace grafain {
      */
     public static toObject(
       message: grafain.ExecuteBatchMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -496,9 +470,7 @@ export namespace grafain {
        * @param [properties] Properties to set
        * @returns Union instance
        */
-      public static create(
-        properties?: grafain.ExecuteBatchMsg.IUnion
-      ): grafain.ExecuteBatchMsg.Union;
+      public static create(properties?: grafain.ExecuteBatchMsg.IUnion): grafain.ExecuteBatchMsg.Union;
 
       /**
        * Encodes the specified Union message. Does not implicitly {@link grafain.ExecuteBatchMsg.Union.verify|verify} messages.
@@ -508,7 +480,7 @@ export namespace grafain {
        */
       public static encode(
         message: grafain.ExecuteBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -519,7 +491,7 @@ export namespace grafain {
        */
       public static encodeDelimited(
         message: grafain.ExecuteBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -532,7 +504,7 @@ export namespace grafain {
        */
       public static decode(
         reader: $protobuf.Reader | Uint8Array,
-        length?: number
+        length?: number,
       ): grafain.ExecuteBatchMsg.Union;
 
       /**
@@ -542,9 +514,7 @@ export namespace grafain {
        * @throws {Error} If the payload is not a reader or valid buffer
        * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      public static decodeDelimited(
-        reader: $protobuf.Reader | Uint8Array
-      ): grafain.ExecuteBatchMsg.Union;
+      public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.ExecuteBatchMsg.Union;
 
       /**
        * Verifies an Union message.
@@ -558,9 +528,7 @@ export namespace grafain {
        * @param object Plain object
        * @returns Union
        */
-      public static fromObject(object: {
-        [k: string]: any;
-      }): grafain.ExecuteBatchMsg.Union;
+      public static fromObject(object: { [k: string]: any }): grafain.ExecuteBatchMsg.Union;
 
       /**
        * Creates a plain object from an Union message. Also converts values to other types if specified.
@@ -570,7 +538,7 @@ export namespace grafain {
        */
       public static toObject(
         message: grafain.ExecuteBatchMsg.Union,
-        options?: $protobuf.IConversionOptions
+        options?: $protobuf.IConversionOptions,
       ): { [k: string]: any };
 
       /**
@@ -698,9 +666,7 @@ export namespace grafain {
      * @param [properties] Properties to set
      * @returns ProposalOptions instance
      */
-    public static create(
-      properties?: grafain.IProposalOptions
-    ): grafain.ProposalOptions;
+    public static create(properties?: grafain.IProposalOptions): grafain.ProposalOptions;
 
     /**
      * Encodes the specified ProposalOptions message. Does not implicitly {@link grafain.ProposalOptions.verify|verify} messages.
@@ -708,10 +674,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: grafain.IProposalOptions,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: grafain.IProposalOptions, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ProposalOptions message, length delimited. Does not implicitly {@link grafain.ProposalOptions.verify|verify} messages.
@@ -721,7 +684,7 @@ export namespace grafain {
      */
     public static encodeDelimited(
       message: grafain.IProposalOptions,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -732,10 +695,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): grafain.ProposalOptions;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): grafain.ProposalOptions;
 
     /**
      * Decodes a ProposalOptions message from the specified reader or buffer, length delimited.
@@ -744,9 +704,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): grafain.ProposalOptions;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.ProposalOptions;
 
     /**
      * Verifies a ProposalOptions message.
@@ -760,9 +718,7 @@ export namespace grafain {
      * @param object Plain object
      * @returns ProposalOptions
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): grafain.ProposalOptions;
+    public static fromObject(object: { [k: string]: any }): grafain.ProposalOptions;
 
     /**
      * Creates a plain object from a ProposalOptions message. Also converts values to other types if specified.
@@ -772,7 +728,7 @@ export namespace grafain {
      */
     public static toObject(
       message: grafain.ProposalOptions,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -804,9 +760,7 @@ export namespace grafain {
      * @param [properties] Properties to set
      * @returns ExecuteProposalBatchMsg instance
      */
-    public static create(
-      properties?: grafain.IExecuteProposalBatchMsg
-    ): grafain.ExecuteProposalBatchMsg;
+    public static create(properties?: grafain.IExecuteProposalBatchMsg): grafain.ExecuteProposalBatchMsg;
 
     /**
      * Encodes the specified ExecuteProposalBatchMsg message. Does not implicitly {@link grafain.ExecuteProposalBatchMsg.verify|verify} messages.
@@ -816,7 +770,7 @@ export namespace grafain {
      */
     public static encode(
       message: grafain.IExecuteProposalBatchMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -827,7 +781,7 @@ export namespace grafain {
      */
     public static encodeDelimited(
       message: grafain.IExecuteProposalBatchMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -840,7 +794,7 @@ export namespace grafain {
      */
     public static decode(
       reader: $protobuf.Reader | Uint8Array,
-      length?: number
+      length?: number,
     ): grafain.ExecuteProposalBatchMsg;
 
     /**
@@ -850,9 +804,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): grafain.ExecuteProposalBatchMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.ExecuteProposalBatchMsg;
 
     /**
      * Verifies an ExecuteProposalBatchMsg message.
@@ -866,9 +818,7 @@ export namespace grafain {
      * @param object Plain object
      * @returns ExecuteProposalBatchMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): grafain.ExecuteProposalBatchMsg;
+    public static fromObject(object: { [k: string]: any }): grafain.ExecuteProposalBatchMsg;
 
     /**
      * Creates a plain object from an ExecuteProposalBatchMsg message. Also converts values to other types if specified.
@@ -878,7 +828,7 @@ export namespace grafain {
      */
     public static toObject(
       message: grafain.ExecuteProposalBatchMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -986,7 +936,7 @@ export namespace grafain {
        * @returns Union instance
        */
       public static create(
-        properties?: grafain.ExecuteProposalBatchMsg.IUnion
+        properties?: grafain.ExecuteProposalBatchMsg.IUnion,
       ): grafain.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -997,7 +947,7 @@ export namespace grafain {
        */
       public static encode(
         message: grafain.ExecuteProposalBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -1008,7 +958,7 @@ export namespace grafain {
        */
       public static encodeDelimited(
         message: grafain.ExecuteProposalBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -1021,7 +971,7 @@ export namespace grafain {
        */
       public static decode(
         reader: $protobuf.Reader | Uint8Array,
-        length?: number
+        length?: number,
       ): grafain.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -1032,7 +982,7 @@ export namespace grafain {
        * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
       public static decodeDelimited(
-        reader: $protobuf.Reader | Uint8Array
+        reader: $protobuf.Reader | Uint8Array,
       ): grafain.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -1047,9 +997,7 @@ export namespace grafain {
        * @param object Plain object
        * @returns Union
        */
-      public static fromObject(object: {
-        [k: string]: any;
-      }): grafain.ExecuteProposalBatchMsg.Union;
+      public static fromObject(object: { [k: string]: any }): grafain.ExecuteProposalBatchMsg.Union;
 
       /**
        * Creates a plain object from an Union message. Also converts values to other types if specified.
@@ -1059,7 +1007,7 @@ export namespace grafain {
        */
       public static toObject(
         message: grafain.ExecuteProposalBatchMsg.Union,
-        options?: $protobuf.IConversionOptions
+        options?: $protobuf.IConversionOptions,
       ): { [k: string]: any };
 
       /**
@@ -1138,10 +1086,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: grafain.ICronTask,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: grafain.ICronTask, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CronTask message, length delimited. Does not implicitly {@link grafain.CronTask.verify|verify} messages.
@@ -1149,10 +1094,7 @@ export namespace grafain {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: grafain.ICronTask,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: grafain.ICronTask, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CronTask message from the specified reader or buffer.
@@ -1162,10 +1104,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): grafain.CronTask;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): grafain.CronTask;
 
     /**
      * Decodes a CronTask message from the specified reader or buffer, length delimited.
@@ -1174,9 +1113,7 @@ export namespace grafain {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): grafain.CronTask;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): grafain.CronTask;
 
     /**
      * Verifies a CronTask message.
@@ -1200,7 +1137,7 @@ export namespace grafain {
      */
     public static toObject(
       message: grafain.CronTask,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -1261,10 +1198,7 @@ export namespace artifact {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: artifact.IArtifact,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: artifact.IArtifact, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Artifact message, length delimited. Does not implicitly {@link artifact.Artifact.verify|verify} messages.
@@ -1272,10 +1206,7 @@ export namespace artifact {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: artifact.IArtifact,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: artifact.IArtifact, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an Artifact message from the specified reader or buffer.
@@ -1285,10 +1216,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): artifact.Artifact;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): artifact.Artifact;
 
     /**
      * Decodes an Artifact message from the specified reader or buffer, length delimited.
@@ -1297,9 +1225,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): artifact.Artifact;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): artifact.Artifact;
 
     /**
      * Verifies an Artifact message.
@@ -1323,7 +1249,7 @@ export namespace artifact {
      */
     public static toObject(
       message: artifact.Artifact,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -1373,9 +1299,7 @@ export namespace artifact {
      * @param [properties] Properties to set
      * @returns CreateArtifactMsg instance
      */
-    public static create(
-      properties?: artifact.ICreateArtifactMsg
-    ): artifact.CreateArtifactMsg;
+    public static create(properties?: artifact.ICreateArtifactMsg): artifact.CreateArtifactMsg;
 
     /**
      * Encodes the specified CreateArtifactMsg message. Does not implicitly {@link artifact.CreateArtifactMsg.verify|verify} messages.
@@ -1383,10 +1307,7 @@ export namespace artifact {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: artifact.ICreateArtifactMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: artifact.ICreateArtifactMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateArtifactMsg message, length delimited. Does not implicitly {@link artifact.CreateArtifactMsg.verify|verify} messages.
@@ -1396,7 +1317,7 @@ export namespace artifact {
      */
     public static encodeDelimited(
       message: artifact.ICreateArtifactMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -1407,10 +1328,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): artifact.CreateArtifactMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): artifact.CreateArtifactMsg;
 
     /**
      * Decodes a CreateArtifactMsg message from the specified reader or buffer, length delimited.
@@ -1419,9 +1337,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): artifact.CreateArtifactMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): artifact.CreateArtifactMsg;
 
     /**
      * Verifies a CreateArtifactMsg message.
@@ -1435,9 +1351,7 @@ export namespace artifact {
      * @param object Plain object
      * @returns CreateArtifactMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): artifact.CreateArtifactMsg;
+    public static fromObject(object: { [k: string]: any }): artifact.CreateArtifactMsg;
 
     /**
      * Creates a plain object from a CreateArtifactMsg message. Also converts values to other types if specified.
@@ -1447,7 +1361,7 @@ export namespace artifact {
      */
     public static toObject(
       message: artifact.CreateArtifactMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -1485,9 +1399,7 @@ export namespace artifact {
      * @param [properties] Properties to set
      * @returns DeleteArtifactMsg instance
      */
-    public static create(
-      properties?: artifact.IDeleteArtifactMsg
-    ): artifact.DeleteArtifactMsg;
+    public static create(properties?: artifact.IDeleteArtifactMsg): artifact.DeleteArtifactMsg;
 
     /**
      * Encodes the specified DeleteArtifactMsg message. Does not implicitly {@link artifact.DeleteArtifactMsg.verify|verify} messages.
@@ -1495,10 +1407,7 @@ export namespace artifact {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: artifact.IDeleteArtifactMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: artifact.IDeleteArtifactMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified DeleteArtifactMsg message, length delimited. Does not implicitly {@link artifact.DeleteArtifactMsg.verify|verify} messages.
@@ -1508,7 +1417,7 @@ export namespace artifact {
      */
     public static encodeDelimited(
       message: artifact.IDeleteArtifactMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -1519,10 +1428,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): artifact.DeleteArtifactMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): artifact.DeleteArtifactMsg;
 
     /**
      * Decodes a DeleteArtifactMsg message from the specified reader or buffer, length delimited.
@@ -1531,9 +1437,7 @@ export namespace artifact {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): artifact.DeleteArtifactMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): artifact.DeleteArtifactMsg;
 
     /**
      * Verifies a DeleteArtifactMsg message.
@@ -1547,9 +1451,7 @@ export namespace artifact {
      * @param object Plain object
      * @returns DeleteArtifactMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): artifact.DeleteArtifactMsg;
+    public static fromObject(object: { [k: string]: any }): artifact.DeleteArtifactMsg;
 
     /**
      * Creates a plain object from a DeleteArtifactMsg message. Also converts values to other types if specified.
@@ -1559,7 +1461,7 @@ export namespace artifact {
      */
     public static toObject(
       message: artifact.DeleteArtifactMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -1602,10 +1504,7 @@ export namespace app {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: app.IResultSet,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: app.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ResultSet message, length delimited. Does not implicitly {@link app.ResultSet.verify|verify} messages.
@@ -1613,10 +1512,7 @@ export namespace app {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: app.IResultSet,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: app.IResultSet, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ResultSet message from the specified reader or buffer.
@@ -1626,10 +1522,7 @@ export namespace app {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): app.ResultSet;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): app.ResultSet;
 
     /**
      * Decodes a ResultSet message from the specified reader or buffer, length delimited.
@@ -1638,9 +1531,7 @@ export namespace app {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): app.ResultSet;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): app.ResultSet;
 
     /**
      * Verifies a ResultSet message.
@@ -1664,7 +1555,7 @@ export namespace app {
      */
     public static toObject(
       message: app.ResultSet,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -1897,10 +1788,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: bnsd.ITx,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: bnsd.ITx, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Tx message, length delimited. Does not implicitly {@link bnsd.Tx.verify|verify} messages.
@@ -1908,10 +1796,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: bnsd.ITx,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: bnsd.ITx, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Tx message from the specified reader or buffer.
@@ -1921,10 +1806,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): bnsd.Tx;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): bnsd.Tx;
 
     /**
      * Decodes a Tx message from the specified reader or buffer, length delimited.
@@ -1933,9 +1815,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): bnsd.Tx;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.Tx;
 
     /**
      * Verifies a Tx message.
@@ -1957,10 +1837,7 @@ export namespace bnsd {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: bnsd.Tx,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: bnsd.Tx, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Tx to JSON.
@@ -1991,9 +1868,7 @@ export namespace bnsd {
      * @param [properties] Properties to set
      * @returns ExecuteBatchMsg instance
      */
-    public static create(
-      properties?: bnsd.IExecuteBatchMsg
-    ): bnsd.ExecuteBatchMsg;
+    public static create(properties?: bnsd.IExecuteBatchMsg): bnsd.ExecuteBatchMsg;
 
     /**
      * Encodes the specified ExecuteBatchMsg message. Does not implicitly {@link bnsd.ExecuteBatchMsg.verify|verify} messages.
@@ -2001,10 +1876,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: bnsd.IExecuteBatchMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: bnsd.IExecuteBatchMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ExecuteBatchMsg message, length delimited. Does not implicitly {@link bnsd.ExecuteBatchMsg.verify|verify} messages.
@@ -2014,7 +1886,7 @@ export namespace bnsd {
      */
     public static encodeDelimited(
       message: bnsd.IExecuteBatchMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -2025,10 +1897,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): bnsd.ExecuteBatchMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): bnsd.ExecuteBatchMsg;
 
     /**
      * Decodes an ExecuteBatchMsg message from the specified reader or buffer, length delimited.
@@ -2037,9 +1906,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): bnsd.ExecuteBatchMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.ExecuteBatchMsg;
 
     /**
      * Verifies an ExecuteBatchMsg message.
@@ -2053,9 +1920,7 @@ export namespace bnsd {
      * @param object Plain object
      * @returns ExecuteBatchMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): bnsd.ExecuteBatchMsg;
+    public static fromObject(object: { [k: string]: any }): bnsd.ExecuteBatchMsg;
 
     /**
      * Creates a plain object from an ExecuteBatchMsg message. Also converts values to other types if specified.
@@ -2065,7 +1930,7 @@ export namespace bnsd {
      */
     public static toObject(
       message: bnsd.ExecuteBatchMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -2200,9 +2065,7 @@ export namespace bnsd {
        * @param [properties] Properties to set
        * @returns Union instance
        */
-      public static create(
-        properties?: bnsd.ExecuteBatchMsg.IUnion
-      ): bnsd.ExecuteBatchMsg.Union;
+      public static create(properties?: bnsd.ExecuteBatchMsg.IUnion): bnsd.ExecuteBatchMsg.Union;
 
       /**
        * Encodes the specified Union message. Does not implicitly {@link bnsd.ExecuteBatchMsg.Union.verify|verify} messages.
@@ -2210,10 +2073,7 @@ export namespace bnsd {
        * @param [writer] Writer to encode to
        * @returns Writer
        */
-      public static encode(
-        message: bnsd.ExecuteBatchMsg.IUnion,
-        writer?: $protobuf.Writer
-      ): $protobuf.Writer;
+      public static encode(message: bnsd.ExecuteBatchMsg.IUnion, writer?: $protobuf.Writer): $protobuf.Writer;
 
       /**
        * Encodes the specified Union message, length delimited. Does not implicitly {@link bnsd.ExecuteBatchMsg.Union.verify|verify} messages.
@@ -2223,7 +2083,7 @@ export namespace bnsd {
        */
       public static encodeDelimited(
         message: bnsd.ExecuteBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -2236,7 +2096,7 @@ export namespace bnsd {
        */
       public static decode(
         reader: $protobuf.Reader | Uint8Array,
-        length?: number
+        length?: number,
       ): bnsd.ExecuteBatchMsg.Union;
 
       /**
@@ -2246,9 +2106,7 @@ export namespace bnsd {
        * @throws {Error} If the payload is not a reader or valid buffer
        * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
-      public static decodeDelimited(
-        reader: $protobuf.Reader | Uint8Array
-      ): bnsd.ExecuteBatchMsg.Union;
+      public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.ExecuteBatchMsg.Union;
 
       /**
        * Verifies an Union message.
@@ -2262,9 +2120,7 @@ export namespace bnsd {
        * @param object Plain object
        * @returns Union
        */
-      public static fromObject(object: {
-        [k: string]: any;
-      }): bnsd.ExecuteBatchMsg.Union;
+      public static fromObject(object: { [k: string]: any }): bnsd.ExecuteBatchMsg.Union;
 
       /**
        * Creates a plain object from an Union message. Also converts values to other types if specified.
@@ -2274,7 +2130,7 @@ export namespace bnsd {
        */
       public static toObject(
         message: bnsd.ExecuteBatchMsg.Union,
-        options?: $protobuf.IConversionOptions
+        options?: $protobuf.IConversionOptions,
       ): { [k: string]: any };
 
       /**
@@ -2423,9 +2279,7 @@ export namespace bnsd {
      * @param [properties] Properties to set
      * @returns ProposalOptions instance
      */
-    public static create(
-      properties?: bnsd.IProposalOptions
-    ): bnsd.ProposalOptions;
+    public static create(properties?: bnsd.IProposalOptions): bnsd.ProposalOptions;
 
     /**
      * Encodes the specified ProposalOptions message. Does not implicitly {@link bnsd.ProposalOptions.verify|verify} messages.
@@ -2433,10 +2287,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: bnsd.IProposalOptions,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: bnsd.IProposalOptions, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ProposalOptions message, length delimited. Does not implicitly {@link bnsd.ProposalOptions.verify|verify} messages.
@@ -2446,7 +2297,7 @@ export namespace bnsd {
      */
     public static encodeDelimited(
       message: bnsd.IProposalOptions,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -2457,10 +2308,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): bnsd.ProposalOptions;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): bnsd.ProposalOptions;
 
     /**
      * Decodes a ProposalOptions message from the specified reader or buffer, length delimited.
@@ -2469,9 +2317,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): bnsd.ProposalOptions;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.ProposalOptions;
 
     /**
      * Verifies a ProposalOptions message.
@@ -2485,9 +2331,7 @@ export namespace bnsd {
      * @param object Plain object
      * @returns ProposalOptions
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): bnsd.ProposalOptions;
+    public static fromObject(object: { [k: string]: any }): bnsd.ProposalOptions;
 
     /**
      * Creates a plain object from a ProposalOptions message. Also converts values to other types if specified.
@@ -2497,7 +2341,7 @@ export namespace bnsd {
      */
     public static toObject(
       message: bnsd.ProposalOptions,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -2529,9 +2373,7 @@ export namespace bnsd {
      * @param [properties] Properties to set
      * @returns ExecuteProposalBatchMsg instance
      */
-    public static create(
-      properties?: bnsd.IExecuteProposalBatchMsg
-    ): bnsd.ExecuteProposalBatchMsg;
+    public static create(properties?: bnsd.IExecuteProposalBatchMsg): bnsd.ExecuteProposalBatchMsg;
 
     /**
      * Encodes the specified ExecuteProposalBatchMsg message. Does not implicitly {@link bnsd.ExecuteProposalBatchMsg.verify|verify} messages.
@@ -2539,10 +2381,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: bnsd.IExecuteProposalBatchMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: bnsd.IExecuteProposalBatchMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ExecuteProposalBatchMsg message, length delimited. Does not implicitly {@link bnsd.ExecuteProposalBatchMsg.verify|verify} messages.
@@ -2552,7 +2391,7 @@ export namespace bnsd {
      */
     public static encodeDelimited(
       message: bnsd.IExecuteProposalBatchMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -2565,7 +2404,7 @@ export namespace bnsd {
      */
     public static decode(
       reader: $protobuf.Reader | Uint8Array,
-      length?: number
+      length?: number,
     ): bnsd.ExecuteProposalBatchMsg;
 
     /**
@@ -2575,9 +2414,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): bnsd.ExecuteProposalBatchMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.ExecuteProposalBatchMsg;
 
     /**
      * Verifies an ExecuteProposalBatchMsg message.
@@ -2591,9 +2428,7 @@ export namespace bnsd {
      * @param object Plain object
      * @returns ExecuteProposalBatchMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): bnsd.ExecuteProposalBatchMsg;
+    public static fromObject(object: { [k: string]: any }): bnsd.ExecuteProposalBatchMsg;
 
     /**
      * Creates a plain object from an ExecuteProposalBatchMsg message. Also converts values to other types if specified.
@@ -2603,7 +2438,7 @@ export namespace bnsd {
      */
     public static toObject(
       message: bnsd.ExecuteProposalBatchMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -2732,7 +2567,7 @@ export namespace bnsd {
        * @returns Union instance
        */
       public static create(
-        properties?: bnsd.ExecuteProposalBatchMsg.IUnion
+        properties?: bnsd.ExecuteProposalBatchMsg.IUnion,
       ): bnsd.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -2743,7 +2578,7 @@ export namespace bnsd {
        */
       public static encode(
         message: bnsd.ExecuteProposalBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -2754,7 +2589,7 @@ export namespace bnsd {
        */
       public static encodeDelimited(
         message: bnsd.ExecuteProposalBatchMsg.IUnion,
-        writer?: $protobuf.Writer
+        writer?: $protobuf.Writer,
       ): $protobuf.Writer;
 
       /**
@@ -2767,7 +2602,7 @@ export namespace bnsd {
        */
       public static decode(
         reader: $protobuf.Reader | Uint8Array,
-        length?: number
+        length?: number,
       ): bnsd.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -2778,7 +2613,7 @@ export namespace bnsd {
        * @throws {$protobuf.util.ProtocolError} If required fields are missing
        */
       public static decodeDelimited(
-        reader: $protobuf.Reader | Uint8Array
+        reader: $protobuf.Reader | Uint8Array,
       ): bnsd.ExecuteProposalBatchMsg.Union;
 
       /**
@@ -2793,9 +2628,7 @@ export namespace bnsd {
        * @param object Plain object
        * @returns Union
        */
-      public static fromObject(object: {
-        [k: string]: any;
-      }): bnsd.ExecuteProposalBatchMsg.Union;
+      public static fromObject(object: { [k: string]: any }): bnsd.ExecuteProposalBatchMsg.Union;
 
       /**
        * Creates a plain object from an Union message. Also converts values to other types if specified.
@@ -2805,7 +2638,7 @@ export namespace bnsd {
        */
       public static toObject(
         message: bnsd.ExecuteProposalBatchMsg.Union,
-        options?: $protobuf.IConversionOptions
+        options?: $protobuf.IConversionOptions,
       ): { [k: string]: any };
 
       /**
@@ -2884,10 +2717,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: bnsd.ICronTask,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: bnsd.ICronTask, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CronTask message, length delimited. Does not implicitly {@link bnsd.CronTask.verify|verify} messages.
@@ -2895,10 +2725,7 @@ export namespace bnsd {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: bnsd.ICronTask,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: bnsd.ICronTask, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CronTask message from the specified reader or buffer.
@@ -2908,10 +2735,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): bnsd.CronTask;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): bnsd.CronTask;
 
     /**
      * Decodes a CronTask message from the specified reader or buffer, length delimited.
@@ -2920,9 +2744,7 @@ export namespace bnsd {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): bnsd.CronTask;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): bnsd.CronTask;
 
     /**
      * Verifies a CronTask message.
@@ -2946,7 +2768,7 @@ export namespace bnsd {
      */
     public static toObject(
       message: bnsd.CronTask,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3001,10 +2823,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: username.IToken,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: username.IToken, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Token message, length delimited. Does not implicitly {@link username.Token.verify|verify} messages.
@@ -3012,10 +2831,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: username.IToken,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: username.IToken, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Token message from the specified reader or buffer.
@@ -3025,10 +2841,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): username.Token;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): username.Token;
 
     /**
      * Decodes a Token message from the specified reader or buffer, length delimited.
@@ -3037,9 +2850,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.Token;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.Token;
 
     /**
      * Verifies a Token message.
@@ -3063,7 +2874,7 @@ export namespace username {
      */
     public static toObject(
       message: username.Token,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3101,9 +2912,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns BlockchainAddress instance
      */
-    public static create(
-      properties?: username.IBlockchainAddress
-    ): username.BlockchainAddress;
+    public static create(properties?: username.IBlockchainAddress): username.BlockchainAddress;
 
     /**
      * Encodes the specified BlockchainAddress message. Does not implicitly {@link username.BlockchainAddress.verify|verify} messages.
@@ -3111,10 +2920,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: username.IBlockchainAddress,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: username.IBlockchainAddress, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified BlockchainAddress message, length delimited. Does not implicitly {@link username.BlockchainAddress.verify|verify} messages.
@@ -3124,7 +2930,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.IBlockchainAddress,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3135,10 +2941,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): username.BlockchainAddress;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): username.BlockchainAddress;
 
     /**
      * Decodes a BlockchainAddress message from the specified reader or buffer, length delimited.
@@ -3147,9 +2950,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.BlockchainAddress;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.BlockchainAddress;
 
     /**
      * Verifies a BlockchainAddress message.
@@ -3163,9 +2964,7 @@ export namespace username {
      * @param object Plain object
      * @returns BlockchainAddress
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.BlockchainAddress;
+    public static fromObject(object: { [k: string]: any }): username.BlockchainAddress;
 
     /**
      * Creates a plain object from a BlockchainAddress message. Also converts values to other types if specified.
@@ -3175,7 +2974,7 @@ export namespace username {
      */
     public static toObject(
       message: username.BlockchainAddress,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3219,9 +3018,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns RegisterTokenMsg instance
      */
-    public static create(
-      properties?: username.IRegisterTokenMsg
-    ): username.RegisterTokenMsg;
+    public static create(properties?: username.IRegisterTokenMsg): username.RegisterTokenMsg;
 
     /**
      * Encodes the specified RegisterTokenMsg message. Does not implicitly {@link username.RegisterTokenMsg.verify|verify} messages.
@@ -3229,10 +3026,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: username.IRegisterTokenMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: username.IRegisterTokenMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified RegisterTokenMsg message, length delimited. Does not implicitly {@link username.RegisterTokenMsg.verify|verify} messages.
@@ -3242,7 +3036,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.IRegisterTokenMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3253,10 +3047,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): username.RegisterTokenMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): username.RegisterTokenMsg;
 
     /**
      * Decodes a RegisterTokenMsg message from the specified reader or buffer, length delimited.
@@ -3265,9 +3056,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.RegisterTokenMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.RegisterTokenMsg;
 
     /**
      * Verifies a RegisterTokenMsg message.
@@ -3281,9 +3070,7 @@ export namespace username {
      * @param object Plain object
      * @returns RegisterTokenMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.RegisterTokenMsg;
+    public static fromObject(object: { [k: string]: any }): username.RegisterTokenMsg;
 
     /**
      * Creates a plain object from a RegisterTokenMsg message. Also converts values to other types if specified.
@@ -3293,7 +3080,7 @@ export namespace username {
      */
     public static toObject(
       message: username.RegisterTokenMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3337,9 +3124,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns TransferTokenMsg instance
      */
-    public static create(
-      properties?: username.ITransferTokenMsg
-    ): username.TransferTokenMsg;
+    public static create(properties?: username.ITransferTokenMsg): username.TransferTokenMsg;
 
     /**
      * Encodes the specified TransferTokenMsg message. Does not implicitly {@link username.TransferTokenMsg.verify|verify} messages.
@@ -3347,10 +3132,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: username.ITransferTokenMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: username.ITransferTokenMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TransferTokenMsg message, length delimited. Does not implicitly {@link username.TransferTokenMsg.verify|verify} messages.
@@ -3360,7 +3142,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.ITransferTokenMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3371,10 +3153,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): username.TransferTokenMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): username.TransferTokenMsg;
 
     /**
      * Decodes a TransferTokenMsg message from the specified reader or buffer, length delimited.
@@ -3383,9 +3162,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.TransferTokenMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.TransferTokenMsg;
 
     /**
      * Verifies a TransferTokenMsg message.
@@ -3399,9 +3176,7 @@ export namespace username {
      * @param object Plain object
      * @returns TransferTokenMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.TransferTokenMsg;
+    public static fromObject(object: { [k: string]: any }): username.TransferTokenMsg;
 
     /**
      * Creates a plain object from a TransferTokenMsg message. Also converts values to other types if specified.
@@ -3411,7 +3186,7 @@ export namespace username {
      */
     public static toObject(
       message: username.TransferTokenMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3455,9 +3230,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns ChangeTokenTargetsMsg instance
      */
-    public static create(
-      properties?: username.IChangeTokenTargetsMsg
-    ): username.ChangeTokenTargetsMsg;
+    public static create(properties?: username.IChangeTokenTargetsMsg): username.ChangeTokenTargetsMsg;
 
     /**
      * Encodes the specified ChangeTokenTargetsMsg message. Does not implicitly {@link username.ChangeTokenTargetsMsg.verify|verify} messages.
@@ -3467,7 +3240,7 @@ export namespace username {
      */
     public static encode(
       message: username.IChangeTokenTargetsMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3478,7 +3251,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.IChangeTokenTargetsMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3491,7 +3264,7 @@ export namespace username {
      */
     public static decode(
       reader: $protobuf.Reader | Uint8Array,
-      length?: number
+      length?: number,
     ): username.ChangeTokenTargetsMsg;
 
     /**
@@ -3501,9 +3274,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.ChangeTokenTargetsMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.ChangeTokenTargetsMsg;
 
     /**
      * Verifies a ChangeTokenTargetsMsg message.
@@ -3517,9 +3288,7 @@ export namespace username {
      * @param object Plain object
      * @returns ChangeTokenTargetsMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.ChangeTokenTargetsMsg;
+    public static fromObject(object: { [k: string]: any }): username.ChangeTokenTargetsMsg;
 
     /**
      * Creates a plain object from a ChangeTokenTargetsMsg message. Also converts values to other types if specified.
@@ -3529,7 +3298,7 @@ export namespace username {
      */
     public static toObject(
       message: username.ChangeTokenTargetsMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3579,9 +3348,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns Configuration instance
      */
-    public static create(
-      properties?: username.IConfiguration
-    ): username.Configuration;
+    public static create(properties?: username.IConfiguration): username.Configuration;
 
     /**
      * Encodes the specified Configuration message. Does not implicitly {@link username.Configuration.verify|verify} messages.
@@ -3589,10 +3356,7 @@ export namespace username {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: username.IConfiguration,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: username.IConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Configuration message, length delimited. Does not implicitly {@link username.Configuration.verify|verify} messages.
@@ -3602,7 +3366,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.IConfiguration,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3613,10 +3377,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): username.Configuration;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): username.Configuration;
 
     /**
      * Decodes a Configuration message from the specified reader or buffer, length delimited.
@@ -3625,9 +3386,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.Configuration;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.Configuration;
 
     /**
      * Verifies a Configuration message.
@@ -3641,9 +3400,7 @@ export namespace username {
      * @param object Plain object
      * @returns Configuration
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.Configuration;
+    public static fromObject(object: { [k: string]: any }): username.Configuration;
 
     /**
      * Creates a plain object from a Configuration message. Also converts values to other types if specified.
@@ -3653,7 +3410,7 @@ export namespace username {
      */
     public static toObject(
       message: username.Configuration,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3691,9 +3448,7 @@ export namespace username {
      * @param [properties] Properties to set
      * @returns UpdateConfigurationMsg instance
      */
-    public static create(
-      properties?: username.IUpdateConfigurationMsg
-    ): username.UpdateConfigurationMsg;
+    public static create(properties?: username.IUpdateConfigurationMsg): username.UpdateConfigurationMsg;
 
     /**
      * Encodes the specified UpdateConfigurationMsg message. Does not implicitly {@link username.UpdateConfigurationMsg.verify|verify} messages.
@@ -3703,7 +3458,7 @@ export namespace username {
      */
     public static encode(
       message: username.IUpdateConfigurationMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3714,7 +3469,7 @@ export namespace username {
      */
     public static encodeDelimited(
       message: username.IUpdateConfigurationMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3727,7 +3482,7 @@ export namespace username {
      */
     public static decode(
       reader: $protobuf.Reader | Uint8Array,
-      length?: number
+      length?: number,
     ): username.UpdateConfigurationMsg;
 
     /**
@@ -3737,9 +3492,7 @@ export namespace username {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): username.UpdateConfigurationMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): username.UpdateConfigurationMsg;
 
     /**
      * Verifies an UpdateConfigurationMsg message.
@@ -3753,9 +3506,7 @@ export namespace username {
      * @param object Plain object
      * @returns UpdateConfigurationMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): username.UpdateConfigurationMsg;
+    public static fromObject(object: { [k: string]: any }): username.UpdateConfigurationMsg;
 
     /**
      * Creates a plain object from an UpdateConfigurationMsg message. Also converts values to other types if specified.
@@ -3765,7 +3516,7 @@ export namespace username {
      */
     public static toObject(
       message: username.UpdateConfigurationMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3808,10 +3559,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: weave.IMetadata,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: weave.IMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Metadata message, length delimited. Does not implicitly {@link weave.Metadata.verify|verify} messages.
@@ -3819,10 +3567,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: weave.IMetadata,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: weave.IMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Metadata message from the specified reader or buffer.
@@ -3832,10 +3577,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): weave.Metadata;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): weave.Metadata;
 
     /**
      * Decodes a Metadata message from the specified reader or buffer, length delimited.
@@ -3844,9 +3586,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): weave.Metadata;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): weave.Metadata;
 
     /**
      * Verifies a Metadata message.
@@ -3870,7 +3610,7 @@ export namespace weave {
      */
     public static toObject(
       message: weave.Metadata,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -3902,9 +3642,7 @@ export namespace weave {
      * @param [properties] Properties to set
      * @returns ValidatorUpdates instance
      */
-    public static create(
-      properties?: weave.IValidatorUpdates
-    ): weave.ValidatorUpdates;
+    public static create(properties?: weave.IValidatorUpdates): weave.ValidatorUpdates;
 
     /**
      * Encodes the specified ValidatorUpdates message. Does not implicitly {@link weave.ValidatorUpdates.verify|verify} messages.
@@ -3912,10 +3650,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: weave.IValidatorUpdates,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: weave.IValidatorUpdates, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ValidatorUpdates message, length delimited. Does not implicitly {@link weave.ValidatorUpdates.verify|verify} messages.
@@ -3925,7 +3660,7 @@ export namespace weave {
      */
     public static encodeDelimited(
       message: weave.IValidatorUpdates,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -3936,10 +3671,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): weave.ValidatorUpdates;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): weave.ValidatorUpdates;
 
     /**
      * Decodes a ValidatorUpdates message from the specified reader or buffer, length delimited.
@@ -3948,9 +3680,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): weave.ValidatorUpdates;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): weave.ValidatorUpdates;
 
     /**
      * Verifies a ValidatorUpdates message.
@@ -3964,9 +3694,7 @@ export namespace weave {
      * @param object Plain object
      * @returns ValidatorUpdates
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): weave.ValidatorUpdates;
+    public static fromObject(object: { [k: string]: any }): weave.ValidatorUpdates;
 
     /**
      * Creates a plain object from a ValidatorUpdates message. Also converts values to other types if specified.
@@ -3976,7 +3704,7 @@ export namespace weave {
      */
     public static toObject(
       message: weave.ValidatorUpdates,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4014,9 +3742,7 @@ export namespace weave {
      * @param [properties] Properties to set
      * @returns ValidatorUpdate instance
      */
-    public static create(
-      properties?: weave.IValidatorUpdate
-    ): weave.ValidatorUpdate;
+    public static create(properties?: weave.IValidatorUpdate): weave.ValidatorUpdate;
 
     /**
      * Encodes the specified ValidatorUpdate message. Does not implicitly {@link weave.ValidatorUpdate.verify|verify} messages.
@@ -4024,10 +3750,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: weave.IValidatorUpdate,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: weave.IValidatorUpdate, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ValidatorUpdate message, length delimited. Does not implicitly {@link weave.ValidatorUpdate.verify|verify} messages.
@@ -4037,7 +3760,7 @@ export namespace weave {
      */
     public static encodeDelimited(
       message: weave.IValidatorUpdate,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -4048,10 +3771,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): weave.ValidatorUpdate;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): weave.ValidatorUpdate;
 
     /**
      * Decodes a ValidatorUpdate message from the specified reader or buffer, length delimited.
@@ -4060,9 +3780,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): weave.ValidatorUpdate;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): weave.ValidatorUpdate;
 
     /**
      * Verifies a ValidatorUpdate message.
@@ -4076,9 +3794,7 @@ export namespace weave {
      * @param object Plain object
      * @returns ValidatorUpdate
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): weave.ValidatorUpdate;
+    public static fromObject(object: { [k: string]: any }): weave.ValidatorUpdate;
 
     /**
      * Creates a plain object from a ValidatorUpdate message. Also converts values to other types if specified.
@@ -4088,7 +3804,7 @@ export namespace weave {
      */
     public static toObject(
       message: weave.ValidatorUpdate,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4134,10 +3850,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: weave.IPubKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: weave.IPubKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified PubKey message, length delimited. Does not implicitly {@link weave.PubKey.verify|verify} messages.
@@ -4145,10 +3858,7 @@ export namespace weave {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: weave.IPubKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: weave.IPubKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a PubKey message from the specified reader or buffer.
@@ -4158,10 +3868,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): weave.PubKey;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): weave.PubKey;
 
     /**
      * Decodes a PubKey message from the specified reader or buffer, length delimited.
@@ -4170,9 +3877,7 @@ export namespace weave {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): weave.PubKey;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): weave.PubKey;
 
     /**
      * Verifies a PubKey message.
@@ -4196,7 +3901,7 @@ export namespace weave {
      */
     public static toObject(
       message: weave.PubKey,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4251,10 +3956,7 @@ export namespace coin {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: coin.ICoin,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: coin.ICoin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Coin message, length delimited. Does not implicitly {@link coin.Coin.verify|verify} messages.
@@ -4262,10 +3964,7 @@ export namespace coin {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: coin.ICoin,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: coin.ICoin, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Coin message from the specified reader or buffer.
@@ -4275,10 +3974,7 @@ export namespace coin {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): coin.Coin;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): coin.Coin;
 
     /**
      * Decodes a Coin message from the specified reader or buffer, length delimited.
@@ -4287,9 +3983,7 @@ export namespace coin {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): coin.Coin;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): coin.Coin;
 
     /**
      * Verifies a Coin message.
@@ -4311,10 +4005,7 @@ export namespace coin {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: coin.Coin,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: coin.Coin, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Coin to JSON.
@@ -4359,10 +4050,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: crypto.IPublicKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: crypto.IPublicKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified PublicKey message, length delimited. Does not implicitly {@link crypto.PublicKey.verify|verify} messages.
@@ -4370,10 +4058,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: crypto.IPublicKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: crypto.IPublicKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a PublicKey message from the specified reader or buffer.
@@ -4383,10 +4068,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): crypto.PublicKey;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): crypto.PublicKey;
 
     /**
      * Decodes a PublicKey message from the specified reader or buffer, length delimited.
@@ -4395,9 +4077,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): crypto.PublicKey;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): crypto.PublicKey;
 
     /**
      * Verifies a PublicKey message.
@@ -4421,7 +4101,7 @@ export namespace crypto {
      */
     public static toObject(
       message: crypto.PublicKey,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4464,10 +4144,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: crypto.IPrivateKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: crypto.IPrivateKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified PrivateKey message, length delimited. Does not implicitly {@link crypto.PrivateKey.verify|verify} messages.
@@ -4475,10 +4152,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: crypto.IPrivateKey,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: crypto.IPrivateKey, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a PrivateKey message from the specified reader or buffer.
@@ -4488,10 +4162,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): crypto.PrivateKey;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): crypto.PrivateKey;
 
     /**
      * Decodes a PrivateKey message from the specified reader or buffer, length delimited.
@@ -4500,9 +4171,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): crypto.PrivateKey;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): crypto.PrivateKey;
 
     /**
      * Verifies a PrivateKey message.
@@ -4526,7 +4195,7 @@ export namespace crypto {
      */
     public static toObject(
       message: crypto.PrivateKey,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4569,10 +4238,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: crypto.ISignature,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: crypto.ISignature, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Signature message, length delimited. Does not implicitly {@link crypto.Signature.verify|verify} messages.
@@ -4580,10 +4246,7 @@ export namespace crypto {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: crypto.ISignature,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: crypto.ISignature, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Signature message from the specified reader or buffer.
@@ -4593,10 +4256,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): crypto.Signature;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): crypto.Signature;
 
     /**
      * Decodes a Signature message from the specified reader or buffer, length delimited.
@@ -4605,9 +4265,7 @@ export namespace crypto {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): crypto.Signature;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): crypto.Signature;
 
     /**
      * Verifies a Signature message.
@@ -4631,7 +4289,7 @@ export namespace crypto {
      */
     public static toObject(
       message: crypto.Signature,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4666,9 +4324,7 @@ export namespace migration {
      * @param [properties] Properties to set
      * @returns Configuration instance
      */
-    public static create(
-      properties?: migration.IConfiguration
-    ): migration.Configuration;
+    public static create(properties?: migration.IConfiguration): migration.Configuration;
 
     /**
      * Encodes the specified Configuration message. Does not implicitly {@link migration.Configuration.verify|verify} messages.
@@ -4676,10 +4332,7 @@ export namespace migration {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: migration.IConfiguration,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: migration.IConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Configuration message, length delimited. Does not implicitly {@link migration.Configuration.verify|verify} messages.
@@ -4689,7 +4342,7 @@ export namespace migration {
      */
     public static encodeDelimited(
       message: migration.IConfiguration,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -4700,10 +4353,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): migration.Configuration;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): migration.Configuration;
 
     /**
      * Decodes a Configuration message from the specified reader or buffer, length delimited.
@@ -4712,9 +4362,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): migration.Configuration;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): migration.Configuration;
 
     /**
      * Verifies a Configuration message.
@@ -4728,9 +4376,7 @@ export namespace migration {
      * @param object Plain object
      * @returns Configuration
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): migration.Configuration;
+    public static fromObject(object: { [k: string]: any }): migration.Configuration;
 
     /**
      * Creates a plain object from a Configuration message. Also converts values to other types if specified.
@@ -4740,7 +4386,7 @@ export namespace migration {
      */
     public static toObject(
       message: migration.Configuration,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4792,10 +4438,7 @@ export namespace migration {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: migration.ISchema,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: migration.ISchema, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Schema message, length delimited. Does not implicitly {@link migration.Schema.verify|verify} messages.
@@ -4803,10 +4446,7 @@ export namespace migration {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: migration.ISchema,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: migration.ISchema, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Schema message from the specified reader or buffer.
@@ -4816,10 +4456,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): migration.Schema;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): migration.Schema;
 
     /**
      * Decodes a Schema message from the specified reader or buffer, length delimited.
@@ -4828,9 +4465,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): migration.Schema;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): migration.Schema;
 
     /**
      * Verifies a Schema message.
@@ -4854,7 +4489,7 @@ export namespace migration {
      */
     public static toObject(
       message: migration.Schema,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -4892,9 +4527,7 @@ export namespace migration {
      * @param [properties] Properties to set
      * @returns UpgradeSchemaMsg instance
      */
-    public static create(
-      properties?: migration.IUpgradeSchemaMsg
-    ): migration.UpgradeSchemaMsg;
+    public static create(properties?: migration.IUpgradeSchemaMsg): migration.UpgradeSchemaMsg;
 
     /**
      * Encodes the specified UpgradeSchemaMsg message. Does not implicitly {@link migration.UpgradeSchemaMsg.verify|verify} messages.
@@ -4902,10 +4535,7 @@ export namespace migration {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: migration.IUpgradeSchemaMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: migration.IUpgradeSchemaMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpgradeSchemaMsg message, length delimited. Does not implicitly {@link migration.UpgradeSchemaMsg.verify|verify} messages.
@@ -4915,7 +4545,7 @@ export namespace migration {
      */
     public static encodeDelimited(
       message: migration.IUpgradeSchemaMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -4926,10 +4556,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): migration.UpgradeSchemaMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): migration.UpgradeSchemaMsg;
 
     /**
      * Decodes an UpgradeSchemaMsg message from the specified reader or buffer, length delimited.
@@ -4938,9 +4565,7 @@ export namespace migration {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): migration.UpgradeSchemaMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): migration.UpgradeSchemaMsg;
 
     /**
      * Verifies an UpgradeSchemaMsg message.
@@ -4954,9 +4579,7 @@ export namespace migration {
      * @param object Plain object
      * @returns UpgradeSchemaMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): migration.UpgradeSchemaMsg;
+    public static fromObject(object: { [k: string]: any }): migration.UpgradeSchemaMsg;
 
     /**
      * Creates a plain object from an UpgradeSchemaMsg message. Also converts values to other types if specified.
@@ -4966,7 +4589,7 @@ export namespace migration {
      */
     public static toObject(
       message: migration.UpgradeSchemaMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5009,10 +4632,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: orm.IMultiRef,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: orm.IMultiRef, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified MultiRef message, length delimited. Does not implicitly {@link orm.MultiRef.verify|verify} messages.
@@ -5020,10 +4640,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: orm.IMultiRef,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: orm.IMultiRef, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a MultiRef message from the specified reader or buffer.
@@ -5033,10 +4650,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): orm.MultiRef;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): orm.MultiRef;
 
     /**
      * Decodes a MultiRef message from the specified reader or buffer, length delimited.
@@ -5045,9 +4659,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): orm.MultiRef;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): orm.MultiRef;
 
     /**
      * Verifies a MultiRef message.
@@ -5071,7 +4683,7 @@ export namespace orm {
      */
     public static toObject(
       message: orm.MultiRef,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5111,10 +4723,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: orm.ICounter,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: orm.ICounter, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Counter message, length delimited. Does not implicitly {@link orm.Counter.verify|verify} messages.
@@ -5122,10 +4731,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: orm.ICounter,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: orm.ICounter, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Counter message from the specified reader or buffer.
@@ -5135,10 +4741,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): orm.Counter;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): orm.Counter;
 
     /**
      * Decodes a Counter message from the specified reader or buffer, length delimited.
@@ -5147,9 +4750,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): orm.Counter;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): orm.Counter;
 
     /**
      * Verifies a Counter message.
@@ -5173,7 +4774,7 @@ export namespace orm {
      */
     public static toObject(
       message: orm.Counter,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5219,10 +4820,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: orm.IVersionedIDRef,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: orm.IVersionedIDRef, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified VersionedIDRef message, length delimited. Does not implicitly {@link orm.VersionedIDRef.verify|verify} messages.
@@ -5230,10 +4828,7 @@ export namespace orm {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: orm.IVersionedIDRef,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: orm.IVersionedIDRef, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a VersionedIDRef message from the specified reader or buffer.
@@ -5243,10 +4838,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): orm.VersionedIDRef;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): orm.VersionedIDRef;
 
     /**
      * Decodes a VersionedIDRef message from the specified reader or buffer, length delimited.
@@ -5255,9 +4847,7 @@ export namespace orm {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): orm.VersionedIDRef;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): orm.VersionedIDRef;
 
     /**
      * Verifies a VersionedIDRef message.
@@ -5281,7 +4871,7 @@ export namespace orm {
      */
     public static toObject(
       message: orm.VersionedIDRef,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5360,10 +4950,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: aswap.ISwap,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: aswap.ISwap, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Swap message, length delimited. Does not implicitly {@link aswap.Swap.verify|verify} messages.
@@ -5371,10 +4958,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: aswap.ISwap,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: aswap.ISwap, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Swap message from the specified reader or buffer.
@@ -5384,10 +4968,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): aswap.Swap;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): aswap.Swap;
 
     /**
      * Decodes a Swap message from the specified reader or buffer, length delimited.
@@ -5396,9 +4977,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): aswap.Swap;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): aswap.Swap;
 
     /**
      * Verifies a Swap message.
@@ -5420,10 +4999,7 @@ export namespace aswap {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: aswap.Swap,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: aswap.Swap, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Swap to JSON.
@@ -5498,10 +5074,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: aswap.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: aswap.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link aswap.CreateMsg.verify|verify} messages.
@@ -5509,10 +5082,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: aswap.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: aswap.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer.
@@ -5522,10 +5092,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): aswap.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): aswap.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -5534,9 +5101,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): aswap.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): aswap.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -5560,7 +5125,7 @@ export namespace aswap {
      */
     public static toObject(
       message: aswap.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5612,10 +5177,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: aswap.IReleaseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: aswap.IReleaseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ReleaseMsg message, length delimited. Does not implicitly {@link aswap.ReleaseMsg.verify|verify} messages.
@@ -5623,10 +5185,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: aswap.IReleaseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: aswap.IReleaseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ReleaseMsg message from the specified reader or buffer.
@@ -5636,10 +5195,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): aswap.ReleaseMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): aswap.ReleaseMsg;
 
     /**
      * Decodes a ReleaseMsg message from the specified reader or buffer, length delimited.
@@ -5648,9 +5204,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): aswap.ReleaseMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): aswap.ReleaseMsg;
 
     /**
      * Verifies a ReleaseMsg message.
@@ -5674,7 +5228,7 @@ export namespace aswap {
      */
     public static toObject(
       message: aswap.ReleaseMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5720,10 +5274,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: aswap.IReturnMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: aswap.IReturnMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ReturnMsg message, length delimited. Does not implicitly {@link aswap.ReturnMsg.verify|verify} messages.
@@ -5731,10 +5282,7 @@ export namespace aswap {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: aswap.IReturnMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: aswap.IReturnMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ReturnMsg message from the specified reader or buffer.
@@ -5744,10 +5292,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): aswap.ReturnMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): aswap.ReturnMsg;
 
     /**
      * Decodes a ReturnMsg message from the specified reader or buffer, length delimited.
@@ -5756,9 +5301,7 @@ export namespace aswap {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): aswap.ReturnMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): aswap.ReturnMsg;
 
     /**
      * Verifies a ReturnMsg message.
@@ -5782,7 +5325,7 @@ export namespace aswap {
      */
     public static toObject(
       message: aswap.ReturnMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5817,9 +5360,7 @@ export namespace batch {
      * @param [properties] Properties to set
      * @returns ByteArrayList instance
      */
-    public static create(
-      properties?: batch.IByteArrayList
-    ): batch.ByteArrayList;
+    public static create(properties?: batch.IByteArrayList): batch.ByteArrayList;
 
     /**
      * Encodes the specified ByteArrayList message. Does not implicitly {@link batch.ByteArrayList.verify|verify} messages.
@@ -5827,10 +5368,7 @@ export namespace batch {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: batch.IByteArrayList,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: batch.IByteArrayList, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ByteArrayList message, length delimited. Does not implicitly {@link batch.ByteArrayList.verify|verify} messages.
@@ -5838,10 +5376,7 @@ export namespace batch {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: batch.IByteArrayList,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: batch.IByteArrayList, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ByteArrayList message from the specified reader or buffer.
@@ -5851,10 +5386,7 @@ export namespace batch {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): batch.ByteArrayList;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): batch.ByteArrayList;
 
     /**
      * Decodes a ByteArrayList message from the specified reader or buffer, length delimited.
@@ -5863,9 +5395,7 @@ export namespace batch {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): batch.ByteArrayList;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): batch.ByteArrayList;
 
     /**
      * Verifies a ByteArrayList message.
@@ -5889,7 +5419,7 @@ export namespace batch {
      */
     public static toObject(
       message: batch.ByteArrayList,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -5938,10 +5468,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cash.ISet,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cash.ISet, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Set message, length delimited. Does not implicitly {@link cash.Set.verify|verify} messages.
@@ -5949,10 +5476,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: cash.ISet,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: cash.ISet, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Set message from the specified reader or buffer.
@@ -5962,10 +5486,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cash.Set;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cash.Set;
 
     /**
      * Decodes a Set message from the specified reader or buffer, length delimited.
@@ -5974,9 +5495,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cash.Set;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cash.Set;
 
     /**
      * Verifies a Set message.
@@ -5998,10 +5517,7 @@ export namespace cash {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: cash.Set,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: cash.Set, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Set to JSON.
@@ -6070,10 +5586,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cash.ISendMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cash.ISendMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified SendMsg message, length delimited. Does not implicitly {@link cash.SendMsg.verify|verify} messages.
@@ -6081,10 +5594,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: cash.ISendMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: cash.ISendMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a SendMsg message from the specified reader or buffer.
@@ -6094,10 +5604,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cash.SendMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cash.SendMsg;
 
     /**
      * Decodes a SendMsg message from the specified reader or buffer, length delimited.
@@ -6106,9 +5613,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cash.SendMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cash.SendMsg;
 
     /**
      * Verifies a SendMsg message.
@@ -6132,7 +5637,7 @@ export namespace cash {
      */
     public static toObject(
       message: cash.SendMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6178,10 +5683,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cash.IFeeInfo,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cash.IFeeInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified FeeInfo message, length delimited. Does not implicitly {@link cash.FeeInfo.verify|verify} messages.
@@ -6189,10 +5691,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: cash.IFeeInfo,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: cash.IFeeInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a FeeInfo message from the specified reader or buffer.
@@ -6202,10 +5701,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cash.FeeInfo;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cash.FeeInfo;
 
     /**
      * Decodes a FeeInfo message from the specified reader or buffer, length delimited.
@@ -6214,9 +5710,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cash.FeeInfo;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cash.FeeInfo;
 
     /**
      * Verifies a FeeInfo message.
@@ -6240,7 +5734,7 @@ export namespace cash {
      */
     public static toObject(
       message: cash.FeeInfo,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6298,10 +5792,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cash.IConfiguration,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cash.IConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Configuration message, length delimited. Does not implicitly {@link cash.Configuration.verify|verify} messages.
@@ -6309,10 +5800,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: cash.IConfiguration,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: cash.IConfiguration, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Configuration message from the specified reader or buffer.
@@ -6322,10 +5810,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cash.Configuration;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cash.Configuration;
 
     /**
      * Decodes a Configuration message from the specified reader or buffer, length delimited.
@@ -6334,9 +5819,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cash.Configuration;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cash.Configuration;
 
     /**
      * Verifies a Configuration message.
@@ -6360,7 +5843,7 @@ export namespace cash {
      */
     public static toObject(
       message: cash.Configuration,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6398,9 +5881,7 @@ export namespace cash {
      * @param [properties] Properties to set
      * @returns UpdateConfigurationMsg instance
      */
-    public static create(
-      properties?: cash.IUpdateConfigurationMsg
-    ): cash.UpdateConfigurationMsg;
+    public static create(properties?: cash.IUpdateConfigurationMsg): cash.UpdateConfigurationMsg;
 
     /**
      * Encodes the specified UpdateConfigurationMsg message. Does not implicitly {@link cash.UpdateConfigurationMsg.verify|verify} messages.
@@ -6408,10 +5889,7 @@ export namespace cash {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cash.IUpdateConfigurationMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cash.IUpdateConfigurationMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpdateConfigurationMsg message, length delimited. Does not implicitly {@link cash.UpdateConfigurationMsg.verify|verify} messages.
@@ -6421,7 +5899,7 @@ export namespace cash {
      */
     public static encodeDelimited(
       message: cash.IUpdateConfigurationMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -6432,10 +5910,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cash.UpdateConfigurationMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cash.UpdateConfigurationMsg;
 
     /**
      * Decodes an UpdateConfigurationMsg message from the specified reader or buffer, length delimited.
@@ -6444,9 +5919,7 @@ export namespace cash {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cash.UpdateConfigurationMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cash.UpdateConfigurationMsg;
 
     /**
      * Verifies an UpdateConfigurationMsg message.
@@ -6460,9 +5933,7 @@ export namespace cash {
      * @param object Plain object
      * @returns UpdateConfigurationMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): cash.UpdateConfigurationMsg;
+    public static fromObject(object: { [k: string]: any }): cash.UpdateConfigurationMsg;
 
     /**
      * Creates a plain object from an UpdateConfigurationMsg message. Also converts values to other types if specified.
@@ -6472,7 +5943,7 @@ export namespace cash {
      */
     public static toObject(
       message: cash.UpdateConfigurationMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6539,10 +6010,7 @@ export namespace cron {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: cron.ITaskResult,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: cron.ITaskResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TaskResult message, length delimited. Does not implicitly {@link cron.TaskResult.verify|verify} messages.
@@ -6550,10 +6018,7 @@ export namespace cron {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: cron.ITaskResult,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: cron.ITaskResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a TaskResult message from the specified reader or buffer.
@@ -6563,10 +6028,7 @@ export namespace cron {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): cron.TaskResult;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): cron.TaskResult;
 
     /**
      * Decodes a TaskResult message from the specified reader or buffer, length delimited.
@@ -6575,9 +6037,7 @@ export namespace cron {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): cron.TaskResult;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): cron.TaskResult;
 
     /**
      * Verifies a TaskResult message.
@@ -6601,7 +6061,7 @@ export namespace cron {
      */
     public static toObject(
       message: cron.TaskResult,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6650,10 +6110,7 @@ export namespace currency {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: currency.ITokenInfo,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: currency.ITokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TokenInfo message, length delimited. Does not implicitly {@link currency.TokenInfo.verify|verify} messages.
@@ -6661,10 +6118,7 @@ export namespace currency {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: currency.ITokenInfo,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: currency.ITokenInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a TokenInfo message from the specified reader or buffer.
@@ -6674,10 +6128,7 @@ export namespace currency {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): currency.TokenInfo;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): currency.TokenInfo;
 
     /**
      * Decodes a TokenInfo message from the specified reader or buffer, length delimited.
@@ -6686,9 +6137,7 @@ export namespace currency {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): currency.TokenInfo;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): currency.TokenInfo;
 
     /**
      * Verifies a TokenInfo message.
@@ -6712,7 +6161,7 @@ export namespace currency {
      */
     public static toObject(
       message: currency.TokenInfo,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6764,10 +6213,7 @@ export namespace currency {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: currency.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: currency.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link currency.CreateMsg.verify|verify} messages.
@@ -6775,10 +6221,7 @@ export namespace currency {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: currency.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: currency.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer.
@@ -6788,10 +6231,7 @@ export namespace currency {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): currency.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): currency.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -6800,9 +6240,7 @@ export namespace currency {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): currency.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): currency.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -6826,7 +6264,7 @@ export namespace currency {
      */
     public static toObject(
       message: currency.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6879,9 +6317,7 @@ export namespace distribution {
      * @param [properties] Properties to set
      * @returns Revenue instance
      */
-    public static create(
-      properties?: distribution.IRevenue
-    ): distribution.Revenue;
+    public static create(properties?: distribution.IRevenue): distribution.Revenue;
 
     /**
      * Encodes the specified Revenue message. Does not implicitly {@link distribution.Revenue.verify|verify} messages.
@@ -6889,10 +6325,7 @@ export namespace distribution {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: distribution.IRevenue,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: distribution.IRevenue, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Revenue message, length delimited. Does not implicitly {@link distribution.Revenue.verify|verify} messages.
@@ -6902,7 +6335,7 @@ export namespace distribution {
      */
     public static encodeDelimited(
       message: distribution.IRevenue,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -6913,10 +6346,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): distribution.Revenue;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): distribution.Revenue;
 
     /**
      * Decodes a Revenue message from the specified reader or buffer, length delimited.
@@ -6925,9 +6355,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): distribution.Revenue;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): distribution.Revenue;
 
     /**
      * Verifies a Revenue message.
@@ -6941,9 +6369,7 @@ export namespace distribution {
      * @param object Plain object
      * @returns Revenue
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): distribution.Revenue;
+    public static fromObject(object: { [k: string]: any }): distribution.Revenue;
 
     /**
      * Creates a plain object from a Revenue message. Also converts values to other types if specified.
@@ -6953,7 +6379,7 @@ export namespace distribution {
      */
     public static toObject(
       message: distribution.Revenue,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -6991,9 +6417,7 @@ export namespace distribution {
      * @param [properties] Properties to set
      * @returns Destination instance
      */
-    public static create(
-      properties?: distribution.IDestination
-    ): distribution.Destination;
+    public static create(properties?: distribution.IDestination): distribution.Destination;
 
     /**
      * Encodes the specified Destination message. Does not implicitly {@link distribution.Destination.verify|verify} messages.
@@ -7001,10 +6425,7 @@ export namespace distribution {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: distribution.IDestination,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: distribution.IDestination, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Destination message, length delimited. Does not implicitly {@link distribution.Destination.verify|verify} messages.
@@ -7014,7 +6435,7 @@ export namespace distribution {
      */
     public static encodeDelimited(
       message: distribution.IDestination,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -7025,10 +6446,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): distribution.Destination;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): distribution.Destination;
 
     /**
      * Decodes a Destination message from the specified reader or buffer, length delimited.
@@ -7037,9 +6455,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): distribution.Destination;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): distribution.Destination;
 
     /**
      * Verifies a Destination message.
@@ -7053,9 +6469,7 @@ export namespace distribution {
      * @param object Plain object
      * @returns Destination
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): distribution.Destination;
+    public static fromObject(object: { [k: string]: any }): distribution.Destination;
 
     /**
      * Creates a plain object from a Destination message. Also converts values to other types if specified.
@@ -7065,7 +6479,7 @@ export namespace distribution {
      */
     public static toObject(
       message: distribution.Destination,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7109,9 +6523,7 @@ export namespace distribution {
      * @param [properties] Properties to set
      * @returns CreateMsg instance
      */
-    public static create(
-      properties?: distribution.ICreateMsg
-    ): distribution.CreateMsg;
+    public static create(properties?: distribution.ICreateMsg): distribution.CreateMsg;
 
     /**
      * Encodes the specified CreateMsg message. Does not implicitly {@link distribution.CreateMsg.verify|verify} messages.
@@ -7119,10 +6531,7 @@ export namespace distribution {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: distribution.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: distribution.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link distribution.CreateMsg.verify|verify} messages.
@@ -7132,7 +6541,7 @@ export namespace distribution {
      */
     public static encodeDelimited(
       message: distribution.ICreateMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -7143,10 +6552,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): distribution.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): distribution.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -7155,9 +6561,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): distribution.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): distribution.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -7171,9 +6575,7 @@ export namespace distribution {
      * @param object Plain object
      * @returns CreateMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): distribution.CreateMsg;
+    public static fromObject(object: { [k: string]: any }): distribution.CreateMsg;
 
     /**
      * Creates a plain object from a CreateMsg message. Also converts values to other types if specified.
@@ -7183,7 +6585,7 @@ export namespace distribution {
      */
     public static toObject(
       message: distribution.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7221,9 +6623,7 @@ export namespace distribution {
      * @param [properties] Properties to set
      * @returns DistributeMsg instance
      */
-    public static create(
-      properties?: distribution.IDistributeMsg
-    ): distribution.DistributeMsg;
+    public static create(properties?: distribution.IDistributeMsg): distribution.DistributeMsg;
 
     /**
      * Encodes the specified DistributeMsg message. Does not implicitly {@link distribution.DistributeMsg.verify|verify} messages.
@@ -7231,10 +6631,7 @@ export namespace distribution {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: distribution.IDistributeMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: distribution.IDistributeMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified DistributeMsg message, length delimited. Does not implicitly {@link distribution.DistributeMsg.verify|verify} messages.
@@ -7244,7 +6641,7 @@ export namespace distribution {
      */
     public static encodeDelimited(
       message: distribution.IDistributeMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -7255,10 +6652,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): distribution.DistributeMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): distribution.DistributeMsg;
 
     /**
      * Decodes a DistributeMsg message from the specified reader or buffer, length delimited.
@@ -7267,9 +6661,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): distribution.DistributeMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): distribution.DistributeMsg;
 
     /**
      * Verifies a DistributeMsg message.
@@ -7283,9 +6675,7 @@ export namespace distribution {
      * @param object Plain object
      * @returns DistributeMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): distribution.DistributeMsg;
+    public static fromObject(object: { [k: string]: any }): distribution.DistributeMsg;
 
     /**
      * Creates a plain object from a DistributeMsg message. Also converts values to other types if specified.
@@ -7295,7 +6685,7 @@ export namespace distribution {
      */
     public static toObject(
       message: distribution.DistributeMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7339,9 +6729,7 @@ export namespace distribution {
      * @param [properties] Properties to set
      * @returns ResetMsg instance
      */
-    public static create(
-      properties?: distribution.IResetMsg
-    ): distribution.ResetMsg;
+    public static create(properties?: distribution.IResetMsg): distribution.ResetMsg;
 
     /**
      * Encodes the specified ResetMsg message. Does not implicitly {@link distribution.ResetMsg.verify|verify} messages.
@@ -7349,10 +6737,7 @@ export namespace distribution {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: distribution.IResetMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: distribution.IResetMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ResetMsg message, length delimited. Does not implicitly {@link distribution.ResetMsg.verify|verify} messages.
@@ -7362,7 +6747,7 @@ export namespace distribution {
      */
     public static encodeDelimited(
       message: distribution.IResetMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -7373,10 +6758,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): distribution.ResetMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): distribution.ResetMsg;
 
     /**
      * Decodes a ResetMsg message from the specified reader or buffer, length delimited.
@@ -7385,9 +6767,7 @@ export namespace distribution {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): distribution.ResetMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): distribution.ResetMsg;
 
     /**
      * Verifies a ResetMsg message.
@@ -7401,9 +6781,7 @@ export namespace distribution {
      * @param object Plain object
      * @returns ResetMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): distribution.ResetMsg;
+    public static fromObject(object: { [k: string]: any }): distribution.ResetMsg;
 
     /**
      * Creates a plain object from a ResetMsg message. Also converts values to other types if specified.
@@ -7413,7 +6791,7 @@ export namespace distribution {
      */
     public static toObject(
       message: distribution.ResetMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7492,10 +6870,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: escrow.IEscrow,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: escrow.IEscrow, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Escrow message, length delimited. Does not implicitly {@link escrow.Escrow.verify|verify} messages.
@@ -7503,10 +6878,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: escrow.IEscrow,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: escrow.IEscrow, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an Escrow message from the specified reader or buffer.
@@ -7516,10 +6888,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): escrow.Escrow;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): escrow.Escrow;
 
     /**
      * Decodes an Escrow message from the specified reader or buffer, length delimited.
@@ -7528,9 +6897,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): escrow.Escrow;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): escrow.Escrow;
 
     /**
      * Verifies an Escrow message.
@@ -7554,7 +6921,7 @@ export namespace escrow {
      */
     public static toObject(
       message: escrow.Escrow,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7630,10 +6997,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: escrow.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: escrow.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link escrow.CreateMsg.verify|verify} messages.
@@ -7641,10 +7005,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: escrow.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: escrow.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer.
@@ -7654,10 +7015,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): escrow.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): escrow.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -7666,9 +7024,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): escrow.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): escrow.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -7692,7 +7048,7 @@ export namespace escrow {
      */
     public static toObject(
       message: escrow.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7744,10 +7100,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: escrow.IReleaseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: escrow.IReleaseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ReleaseMsg message, length delimited. Does not implicitly {@link escrow.ReleaseMsg.verify|verify} messages.
@@ -7755,10 +7108,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: escrow.IReleaseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: escrow.IReleaseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ReleaseMsg message from the specified reader or buffer.
@@ -7768,10 +7118,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): escrow.ReleaseMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): escrow.ReleaseMsg;
 
     /**
      * Decodes a ReleaseMsg message from the specified reader or buffer, length delimited.
@@ -7780,9 +7127,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): escrow.ReleaseMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): escrow.ReleaseMsg;
 
     /**
      * Verifies a ReleaseMsg message.
@@ -7806,7 +7151,7 @@ export namespace escrow {
      */
     public static toObject(
       message: escrow.ReleaseMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7852,10 +7197,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: escrow.IReturnMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: escrow.IReturnMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ReturnMsg message, length delimited. Does not implicitly {@link escrow.ReturnMsg.verify|verify} messages.
@@ -7863,10 +7205,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: escrow.IReturnMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: escrow.IReturnMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ReturnMsg message from the specified reader or buffer.
@@ -7876,10 +7215,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): escrow.ReturnMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): escrow.ReturnMsg;
 
     /**
      * Decodes a ReturnMsg message from the specified reader or buffer, length delimited.
@@ -7888,9 +7224,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): escrow.ReturnMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): escrow.ReturnMsg;
 
     /**
      * Verifies a ReturnMsg message.
@@ -7914,7 +7248,7 @@ export namespace escrow {
      */
     public static toObject(
       message: escrow.ReturnMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -7970,9 +7304,7 @@ export namespace escrow {
      * @param [properties] Properties to set
      * @returns UpdatePartiesMsg instance
      */
-    public static create(
-      properties?: escrow.IUpdatePartiesMsg
-    ): escrow.UpdatePartiesMsg;
+    public static create(properties?: escrow.IUpdatePartiesMsg): escrow.UpdatePartiesMsg;
 
     /**
      * Encodes the specified UpdatePartiesMsg message. Does not implicitly {@link escrow.UpdatePartiesMsg.verify|verify} messages.
@@ -7980,10 +7312,7 @@ export namespace escrow {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: escrow.IUpdatePartiesMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: escrow.IUpdatePartiesMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpdatePartiesMsg message, length delimited. Does not implicitly {@link escrow.UpdatePartiesMsg.verify|verify} messages.
@@ -7993,7 +7322,7 @@ export namespace escrow {
      */
     public static encodeDelimited(
       message: escrow.IUpdatePartiesMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -8004,10 +7333,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): escrow.UpdatePartiesMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): escrow.UpdatePartiesMsg;
 
     /**
      * Decodes an UpdatePartiesMsg message from the specified reader or buffer, length delimited.
@@ -8016,9 +7342,7 @@ export namespace escrow {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): escrow.UpdatePartiesMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): escrow.UpdatePartiesMsg;
 
     /**
      * Verifies an UpdatePartiesMsg message.
@@ -8032,9 +7356,7 @@ export namespace escrow {
      * @param object Plain object
      * @returns UpdatePartiesMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): escrow.UpdatePartiesMsg;
+    public static fromObject(object: { [k: string]: any }): escrow.UpdatePartiesMsg;
 
     /**
      * Creates a plain object from an UpdatePartiesMsg message. Also converts values to other types if specified.
@@ -8044,7 +7366,7 @@ export namespace escrow {
      */
     public static toObject(
       message: escrow.UpdatePartiesMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8117,10 +7439,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IElectorate,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IElectorate, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Electorate message, length delimited. Does not implicitly {@link gov.Electorate.verify|verify} messages.
@@ -8128,10 +7447,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IElectorate,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IElectorate, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an Electorate message from the specified reader or buffer.
@@ -8141,10 +7457,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Electorate;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Electorate;
 
     /**
      * Decodes an Electorate message from the specified reader or buffer, length delimited.
@@ -8153,9 +7466,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Electorate;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Electorate;
 
     /**
      * Verifies an Electorate message.
@@ -8179,7 +7490,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.Electorate,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8225,10 +7536,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IElector,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IElector, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Elector message, length delimited. Does not implicitly {@link gov.Elector.verify|verify} messages.
@@ -8236,10 +7544,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IElector,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IElector, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an Elector message from the specified reader or buffer.
@@ -8249,10 +7554,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Elector;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Elector;
 
     /**
      * Decodes an Elector message from the specified reader or buffer, length delimited.
@@ -8261,9 +7563,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Elector;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Elector;
 
     /**
      * Verifies an Elector message.
@@ -8287,7 +7587,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.Elector,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8375,10 +7675,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IElectionRule,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IElectionRule, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ElectionRule message, length delimited. Does not implicitly {@link gov.ElectionRule.verify|verify} messages.
@@ -8386,10 +7683,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IElectionRule,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IElectionRule, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an ElectionRule message from the specified reader or buffer.
@@ -8399,10 +7693,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.ElectionRule;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.ElectionRule;
 
     /**
      * Decodes an ElectionRule message from the specified reader or buffer, length delimited.
@@ -8411,9 +7702,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.ElectionRule;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.ElectionRule;
 
     /**
      * Verifies an ElectionRule message.
@@ -8437,7 +7726,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.ElectionRule,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8483,10 +7772,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IFraction,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IFraction, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Fraction message, length delimited. Does not implicitly {@link gov.Fraction.verify|verify} messages.
@@ -8494,10 +7780,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IFraction,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IFraction, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Fraction message from the specified reader or buffer.
@@ -8507,10 +7790,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Fraction;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Fraction;
 
     /**
      * Decodes a Fraction message from the specified reader or buffer, length delimited.
@@ -8519,9 +7799,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Fraction;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Fraction;
 
     /**
      * Verifies a Fraction message.
@@ -8545,7 +7823,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.Fraction,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8669,10 +7947,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IProposal,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IProposal, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Proposal message, length delimited. Does not implicitly {@link gov.Proposal.verify|verify} messages.
@@ -8680,10 +7955,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IProposal,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IProposal, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Proposal message from the specified reader or buffer.
@@ -8693,10 +7965,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Proposal;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Proposal;
 
     /**
      * Decodes a Proposal message from the specified reader or buffer, length delimited.
@@ -8705,9 +7974,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Proposal;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Proposal;
 
     /**
      * Verifies a Proposal message.
@@ -8731,7 +7998,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.Proposal,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8747,7 +8014,7 @@ export namespace gov {
       PROPOSAL_STATUS_INVALID = 0,
       PROPOSAL_STATUS_SUBMITTED = 1,
       PROPOSAL_STATUS_CLOSED = 2,
-      PROPOSAL_STATUS_WITHDRAWN = 3
+      PROPOSAL_STATUS_WITHDRAWN = 3,
     }
 
     /** Result enum. */
@@ -8755,7 +8022,7 @@ export namespace gov {
       PROPOSAL_RESULT_INVALID = 0,
       PROPOSAL_RESULT_UNDEFINED = 1,
       PROPOSAL_RESULT_ACCEPTED = 2,
-      PROPOSAL_RESULT_REJECTED = 3
+      PROPOSAL_RESULT_REJECTED = 3,
     }
 
     /** ExecutorResult enum. */
@@ -8763,7 +8030,7 @@ export namespace gov {
       PROPOSAL_EXECUTOR_RESULT_INVALID = 0,
       PROPOSAL_EXECUTOR_RESULT_NOT_RUN = 1,
       PROPOSAL_EXECUTOR_RESULT_SUCCESS = 2,
-      PROPOSAL_EXECUTOR_RESULT_FAILURE = 3
+      PROPOSAL_EXECUTOR_RESULT_FAILURE = 3,
     }
   }
 
@@ -8815,10 +8082,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IResolution,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IResolution, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Resolution message, length delimited. Does not implicitly {@link gov.Resolution.verify|verify} messages.
@@ -8826,10 +8090,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IResolution,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IResolution, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Resolution message from the specified reader or buffer.
@@ -8839,10 +8100,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Resolution;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Resolution;
 
     /**
      * Decodes a Resolution message from the specified reader or buffer, length delimited.
@@ -8851,9 +8109,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Resolution;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Resolution;
 
     /**
      * Verifies a Resolution message.
@@ -8877,7 +8133,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.Resolution,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -8947,10 +8203,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.ITallyResult,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.ITallyResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TallyResult message, length delimited. Does not implicitly {@link gov.TallyResult.verify|verify} messages.
@@ -8958,10 +8211,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.ITallyResult,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.ITallyResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a TallyResult message from the specified reader or buffer.
@@ -8971,10 +8221,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.TallyResult;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.TallyResult;
 
     /**
      * Decodes a TallyResult message from the specified reader or buffer, length delimited.
@@ -8983,9 +8230,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.TallyResult;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.TallyResult;
 
     /**
      * Verifies a TallyResult message.
@@ -9009,7 +8254,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.TallyResult,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9061,10 +8306,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IVote,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IVote, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Vote message, length delimited. Does not implicitly {@link gov.Vote.verify|verify} messages.
@@ -9072,10 +8314,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IVote,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IVote, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Vote message from the specified reader or buffer.
@@ -9085,10 +8324,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.Vote;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.Vote;
 
     /**
      * Decodes a Vote message from the specified reader or buffer, length delimited.
@@ -9097,9 +8333,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.Vote;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.Vote;
 
     /**
      * Verifies a Vote message.
@@ -9121,10 +8355,7 @@ export namespace gov {
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(
-      message: gov.Vote,
-      options?: $protobuf.IConversionOptions
-    ): { [k: string]: any };
+    public static toObject(message: gov.Vote, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
      * Converts this Vote to JSON.
@@ -9191,9 +8422,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns CreateProposalMsg instance
      */
-    public static create(
-      properties?: gov.ICreateProposalMsg
-    ): gov.CreateProposalMsg;
+    public static create(properties?: gov.ICreateProposalMsg): gov.CreateProposalMsg;
 
     /**
      * Encodes the specified CreateProposalMsg message. Does not implicitly {@link gov.CreateProposalMsg.verify|verify} messages.
@@ -9201,10 +8430,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.ICreateProposalMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.ICreateProposalMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateProposalMsg message, length delimited. Does not implicitly {@link gov.CreateProposalMsg.verify|verify} messages.
@@ -9214,7 +8440,7 @@ export namespace gov {
      */
     public static encodeDelimited(
       message: gov.ICreateProposalMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -9225,10 +8451,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.CreateProposalMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.CreateProposalMsg;
 
     /**
      * Decodes a CreateProposalMsg message from the specified reader or buffer, length delimited.
@@ -9237,9 +8460,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.CreateProposalMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.CreateProposalMsg;
 
     /**
      * Verifies a CreateProposalMsg message.
@@ -9253,9 +8474,7 @@ export namespace gov {
      * @param object Plain object
      * @returns CreateProposalMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): gov.CreateProposalMsg;
+    public static fromObject(object: { [k: string]: any }): gov.CreateProposalMsg;
 
     /**
      * Creates a plain object from a CreateProposalMsg message. Also converts values to other types if specified.
@@ -9265,7 +8484,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.CreateProposalMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9303,9 +8522,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns DeleteProposalMsg instance
      */
-    public static create(
-      properties?: gov.IDeleteProposalMsg
-    ): gov.DeleteProposalMsg;
+    public static create(properties?: gov.IDeleteProposalMsg): gov.DeleteProposalMsg;
 
     /**
      * Encodes the specified DeleteProposalMsg message. Does not implicitly {@link gov.DeleteProposalMsg.verify|verify} messages.
@@ -9313,10 +8530,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IDeleteProposalMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IDeleteProposalMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified DeleteProposalMsg message, length delimited. Does not implicitly {@link gov.DeleteProposalMsg.verify|verify} messages.
@@ -9326,7 +8540,7 @@ export namespace gov {
      */
     public static encodeDelimited(
       message: gov.IDeleteProposalMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -9337,10 +8551,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.DeleteProposalMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.DeleteProposalMsg;
 
     /**
      * Decodes a DeleteProposalMsg message from the specified reader or buffer, length delimited.
@@ -9349,9 +8560,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.DeleteProposalMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.DeleteProposalMsg;
 
     /**
      * Verifies a DeleteProposalMsg message.
@@ -9365,9 +8574,7 @@ export namespace gov {
      * @param object Plain object
      * @returns DeleteProposalMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): gov.DeleteProposalMsg;
+    public static fromObject(object: { [k: string]: any }): gov.DeleteProposalMsg;
 
     /**
      * Creates a plain object from a DeleteProposalMsg message. Also converts values to other types if specified.
@@ -9377,7 +8584,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.DeleteProposalMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9392,7 +8599,7 @@ export namespace gov {
     VOTE_OPTION_INVALID = 0,
     VOTE_OPTION_YES = 1,
     VOTE_OPTION_NO = 2,
-    VOTE_OPTION_ABSTAIN = 3
+    VOTE_OPTION_ABSTAIN = 3,
   }
 
   /** Properties of a VoteMsg. */
@@ -9443,10 +8650,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IVoteMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IVoteMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified VoteMsg message, length delimited. Does not implicitly {@link gov.VoteMsg.verify|verify} messages.
@@ -9454,10 +8658,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IVoteMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IVoteMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a VoteMsg message from the specified reader or buffer.
@@ -9467,10 +8668,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.VoteMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.VoteMsg;
 
     /**
      * Decodes a VoteMsg message from the specified reader or buffer, length delimited.
@@ -9479,9 +8677,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.VoteMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.VoteMsg;
 
     /**
      * Verifies a VoteMsg message.
@@ -9505,7 +8701,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.VoteMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9551,10 +8747,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.ITallyMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.ITallyMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TallyMsg message, length delimited. Does not implicitly {@link gov.TallyMsg.verify|verify} messages.
@@ -9562,10 +8755,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.ITallyMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.ITallyMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a TallyMsg message from the specified reader or buffer.
@@ -9575,10 +8765,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.TallyMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.TallyMsg;
 
     /**
      * Decodes a TallyMsg message from the specified reader or buffer, length delimited.
@@ -9587,9 +8774,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.TallyMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.TallyMsg;
 
     /**
      * Verifies a TallyMsg message.
@@ -9613,7 +8798,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.TallyMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9651,9 +8836,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns CreateTextResolutionMsg instance
      */
-    public static create(
-      properties?: gov.ICreateTextResolutionMsg
-    ): gov.CreateTextResolutionMsg;
+    public static create(properties?: gov.ICreateTextResolutionMsg): gov.CreateTextResolutionMsg;
 
     /**
      * Encodes the specified CreateTextResolutionMsg message. Does not implicitly {@link gov.CreateTextResolutionMsg.verify|verify} messages.
@@ -9661,10 +8844,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.ICreateTextResolutionMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.ICreateTextResolutionMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateTextResolutionMsg message, length delimited. Does not implicitly {@link gov.CreateTextResolutionMsg.verify|verify} messages.
@@ -9674,7 +8854,7 @@ export namespace gov {
      */
     public static encodeDelimited(
       message: gov.ICreateTextResolutionMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -9685,10 +8865,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.CreateTextResolutionMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.CreateTextResolutionMsg;
 
     /**
      * Decodes a CreateTextResolutionMsg message from the specified reader or buffer, length delimited.
@@ -9697,9 +8874,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.CreateTextResolutionMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.CreateTextResolutionMsg;
 
     /**
      * Verifies a CreateTextResolutionMsg message.
@@ -9713,9 +8888,7 @@ export namespace gov {
      * @param object Plain object
      * @returns CreateTextResolutionMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): gov.CreateTextResolutionMsg;
+    public static fromObject(object: { [k: string]: any }): gov.CreateTextResolutionMsg;
 
     /**
      * Creates a plain object from a CreateTextResolutionMsg message. Also converts values to other types if specified.
@@ -9725,7 +8898,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.CreateTextResolutionMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9769,9 +8942,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns UpdateElectorateMsg instance
      */
-    public static create(
-      properties?: gov.IUpdateElectorateMsg
-    ): gov.UpdateElectorateMsg;
+    public static create(properties?: gov.IUpdateElectorateMsg): gov.UpdateElectorateMsg;
 
     /**
      * Encodes the specified UpdateElectorateMsg message. Does not implicitly {@link gov.UpdateElectorateMsg.verify|verify} messages.
@@ -9779,10 +8950,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IUpdateElectorateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IUpdateElectorateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpdateElectorateMsg message, length delimited. Does not implicitly {@link gov.UpdateElectorateMsg.verify|verify} messages.
@@ -9792,7 +8960,7 @@ export namespace gov {
      */
     public static encodeDelimited(
       message: gov.IUpdateElectorateMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -9803,10 +8971,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.UpdateElectorateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.UpdateElectorateMsg;
 
     /**
      * Decodes an UpdateElectorateMsg message from the specified reader or buffer, length delimited.
@@ -9815,9 +8980,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.UpdateElectorateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.UpdateElectorateMsg;
 
     /**
      * Verifies an UpdateElectorateMsg message.
@@ -9831,9 +8994,7 @@ export namespace gov {
      * @param object Plain object
      * @returns UpdateElectorateMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): gov.UpdateElectorateMsg;
+    public static fromObject(object: { [k: string]: any }): gov.UpdateElectorateMsg;
 
     /**
      * Creates a plain object from an UpdateElectorateMsg message. Also converts values to other types if specified.
@@ -9843,7 +9004,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.UpdateElectorateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -9899,9 +9060,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns UpdateElectionRuleMsg instance
      */
-    public static create(
-      properties?: gov.IUpdateElectionRuleMsg
-    ): gov.UpdateElectionRuleMsg;
+    public static create(properties?: gov.IUpdateElectionRuleMsg): gov.UpdateElectionRuleMsg;
 
     /**
      * Encodes the specified UpdateElectionRuleMsg message. Does not implicitly {@link gov.UpdateElectionRuleMsg.verify|verify} messages.
@@ -9909,10 +9068,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IUpdateElectionRuleMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IUpdateElectionRuleMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpdateElectionRuleMsg message, length delimited. Does not implicitly {@link gov.UpdateElectionRuleMsg.verify|verify} messages.
@@ -9922,7 +9078,7 @@ export namespace gov {
      */
     public static encodeDelimited(
       message: gov.IUpdateElectionRuleMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -9933,10 +9089,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.UpdateElectionRuleMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.UpdateElectionRuleMsg;
 
     /**
      * Decodes an UpdateElectionRuleMsg message from the specified reader or buffer, length delimited.
@@ -9945,9 +9098,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.UpdateElectionRuleMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.UpdateElectionRuleMsg;
 
     /**
      * Verifies an UpdateElectionRuleMsg message.
@@ -9961,9 +9112,7 @@ export namespace gov {
      * @param object Plain object
      * @returns UpdateElectionRuleMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): gov.UpdateElectionRuleMsg;
+    public static fromObject(object: { [k: string]: any }): gov.UpdateElectionRuleMsg;
 
     /**
      * Creates a plain object from an UpdateElectionRuleMsg message. Also converts values to other types if specified.
@@ -9973,7 +9122,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.UpdateElectionRuleMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10020,9 +9169,7 @@ export namespace gov {
      * @param [properties] Properties to set
      * @returns ProposalOptions instance
      */
-    public static create(
-      properties?: gov.IProposalOptions
-    ): gov.ProposalOptions;
+    public static create(properties?: gov.IProposalOptions): gov.ProposalOptions;
 
     /**
      * Encodes the specified ProposalOptions message. Does not implicitly {@link gov.ProposalOptions.verify|verify} messages.
@@ -10030,10 +9177,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: gov.IProposalOptions,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: gov.IProposalOptions, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ProposalOptions message, length delimited. Does not implicitly {@link gov.ProposalOptions.verify|verify} messages.
@@ -10041,10 +9185,7 @@ export namespace gov {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: gov.IProposalOptions,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: gov.IProposalOptions, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a ProposalOptions message from the specified reader or buffer.
@@ -10054,10 +9195,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): gov.ProposalOptions;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): gov.ProposalOptions;
 
     /**
      * Decodes a ProposalOptions message from the specified reader or buffer, length delimited.
@@ -10066,9 +9204,7 @@ export namespace gov {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): gov.ProposalOptions;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): gov.ProposalOptions;
 
     /**
      * Verifies a ProposalOptions message.
@@ -10092,7 +9228,7 @@ export namespace gov {
      */
     public static toObject(
       message: gov.ProposalOptions,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10147,10 +9283,7 @@ export namespace msgfee {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: msgfee.IMsgFee,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: msgfee.IMsgFee, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified MsgFee message, length delimited. Does not implicitly {@link msgfee.MsgFee.verify|verify} messages.
@@ -10158,10 +9291,7 @@ export namespace msgfee {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: msgfee.IMsgFee,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: msgfee.IMsgFee, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a MsgFee message from the specified reader or buffer.
@@ -10171,10 +9301,7 @@ export namespace msgfee {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): msgfee.MsgFee;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): msgfee.MsgFee;
 
     /**
      * Decodes a MsgFee message from the specified reader or buffer, length delimited.
@@ -10183,9 +9310,7 @@ export namespace msgfee {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): msgfee.MsgFee;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): msgfee.MsgFee;
 
     /**
      * Verifies a MsgFee message.
@@ -10209,7 +9334,7 @@ export namespace msgfee {
      */
     public static toObject(
       message: msgfee.MsgFee,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10276,10 +9401,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: multisig.IContract,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: multisig.IContract, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Contract message, length delimited. Does not implicitly {@link multisig.Contract.verify|verify} messages.
@@ -10287,10 +9409,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: multisig.IContract,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: multisig.IContract, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Contract message from the specified reader or buffer.
@@ -10300,10 +9419,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): multisig.Contract;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): multisig.Contract;
 
     /**
      * Decodes a Contract message from the specified reader or buffer, length delimited.
@@ -10312,9 +9428,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): multisig.Contract;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): multisig.Contract;
 
     /**
      * Verifies a Contract message.
@@ -10338,7 +9452,7 @@ export namespace multisig {
      */
     public static toObject(
       message: multisig.Contract,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10376,9 +9490,7 @@ export namespace multisig {
      * @param [properties] Properties to set
      * @returns Participant instance
      */
-    public static create(
-      properties?: multisig.IParticipant
-    ): multisig.Participant;
+    public static create(properties?: multisig.IParticipant): multisig.Participant;
 
     /**
      * Encodes the specified Participant message. Does not implicitly {@link multisig.Participant.verify|verify} messages.
@@ -10386,10 +9498,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: multisig.IParticipant,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: multisig.IParticipant, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Participant message, length delimited. Does not implicitly {@link multisig.Participant.verify|verify} messages.
@@ -10399,7 +9508,7 @@ export namespace multisig {
      */
     public static encodeDelimited(
       message: multisig.IParticipant,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -10410,10 +9519,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): multisig.Participant;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): multisig.Participant;
 
     /**
      * Decodes a Participant message from the specified reader or buffer, length delimited.
@@ -10422,9 +9528,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): multisig.Participant;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): multisig.Participant;
 
     /**
      * Verifies a Participant message.
@@ -10438,9 +9542,7 @@ export namespace multisig {
      * @param object Plain object
      * @returns Participant
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): multisig.Participant;
+    public static fromObject(object: { [k: string]: any }): multisig.Participant;
 
     /**
      * Creates a plain object from a Participant message. Also converts values to other types if specified.
@@ -10450,7 +9552,7 @@ export namespace multisig {
      */
     public static toObject(
       message: multisig.Participant,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10508,10 +9610,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: multisig.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: multisig.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link multisig.CreateMsg.verify|verify} messages.
@@ -10519,10 +9618,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: multisig.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: multisig.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer.
@@ -10532,10 +9628,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): multisig.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): multisig.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -10544,9 +9637,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): multisig.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): multisig.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -10570,7 +9661,7 @@ export namespace multisig {
      */
     public static toObject(
       message: multisig.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10634,10 +9725,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: multisig.IUpdateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: multisig.IUpdateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UpdateMsg message, length delimited. Does not implicitly {@link multisig.UpdateMsg.verify|verify} messages.
@@ -10645,10 +9733,7 @@ export namespace multisig {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: multisig.IUpdateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: multisig.IUpdateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an UpdateMsg message from the specified reader or buffer.
@@ -10658,10 +9743,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): multisig.UpdateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): multisig.UpdateMsg;
 
     /**
      * Decodes an UpdateMsg message from the specified reader or buffer, length delimited.
@@ -10670,9 +9752,7 @@ export namespace multisig {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): multisig.UpdateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): multisig.UpdateMsg;
 
     /**
      * Verifies an UpdateMsg message.
@@ -10696,7 +9776,7 @@ export namespace multisig {
      */
     public static toObject(
       message: multisig.UpdateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10779,9 +9859,7 @@ export namespace paychan {
      * @param [properties] Properties to set
      * @returns PaymentChannel instance
      */
-    public static create(
-      properties?: paychan.IPaymentChannel
-    ): paychan.PaymentChannel;
+    public static create(properties?: paychan.IPaymentChannel): paychan.PaymentChannel;
 
     /**
      * Encodes the specified PaymentChannel message. Does not implicitly {@link paychan.PaymentChannel.verify|verify} messages.
@@ -10789,10 +9867,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: paychan.IPaymentChannel,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: paychan.IPaymentChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified PaymentChannel message, length delimited. Does not implicitly {@link paychan.PaymentChannel.verify|verify} messages.
@@ -10802,7 +9877,7 @@ export namespace paychan {
      */
     public static encodeDelimited(
       message: paychan.IPaymentChannel,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -10813,10 +9888,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): paychan.PaymentChannel;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): paychan.PaymentChannel;
 
     /**
      * Decodes a PaymentChannel message from the specified reader or buffer, length delimited.
@@ -10825,9 +9897,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): paychan.PaymentChannel;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): paychan.PaymentChannel;
 
     /**
      * Verifies a PaymentChannel message.
@@ -10841,9 +9911,7 @@ export namespace paychan {
      * @param object Plain object
      * @returns PaymentChannel
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): paychan.PaymentChannel;
+    public static fromObject(object: { [k: string]: any }): paychan.PaymentChannel;
 
     /**
      * Creates a plain object from a PaymentChannel message. Also converts values to other types if specified.
@@ -10853,7 +9921,7 @@ export namespace paychan {
      */
     public static toObject(
       message: paychan.PaymentChannel,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -10929,10 +9997,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: paychan.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: paychan.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CreateMsg message, length delimited. Does not implicitly {@link paychan.CreateMsg.verify|verify} messages.
@@ -10940,10 +10005,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: paychan.ICreateMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: paychan.ICreateMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer.
@@ -10953,10 +10015,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): paychan.CreateMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): paychan.CreateMsg;
 
     /**
      * Decodes a CreateMsg message from the specified reader or buffer, length delimited.
@@ -10965,9 +10024,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): paychan.CreateMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): paychan.CreateMsg;
 
     /**
      * Verifies a CreateMsg message.
@@ -10991,7 +10048,7 @@ export namespace paychan {
      */
     public static toObject(
       message: paychan.CreateMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11049,10 +10106,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: paychan.IPayment,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: paychan.IPayment, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Payment message, length delimited. Does not implicitly {@link paychan.Payment.verify|verify} messages.
@@ -11060,10 +10114,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: paychan.IPayment,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: paychan.IPayment, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a Payment message from the specified reader or buffer.
@@ -11073,10 +10124,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): paychan.Payment;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): paychan.Payment;
 
     /**
      * Decodes a Payment message from the specified reader or buffer, length delimited.
@@ -11085,9 +10133,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): paychan.Payment;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): paychan.Payment;
 
     /**
      * Verifies a Payment message.
@@ -11111,7 +10157,7 @@ export namespace paychan {
      */
     public static toObject(
       message: paychan.Payment,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11155,9 +10201,7 @@ export namespace paychan {
      * @param [properties] Properties to set
      * @returns TransferMsg instance
      */
-    public static create(
-      properties?: paychan.ITransferMsg
-    ): paychan.TransferMsg;
+    public static create(properties?: paychan.ITransferMsg): paychan.TransferMsg;
 
     /**
      * Encodes the specified TransferMsg message. Does not implicitly {@link paychan.TransferMsg.verify|verify} messages.
@@ -11165,10 +10209,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: paychan.ITransferMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: paychan.ITransferMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified TransferMsg message, length delimited. Does not implicitly {@link paychan.TransferMsg.verify|verify} messages.
@@ -11176,10 +10217,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: paychan.ITransferMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: paychan.ITransferMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a TransferMsg message from the specified reader or buffer.
@@ -11189,10 +10227,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): paychan.TransferMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): paychan.TransferMsg;
 
     /**
      * Decodes a TransferMsg message from the specified reader or buffer, length delimited.
@@ -11201,9 +10236,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): paychan.TransferMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): paychan.TransferMsg;
 
     /**
      * Verifies a TransferMsg message.
@@ -11227,7 +10260,7 @@ export namespace paychan {
      */
     public static toObject(
       message: paychan.TransferMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11279,10 +10312,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: paychan.ICloseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: paychan.ICloseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified CloseMsg message, length delimited. Does not implicitly {@link paychan.CloseMsg.verify|verify} messages.
@@ -11290,10 +10320,7 @@ export namespace paychan {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: paychan.ICloseMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: paychan.ICloseMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a CloseMsg message from the specified reader or buffer.
@@ -11303,10 +10330,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): paychan.CloseMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): paychan.CloseMsg;
 
     /**
      * Decodes a CloseMsg message from the specified reader or buffer, length delimited.
@@ -11315,9 +10339,7 @@ export namespace paychan {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): paychan.CloseMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): paychan.CloseMsg;
 
     /**
      * Verifies a CloseMsg message.
@@ -11341,7 +10363,7 @@ export namespace paychan {
      */
     public static toObject(
       message: paychan.CloseMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11396,10 +10418,7 @@ export namespace sigs {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: sigs.IUserData,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: sigs.IUserData, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified UserData message, length delimited. Does not implicitly {@link sigs.UserData.verify|verify} messages.
@@ -11407,10 +10426,7 @@ export namespace sigs {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: sigs.IUserData,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: sigs.IUserData, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a UserData message from the specified reader or buffer.
@@ -11420,10 +10436,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): sigs.UserData;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): sigs.UserData;
 
     /**
      * Decodes a UserData message from the specified reader or buffer, length delimited.
@@ -11432,9 +10445,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): sigs.UserData;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): sigs.UserData;
 
     /**
      * Verifies a UserData message.
@@ -11458,7 +10469,7 @@ export namespace sigs {
      */
     public static toObject(
       message: sigs.UserData,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11510,10 +10521,7 @@ export namespace sigs {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: sigs.IStdSignature,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: sigs.IStdSignature, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified StdSignature message, length delimited. Does not implicitly {@link sigs.StdSignature.verify|verify} messages.
@@ -11521,10 +10529,7 @@ export namespace sigs {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: sigs.IStdSignature,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: sigs.IStdSignature, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes a StdSignature message from the specified reader or buffer.
@@ -11534,10 +10539,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): sigs.StdSignature;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): sigs.StdSignature;
 
     /**
      * Decodes a StdSignature message from the specified reader or buffer, length delimited.
@@ -11546,9 +10548,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): sigs.StdSignature;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): sigs.StdSignature;
 
     /**
      * Verifies a StdSignature message.
@@ -11572,7 +10572,7 @@ export namespace sigs {
      */
     public static toObject(
       message: sigs.StdSignature,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11610,9 +10610,7 @@ export namespace sigs {
      * @param [properties] Properties to set
      * @returns BumpSequenceMsg instance
      */
-    public static create(
-      properties?: sigs.IBumpSequenceMsg
-    ): sigs.BumpSequenceMsg;
+    public static create(properties?: sigs.IBumpSequenceMsg): sigs.BumpSequenceMsg;
 
     /**
      * Encodes the specified BumpSequenceMsg message. Does not implicitly {@link sigs.BumpSequenceMsg.verify|verify} messages.
@@ -11620,10 +10618,7 @@ export namespace sigs {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: sigs.IBumpSequenceMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: sigs.IBumpSequenceMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified BumpSequenceMsg message, length delimited. Does not implicitly {@link sigs.BumpSequenceMsg.verify|verify} messages.
@@ -11633,7 +10628,7 @@ export namespace sigs {
      */
     public static encodeDelimited(
       message: sigs.IBumpSequenceMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -11644,10 +10639,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): sigs.BumpSequenceMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): sigs.BumpSequenceMsg;
 
     /**
      * Decodes a BumpSequenceMsg message from the specified reader or buffer, length delimited.
@@ -11656,9 +10648,7 @@ export namespace sigs {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): sigs.BumpSequenceMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): sigs.BumpSequenceMsg;
 
     /**
      * Verifies a BumpSequenceMsg message.
@@ -11672,9 +10662,7 @@ export namespace sigs {
      * @param object Plain object
      * @returns BumpSequenceMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): sigs.BumpSequenceMsg;
+    public static fromObject(object: { [k: string]: any }): sigs.BumpSequenceMsg;
 
     /**
      * Creates a plain object from a BumpSequenceMsg message. Also converts values to other types if specified.
@@ -11684,7 +10672,7 @@ export namespace sigs {
      */
     public static toObject(
       message: sigs.BumpSequenceMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11725,9 +10713,7 @@ export namespace validators {
      * @param [properties] Properties to set
      * @returns ApplyDiffMsg instance
      */
-    public static create(
-      properties?: validators.IApplyDiffMsg
-    ): validators.ApplyDiffMsg;
+    public static create(properties?: validators.IApplyDiffMsg): validators.ApplyDiffMsg;
 
     /**
      * Encodes the specified ApplyDiffMsg message. Does not implicitly {@link validators.ApplyDiffMsg.verify|verify} messages.
@@ -11735,10 +10721,7 @@ export namespace validators {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: validators.IApplyDiffMsg,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: validators.IApplyDiffMsg, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified ApplyDiffMsg message, length delimited. Does not implicitly {@link validators.ApplyDiffMsg.verify|verify} messages.
@@ -11748,7 +10731,7 @@ export namespace validators {
      */
     public static encodeDelimited(
       message: validators.IApplyDiffMsg,
-      writer?: $protobuf.Writer
+      writer?: $protobuf.Writer,
     ): $protobuf.Writer;
 
     /**
@@ -11759,10 +10742,7 @@ export namespace validators {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): validators.ApplyDiffMsg;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): validators.ApplyDiffMsg;
 
     /**
      * Decodes an ApplyDiffMsg message from the specified reader or buffer, length delimited.
@@ -11771,9 +10751,7 @@ export namespace validators {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): validators.ApplyDiffMsg;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): validators.ApplyDiffMsg;
 
     /**
      * Verifies an ApplyDiffMsg message.
@@ -11787,9 +10765,7 @@ export namespace validators {
      * @param object Plain object
      * @returns ApplyDiffMsg
      */
-    public static fromObject(object: {
-      [k: string]: any;
-    }): validators.ApplyDiffMsg;
+    public static fromObject(object: { [k: string]: any }): validators.ApplyDiffMsg;
 
     /**
      * Creates a plain object from an ApplyDiffMsg message. Also converts values to other types if specified.
@@ -11799,7 +10775,7 @@ export namespace validators {
      */
     public static toObject(
       message: validators.ApplyDiffMsg,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
@@ -11837,9 +10813,7 @@ export namespace validators {
      * @param [properties] Properties to set
      * @returns Accounts instance
      */
-    public static create(
-      properties?: validators.IAccounts
-    ): validators.Accounts;
+    public static create(properties?: validators.IAccounts): validators.Accounts;
 
     /**
      * Encodes the specified Accounts message. Does not implicitly {@link validators.Accounts.verify|verify} messages.
@@ -11847,10 +10821,7 @@ export namespace validators {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(
-      message: validators.IAccounts,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encode(message: validators.IAccounts, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Encodes the specified Accounts message, length delimited. Does not implicitly {@link validators.Accounts.verify|verify} messages.
@@ -11858,10 +10829,7 @@ export namespace validators {
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(
-      message: validators.IAccounts,
-      writer?: $protobuf.Writer
-    ): $protobuf.Writer;
+    public static encodeDelimited(message: validators.IAccounts, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
      * Decodes an Accounts message from the specified reader or buffer.
@@ -11871,10 +10839,7 @@ export namespace validators {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(
-      reader: $protobuf.Reader | Uint8Array,
-      length?: number
-    ): validators.Accounts;
+    public static decode(reader: $protobuf.Reader | Uint8Array, length?: number): validators.Accounts;
 
     /**
      * Decodes an Accounts message from the specified reader or buffer, length delimited.
@@ -11883,9 +10848,7 @@ export namespace validators {
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(
-      reader: $protobuf.Reader | Uint8Array
-    ): validators.Accounts;
+    public static decodeDelimited(reader: $protobuf.Reader | Uint8Array): validators.Accounts;
 
     /**
      * Verifies an Accounts message.
@@ -11909,7 +10872,7 @@ export namespace validators {
      */
     public static toObject(
       message: validators.Accounts,
-      options?: $protobuf.IConversionOptions
+      options?: $protobuf.IConversionOptions,
     ): { [k: string]: any };
 
     /**
