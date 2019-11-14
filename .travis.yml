@@ -1,0 +1,67 @@
+os:
+  - linux
+  - osx
+
+dist: xenial
+
+# Workaround for Chrome sandboxing issue (https://github.com/travis-ci/travis-ci/issues/8836)
+sudo: required
+
+services:
+  - docker
+  - xvfb
+
+language: node_js
+node_js:
+  - "8"
+
+addons:
+  chrome: stable
+
+env:
+  matrix:
+    - MODE=tests-default
+    - MODE=tests-chrome
+    - MODE=tests-firefox
+    - MODE=tests-safari
+    - MODE=lint-docs
+
+matrix:
+  exclude:
+    - os: linux
+      env: MODE=tests-safari
+    - os: osx
+      env: MODE=lint-docs
+    - os: osx
+      env: MODE=tests-default
+    - os: osx
+      env: MODE=tests-chrome
+    - os: osx
+      env: MODE=tests-firefox
+  allow_failures:
+    # https://github.com/iov-one/iov-core/issues/760
+    - os: linux
+      env: MODE=tests-firefox
+
+# Override default install step
+install:
+  - true
+
+before_script:
+# Make variables and function from Travis available in our script
+# See implementation https://github.com/travis-ci/travis-build/blob/4041ba116ddb3bdfd66ab8acbb7094dee28d6797/lib/travis/build/templates/header.sh
+# and http://www.garbers.co.za/2017/11/01/code-folding-and-timing-in-travis-ci/
+- export ANSI_CLEAR
+- export -f travis_nanoseconds travis_fold travis_time_start travis_time_finish
+
+script:
+- ./scripts/travis/main.sh
+
+branches:
+  only:
+    - master
+    - /^v[0-9]+\.[0-9]+\.x$/        # release branches
+    - /^v[0-9]+\.[0-9]+\.[0-9]+$/   # release tags
+
+notifications:
+  email: false
