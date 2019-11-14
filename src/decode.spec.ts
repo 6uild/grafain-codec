@@ -15,7 +15,7 @@ import {
   TokenTicker,
   UnsignedTransaction,
 } from "@iov/bcp";
-import { Bech32, Encoding } from "@iov/encoding";
+import { Encoding } from "@iov/encoding";
 
 import {
   decodeAmount,

@@ -2,7 +2,6 @@ import {
   Address,
   Algorithm,
   Amount,
-  ChainId,
   isSendTransaction,
   isSwapAbortTransaction,
   isSwapClaimTransaction,

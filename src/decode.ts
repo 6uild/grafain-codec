@@ -63,8 +63,6 @@ import {
 } from "./types";
 import { addressPrefix, encodeBnsAddress, IovBech32Prefix } from "./util";
 
-const { fromUtf8 } = Encoding;
-
 function decodeString(input: string | null | undefined): string {
   // weave encodes empty strings as null
   return input || "";
