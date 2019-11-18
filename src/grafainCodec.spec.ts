@@ -1,5 +1,6 @@
 import { PostableBytes, PrehashType, SignedTransaction } from "@iov/bcp";
 import { Ed25519, Sha512 } from "@iov/crypto";
+import { Ed25519HdWallet, HdPaths, UserProfile } from "@iov/keycontrol";
 
 import { grafainCodec } from "./grafainCodec";
 import {
@@ -14,7 +15,6 @@ import {
   swapClaimTxJson,
   swapOfferTxJson,
 } from "./testdata.spec";
-import { Ed25519HdWallet, HdPaths, UserProfile } from "@iov/keycontrol";
 
 describe("grafainCodec", () => {
   it("properly encodes transactions", () => {

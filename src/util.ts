@@ -69,7 +69,7 @@ export function identityToAddress(identity: Identity): Address {
 
 export function isValidAddress(address: string): boolean {
   try {
-    if (address === undefined || address.length !== 40 || address.toUpperCase() === address) {
+    if (address === undefined || address.length !== 40 || address.toUpperCase() !== address) {
       return false;
     }
     decodeGrafainAddress(address as Address);

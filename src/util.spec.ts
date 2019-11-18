@@ -103,18 +103,16 @@ describe("Util", () => {
   });
 
   it("has working encodeBnsAddress", () => {
-    // raw data generated using https://github.com/nym-zone/bech32
-    // bech32 -e -h tiov f6cade229408c93a2a8d181d62efce46ff60d210
     const raw = fromHex("f6cade229408c93a2a8d181d62efce46ff60d210");
-    expect(encodeGrafainAddress(raw)).toEqual("tiov17m9dug55pryn525drqwk9m7wgmlkp5ss4j2mky");
+    expect(encodeGrafainAddress(raw)).toEqual("F6CADE229408C93A2A8D181D62EFCE46FF60D210");
   });
 
   it("isValidAddress checks valid addresses", () => {
-    const good = "tiov17m9dug55pryn525drqwk9m7wgmlkp5ss4j2mky";
-    const good2 = encodeGrafainAddress(fromHex("1234567890abcdef1234567890abcdef12345678"));
-    const bad = "ti17m9dug55pryn525drqwk9m7wgmlkp5ss4j2m1"; // bad size
-    const bad2 = "tiov17m9dug55pryn525drqwk9m7wgmlkp5ss4j2m12"; // bad checksum
-    const bad3 = "btc17m9dug55pryn525drqwk9m7wgmlkp5ss4j2mky"; // bad prefix
+    const good = "F6CADE229408C93A2A8D181D62EFCE46FF60D210";
+    const good2 = encodeGrafainAddress(fromHex("f6cade229408c93a2a8d181d62efce46ff60d210"));
+    const bad = "F6CADE229408C93A2A8D181D62EFCE46FF60D21"; // too short
+    const bad2 = "F6CADE229408C93A2A8D181D62EFCE46FF60D2100"; // too long
+    const bad3 = "f6cade229408c93a2a8d181d62efce46ff60d210"; // lower case
 
     expect(isValidAddress(good)).toEqual(true);
     expect(isValidAddress(good2)).toEqual(true);
@@ -131,14 +129,14 @@ describe("Util", () => {
 
     it("handles sentFromOrTo", () => {
       const query = buildQueryString({
-        sentFromOrTo: "tiov142a64wa2hw4th24m42a64wa2hw4th24m593zc3" as Address,
+        sentFromOrTo: "aabbaabbaabbaabbaabbaabbaabbaabbaabbaabb" as Address,
       });
       const expected = `${toHex(toAscii("cash:")).toUpperCase()}AABBAABBAABBAABBAABBAABBAABBAABBAABBAABB='s'`;
       expect(query).toEqual(expected);
     });
 
     it("handles signedBy", () => {
-      const query = buildQueryString({ signedBy: "tiov142a64wa2hw4th24m42a64wa2hw4th24m593zc3" as Address });
+      const query = buildQueryString({ signedBy: "aabbaabbaabbaabbaabbaabbaabbaabbaabbaabb" as Address });
       const expected = `${toHex(toAscii("sigs:")).toUpperCase()}AABBAABBAABBAABBAABBAABBAABBAABBAABBAABB='s'`;
       expect(query).toEqual(expected);
     });

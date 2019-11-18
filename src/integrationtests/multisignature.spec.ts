@@ -23,10 +23,10 @@ import { CreateMultisignatureTx, MultisignatureTx, Participant } from "../types"
 
 const CASH = "CASH" as TokenTicker;
 const grafainUrl = "ws://localhost:23456";
-const chainId = "local-iov-devnet" as ChainId;
-// Address: tiov1xwvnaxahzcszkvmk362m7vndjkzumv8ufmzy3m
+const chainId = "local-devnet" as ChainId;
+// Address: 33993E9BB716202B33768E95BF326D9585CDB0FC
 const aliceMnemonic = "host century wave huge seed boost success right brave general orphan lion";
-// Address: tiov1qrw95py2x7fzjw25euuqlj6dq6t0jahe7rh8wp
+// Address: 00DC5A048A3792293954CF380FCB4D0696F976F9
 const bobMnemonic = "dad kiss slogan offer outer bomb usual dream awkward jeans enlist mansion";
 const defaultFeeAmount = 10000000;
 

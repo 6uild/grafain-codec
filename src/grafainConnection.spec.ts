@@ -131,9 +131,7 @@ describe("GrafainConnection", () => {
     tokenTicker: cash,
   };
 
-  // Generated using https://github.com/nym-zone/bech32
-  // bech32 -e -h tiov 010101020202030303040404050505050A0A0A0A
-  const unusedAddress = "tiov1qyqszqszqgpsxqcyqszq2pg9q59q5zs2fx9n6s" as Address;
+  const unusedAddress = "010101020202030303040404050505050A0A0A0A" as Address;
 
   const unusedPubkey: PubkeyBundle = {
     algo: Algorithm.Ed25519,
@@ -150,7 +148,7 @@ describe("GrafainConnection", () => {
   // Dev admin
   // path: m/44'/234'/0'
   // pubkey: 418f88ff4876d33a3d6e2a17d0fe0e78dc3cb5e4b42c6c156ed1b8bfce5d46d1
-  // IOV address: tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea
+  // IOV address: A4F97447E7DF55B6EF0D6209EBEF2A7B22625376
   // Same mnemonic as faucet.
   // This account has money in the genesis file (see scripts/grafaind/README.md).
   const adminPath = HdPaths.iov(0);
@@ -1887,12 +1885,12 @@ describe("GrafainConnection", () => {
       expect(electorates[0]).toEqual({
         id: 1,
         version: 1,
-        admin: "tiov1qkz3ujh7fwpjy88tc3xnc70xr8xfh703pm8r85" as Address,
+        admin: "05851E4AFE4B83221CEBC44D3C79E619CC9BF9F1" as Address,
         title: "Default electorate",
         electors: {
-          tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea: { weight: 9 },
-          tiov12shyht3pvvacvyee36w5844jkfh5s0mf4gszp9: { weight: 10 },
-          tiov18mgvcwg4339w40ktv0hmmln80ttvza2n6hjaxh: { weight: 11 },
+          A4F97447E7DF55B6EF0D6209EBEF2A7B22625376: { weight: 9 },
+          "542E4BAE21633B8613398E9D43D6B2B26F483F69": { weight: 10 },
+          "3ED0CC39158C4AEABECB63EFBDFE677AD6C17553": { weight: 11 },
         },
         totalWeight: 30,
       });
@@ -1911,7 +1909,7 @@ describe("GrafainConnection", () => {
       expect(rules[0]).toEqual({
         id: 1,
         version: 1,
-        admin: "tiov1qkz3ujh7fwpjy88tc3xnc70xr8xfh703pm8r85" as Address,
+        admin: "05851E4AFE4B83221CEBC44D3C79E619CC9BF9F1" as Address,
         electorateId: 1,
         title: "fooo",
         votingPeriod: 1 * 3600,
@@ -1924,7 +1922,7 @@ describe("GrafainConnection", () => {
       expect(rules[1]).toEqual({
         id: 2,
         version: 1,
-        admin: "tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z" as Address,
+        admin: "B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22" as Address,
         electorateId: 2,
         title: "barr",
         votingPeriod: 10,
@@ -1940,7 +1938,7 @@ describe("GrafainConnection", () => {
       expect(rules[2]).toEqual({
         id: 3,
         version: 1,
-        admin: "tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z" as Address,
+        admin: "B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22" as Address,
         electorateId: 2,
         title: "frontend",
         votingPeriod: 10 * 3600,

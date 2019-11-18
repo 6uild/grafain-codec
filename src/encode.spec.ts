@@ -184,12 +184,12 @@ describe("Encode", () => {
       pubkey: {
         algo: Algorithm.Ed25519,
         // Random 32 bytes pubkey. Derived IOV address:
-        // tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3 / 6e1114f57410d8e7bcd910a568c9196efc1479e4
+        // 6E1114F57410D8E7BCD910A568C9196EFC1479E4 / 6e1114f57410d8e7bcd910a568c9196efc1479e4
         data: fromHex("7196c465e4c95b3dce425784f51936b95da6bc58b3212648cdca64ee7198df47") as PubkeyBytes,
       },
     };
-    const defaultSender = "tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3" as Address;
-    const defaultRecipient = "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address;
+    const defaultSender = "6E1114F57410D8E7BCD910A568C9196EFC1479E4" as Address;
+    const defaultRecipient = "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address;
 
     const defaultAmount: Amount = {
       quantity: "1000000001",
@@ -282,14 +282,14 @@ describe("Encode", () => {
       pubkey: {
         algo: Algorithm.Ed25519,
         // Random 32 bytes pubkey. Derived IOV address:
-        // tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3 / 6e1114f57410d8e7bcd910a568c9196efc1479e4
+        // 6E1114F57410D8E7BCD910A568C9196EFC1479E4 / 6e1114f57410d8e7bcd910a568c9196efc1479e4
         data: fromHex("7196c465e4c95b3dce425784f51936b95da6bc58b3212648cdca64ee7198df47") as PubkeyBytes,
       },
     };
-    const defaultSender = "tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3" as Address;
+    const defaultSender = "6E1114F57410D8E7BCD910A568C9196EFC1479E4" as Address;
     // weave address hex: b1ca7e78f74423ae01da3b51e676934d9105f282
-    const defaultRecipient = "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address;
-    const defaultArbiter = "tiov17yp0mh3yxwv6yxx386mxyfzlqnhe6q58edka6r" as Address;
+    const defaultRecipient = "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address;
+    const defaultArbiter = "F102FDDE243399A218D13EB662245F04EF9D0287" as Address;
     const defaultAmount: Amount = {
       quantity: "1000000001",
       fractionalDigits: 9,
@@ -347,15 +347,15 @@ describe("Encode", () => {
     it("works for CreateMultisignatureTx", () => {
       const participants: readonly Participant[] = [
         {
-          address: "tiov1zg69v7yszg69v7yszg69v7yszg69v7ysy7xxgy" as Address,
+          address: "1234567890123456789012345678901234567890" as Address,
           weight: 4,
         },
         {
-          address: "tiov140x77qfr40x77qfr40x77qfr40x77qfrj4zpp5" as Address,
+          address: "ABCDEF0123ABCDEF0123ABCDEF0123ABCDEF0123" as Address,
           weight: 1,
         },
         {
-          address: "tiov1nxvenxvenxvenxvenxvenxvenxvenxverxe7mm" as Address,
+          address: "9999999999999999999999999999999999999999" as Address,
           weight: 1,
         },
       ];
@@ -390,15 +390,15 @@ describe("Encode", () => {
     it("works for UpdateMultisignatureTx", () => {
       const participants: readonly Participant[] = [
         {
-          address: "tiov1zg69v7yszg69v7yszg69v7yszg69v7ysy7xxgy" as Address,
+          address: "1234567890123456789012345678901234567890" as Address,
           weight: 4,
         },
         {
-          address: "tiov140x77qfr40x77qfr40x77qfr40x77qfrj4zpp5" as Address,
+          address: "ABCDEF0123ABCDEF0123ABCDEF0123ABCDEF0123" as Address,
           weight: 1,
         },
         {
-          address: "tiov1nxvenxvenxvenxvenxvenxvenxvenxverxe7mm" as Address,
+          address: "9999999999999999999999999999999999999999" as Address,
           weight: 1,
         },
       ];
@@ -839,14 +839,14 @@ describe("Encode", () => {
           creator: defaultCreator,
           sender: defaultSender,
           amount: defaultAmount,
-          recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+          recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
         };
         const memoEmpty: SendTransaction & WithCreator = {
           kind: "bcp/send",
           creator: defaultCreator,
           sender: defaultSender,
           amount: defaultAmount,
-          recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+          recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
           memo: "",
         };
         expect(buildMsg(memoUnset)).toEqual(buildMsg(memoEmpty));
@@ -857,7 +857,7 @@ describe("Encode", () => {
           kind: "bcp/swap_offer",
           creator: defaultCreator,
           amounts: [],
-          recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+          recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
           timeout: { timestamp: 22 },
           hash: fromHex("aabbccdd") as Hash,
         };
@@ -865,7 +865,7 @@ describe("Encode", () => {
           kind: "bcp/swap_offer",
           creator: defaultCreator,
           amounts: [],
-          recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+          recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
           timeout: { timestamp: 22 },
           hash: fromHex("aabbccdd") as Hash,
           memo: "",
@@ -896,7 +896,7 @@ describe("Encode", () => {
           kind: "bcp/swap_offer",
           creator: defaultCreator,
           amounts: [],
-          recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+          recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
           timeout: { timestamp: 22 },
           hash: fromHex("aabbccdd") as Hash,
           // max length is 128; this emoji has string length 3 but byte length 7

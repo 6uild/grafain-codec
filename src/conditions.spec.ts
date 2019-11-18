@@ -38,29 +38,29 @@ describe("conditions", () => {
         },
         hash: fromHex("09d638982fbb9d30e8cb984a6fe65a003851f2cee9e28aacf578d242fc776df4") as Hash,
       };
-      const address = swapToAddress("local-iov-devnet" as ChainId, swap);
-      expect(address).toEqual("tiov1k7axllrc97mtzcn0nkhtgxjre2gfvm3ua62pu5");
+      const address = swapToAddress("local-devnet" as ChainId, swap);
+      expect(address).toEqual("B7BA6FFC782FB6B1626F9DAEB41A43CA90966E3C");
     });
   });
 
   describe("multisignatureIdToAddress", () => {
     it("leads to known address", () => {
-      const address = multisignatureIdToAddress("local-iov-devnet" as ChainId, 2);
-      expect(address).toEqual("tiov1zd573wa38pxfvn9mxvpkjm6a8vteqvaryc8xs7");
+      const address = multisignatureIdToAddress("local-devnet" as ChainId, 2);
+      expect(address).toEqual("1369E8BBB1384C964CBB3303696F5D3B179033A3");
     });
   });
 
   describe("escrowIdToAddress", () => {
     it("leads to known address", () => {
-      const address = escrowIdToAddress("local-iov-devnet" as ChainId, 1);
-      expect(address).toEqual("tiov170qvwm0tscn5mza3vmaerkzqllvwc3kycrz6kr");
+      const address = escrowIdToAddress("local-devnet" as ChainId, 1);
+      expect(address).toEqual("F3C0C76DEB86274D8BB166FB91D840FFD8EC46C4");
     });
   });
 
   describe("electionRuleIdToAddress", () => {
     it("leads to known address", () => {
-      const address = electionRuleIdToAddress("local-iov-devnet" as ChainId, 2);
-      expect(address).toEqual("tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z");
+      const address = electionRuleIdToAddress("local-devnet" as ChainId, 2);
+      expect(address).toEqual("B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22");
     });
   });
 });

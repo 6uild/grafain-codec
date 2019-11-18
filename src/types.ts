@@ -258,8 +258,8 @@ export interface Artifact {
   readonly checksum: string;
 }
 
-export interface ArtifactByOwnerQuery {
-  readonly owner: Address;
+export interface ArtifactByChecksumQuery {
+  readonly checksum: string;
 }
 // Rest
 

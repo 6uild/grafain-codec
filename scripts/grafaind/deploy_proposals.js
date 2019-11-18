@@ -8,7 +8,7 @@ const { Ed25519HdWallet, HdPaths, UserProfile } = require("@iov/keycontrol");
 // Dev admin
 // path: m/44'/234'/0'
 // pubkey: 418f88ff4876d33a3d6e2a17d0fe0e78dc3cb5e4b42c6c156ed1b8bfce5d46d1
-// IOV address: tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea
+// IOV address: A4F97447E7DF55B6EF0D6209EBEF2A7B22625376
 // This account has money in the genesis file (see scripts/grafain/README.md).
 const adminMnemonic = "degree tackle suggest window test behind mesh extra cover prepare oak script";
 const adminPath = HdPaths.iov(0);
@@ -41,7 +41,7 @@ async function main() {
   const wallet = profile.addWallet(Ed25519HdWallet.fromMnemonic(adminMnemonic));
   const identity = await profile.createIdentity(wallet.id, chainId, adminPath);
   const guaranteeFundEscrowId = Encoding.fromHex("0000000000000001");
-  const rewardFundAddress = "tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z";
+  const rewardFundAddress = "B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22";
   const signAndPost = createSignAndPoster(connection, profile);
 
   const initialTxForReward = await connection.withDefaultFee({
@@ -73,7 +73,7 @@ async function main() {
       description: "Add a committee member in more detail",
       electionRuleId: electionRuleId,
       committee: committeeId,
-      address: "tiov12shyht3pvvacvyee36w5844jkfh5s0mf4gszp9",
+      address: "542E4BAE21633B8613398E9D43D6B2B26F483F69",
       weight: 3,
     },
     {
@@ -82,7 +82,7 @@ async function main() {
       description: "Remove a committee member in more detail",
       electionRuleId: electionRuleId,
       committee: committeeId,
-      address: "tiov18mgvcwg4339w40ktv0hmmln80ttvza2n6hjaxh",
+      address: "3ED0CC39158C4AEABECB63EFBDFE677AD6C17553",
     },
     {
       type: ProposalType.AmendElectionRuleThreshold,
@@ -139,11 +139,11 @@ async function main() {
       electionRuleId: electionRuleId,
       recipients: [
         {
-          address: "tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea",
+          address: "A4F97447E7DF55B6EF0D6209EBEF2A7B22625376",
           weight: 2,
         },
         {
-          address: "tiov12shyht3pvvacvyee36w5844jkfh5s0mf4gszp9",
+          address: "542E4BAE21633B8613398E9D43D6B2B26F483F69",
           weight: 1,
         },
       ],

@@ -107,8 +107,6 @@ const sig2: FullSignature = {
   ) as SignatureBytes,
 };
 
-// recipient address generated using https://github.com/nym-zone/bech32
-// bech32 -e -h tiov 009985cb38847474fe9febfd56ab67e14bcd56f3
 const randomMsg: SendTransaction & WithCreator = {
   creator: {
     chainId: "foo-bar-baz" as ChainId,
@@ -116,7 +114,7 @@ const randomMsg: SendTransaction & WithCreator = {
   },
   kind: "bcp/send",
   sender: data.address as Address,
-  recipient: "tiov1qzvctjecs368fl5la074d2m8u99u64hn8q7kyn" as Address,
+  recipient: "009985CB38847474FE9FEBFD56AB67E14BCD56F3" as Address,
   memo: "One more fix!",
   amount: {
     quantity: "128079890911",
@@ -138,15 +136,13 @@ export const randomTxJson: SignedTransaction = {
   otherSignatures: [sig2],
 };
 
-// recipient address generated using https://github.com/nym-zone/bech32
-// bech32 -e -h tiov 123485cb38847474fe9febfd56ab67e14bcd56f3
 const swapOfferTransaction: SwapOfferTransaction & WithCreator = {
   creator: {
     chainId: "swap-a-doo" as ChainId,
     pubkey: pubJson,
   },
   kind: "bcp/swap_offer",
-  recipient: "tiov1zg6gtjecs368fl5la074d2m8u99u64hnhhlprg" as Address,
+  recipient: "123485CB38847474FE9FEBFD56AB67E14BCD56F3" as Address,
   timeout: { timestamp: 1601234567 },
   amounts: [
     {

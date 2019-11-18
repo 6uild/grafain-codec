@@ -207,13 +207,13 @@ describe("Full atomic swap between two different tokens on BNS", () => {
       "host century wave huge seed boost success right brave general orphan lion",
       HdPaths.iov(0),
     );
-    expect(alice.grafainAddress).toEqual("tiov1xwvnaxahzcszkvmk362m7vndjkzumv8ufmzy3m");
+    expect(alice.grafainAddress).toEqual("33993E9BB716202B33768E95BF326D9585CDB0FC");
 
     const bob = await Actor.create(
       "dad kiss slogan offer outer bomb usual dream awkward jeans enlist mansion",
       HdPaths.iov(0),
     );
-    expect(bob.grafainAddress).toEqual("tiov1qrw95py2x7fzjw25euuqlj6dq6t0jahe7rh8wp");
+    expect(bob.grafainAddress).toEqual("00DC5A048A3792293954CF380FCB4D0696F976F9");
 
     // TODO: let independent faucet send those tokens
     // We need to send some native fee tokens to Bob

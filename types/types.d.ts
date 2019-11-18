@@ -205,8 +205,8 @@ export interface Artifact {
   readonly image: string;
   readonly checksum: string;
 }
-export interface ArtifactByOwnerQuery {
-  readonly owner: Address;
+export interface ArtifactByChecksumQuery {
+  readonly checksum: string;
 }
 export declare type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;
 export interface PrivkeyBundle {

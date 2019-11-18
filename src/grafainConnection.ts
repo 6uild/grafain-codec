@@ -71,7 +71,7 @@ import { grafainCodec } from "./grafainCodec";
 import { grafainSwapQueryTag } from "./tags";
 import {
   Artifact,
-  ArtifactByOwnerQuery,
+  ArtifactByChecksumQuery,
   Decoder,
   ElectionRule,
   Electorate,
@@ -678,8 +678,8 @@ export class GrafainConnection implements AtomicSwapConnection {
     return votes;
   }
 
-  public async getArtifacts(query: ArtifactByOwnerQuery): Promise<readonly Artifact[]> {
-    const results = (await this.query("/artifacts", toUtf8(query.owner))).results;
+  public async getArtifacts(query: ArtifactByChecksumQuery): Promise<readonly Artifact[]> {
+    const results = (await this.query("/artifacts/checksum", toUtf8(query.checksum))).results;
 
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
     const artfs = results.map(parser).map(artf => decodeArtifact(artf));
