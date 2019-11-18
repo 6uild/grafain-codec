@@ -1,6 +1,6 @@
 {
   "name": "@6uild/grafain",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Transaction codec for grafain blockchain",
   "author": "based on iov-core by IOV SAS <admin@iov.one>",
   "license": "Apache-2.0",

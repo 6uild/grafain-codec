@@ -46,17 +46,18 @@ import { asArray, firstEvent, lastValue, toListPromise } from "@iov/stream";
 import BN from "bn.js";
 import Long from "long";
 
-import { CreateArtifactTX } from "../types";
 import { decodeNumericId } from "./decode";
 import { grafainCodec } from "./grafainCodec";
 import { GrafainConnection } from "./grafainConnection";
 import { grafainSwapQueryTag } from "./tags";
 import {
   ActionKind,
+  CreateArtifactTX,
   CreateEscrowTx,
   CreateMultisignatureTx,
   CreateProposalTx,
   CreateTextResolutionAction,
+  DeleteArtifactTX,
   isCreateArtifactTX,
   isCreateEscrowTx,
   isCreateMultisignatureTx,
@@ -75,7 +76,7 @@ import {
   VoteOption,
   VoteTx,
 } from "./types";
-import { encodeBnsAddress, identityToAddress } from "./util";
+import { encodeGrafainAddress, identityToAddress } from "./util";
 
 const { fromHex, toHex } = Encoding;
 
@@ -101,7 +102,7 @@ function getRandomInteger(min: number, max: number): number {
 }
 
 async function randomBnsAddress(): Promise<Address> {
-  return encodeBnsAddress("tiov", Random.getBytes(20));
+  return encodeGrafainAddress(Random.getBytes(20));
 }
 
 function matchId(id: SwapId): (swap: AtomicSwap) => boolean {
@@ -116,7 +117,7 @@ const bash = "BASH" as TokenTicker;
 const cash = "CASH" as TokenTicker;
 const blockTime = 1000;
 
-describe("BnsConnection", () => {
+describe("GrafainConnection", () => {
   const defaultAmount: Amount = {
     quantity: "1000000001",
     fractionalDigits: 9,
@@ -696,7 +697,7 @@ describe("BnsConnection", () => {
       })().catch(done.fail);
     });
 
-    it("can create an artifact", async () => {
+    it("can create and delete an artifact", async () => {
       pendingWithoutGrafaind();
       const connection = await GrafainConnection.establish(grafaindTendermintUrl);
       const registryChainId = connection.chainId();
@@ -723,7 +724,7 @@ describe("BnsConnection", () => {
 
       const response = await connection.postTx(grafainCodec.bytesToPost(signed));
       const blockInfo = await response.blockInfo.waitFor(info => !isBlockInfoPending(info));
-      expect(blockInfo.state).toEqual(TransactionState.Succeeded);
+      if (!isBlockInfoSucceeded(blockInfo)) throw new Error("Transaction did not succeed");
 
       await tendermintSearchIndexUpdated();
 
@@ -737,6 +738,19 @@ describe("BnsConnection", () => {
       expect(firstSearchResultTransaction.image).toEqual(myImage);
       expect(firstSearchResultTransaction.checksum).toEqual("anyValidChecksum");
 
+      const artifactID = blockInfo.result || fromHex("");
+      const delArtifact = await connection.withDefaultFee<DeleteArtifactTX & WithCreator>({
+        kind: "grafain/delete_artifact",
+        creator: identity,
+        id: artifactID,
+      });
+
+      const nonce2 = await connection.getNonce({ pubkey: identity.pubkey });
+      const delSigned = await profile.signTransaction(delArtifact, grafainCodec, nonce2);
+
+      const delResponse = await connection.postTx(grafainCodec.bytesToPost(delSigned));
+      const delBlockInfo = await delResponse.blockInfo.waitFor(info => !isBlockInfoPending(info));
+      expect(delBlockInfo.state).toEqual(TransactionState.Succeeded);
       connection.disconnect();
     });
 
@@ -950,8 +964,8 @@ describe("BnsConnection", () => {
           kind: "grafain/create_escrow",
           creator: sender,
           sender: senderAddress,
-          arbiter: encodeBnsAddress("tiov", fromHex("0000000000000000000000000000000000000000")),
-          recipient: encodeBnsAddress("tiov", fromHex("0000000000000000000000000000000000000000")),
+          arbiter: encodeGrafainAddress(fromHex("0000000000000000000000000000000000000000")),
+          recipient: encodeGrafainAddress(fromHex("0000000000000000000000000000000000000000")),
           amounts: [defaultAmount],
           timeout: { timestamp: timeout },
         });

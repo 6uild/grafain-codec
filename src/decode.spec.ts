@@ -237,7 +237,7 @@ describe("Decode", () => {
         totalElectorateWeight: 6,
       };
 
-      expect(decodeElectorate("tiov", electorate)).toEqual({
+      expect(decodeElectorate(electorate)).toEqual({
         id: 5,
         version: 3,
         admin: "tiov124242e5gwuqpzqq3qqgsqygqzyqpzqq350k5np" as Address,
@@ -271,7 +271,7 @@ describe("Decode", () => {
           denominator: 4,
         },
       };
-      expect(decodeElectionRule("tiov", rule)).toEqual({
+      expect(decodeElectionRule(rule)).toEqual({
         id: 2,
         version: 3,
         admin: "tiov124242e5gwuqpzqq3qqgsqygqzyqpzqq350k5np" as Address,
@@ -326,7 +326,7 @@ describe("Decode", () => {
         executorResult: codecImpl.gov.Proposal.ExecutorResult.PROPOSAL_EXECUTOR_RESULT_NOT_RUN,
       };
 
-      expect(decodeProposal("tiov", proposal)).toEqual({
+      expect(decodeProposal(proposal)).toEqual({
         id: 4785220636355259,
         title: "This will happen next",
         action: {

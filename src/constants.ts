@@ -1,3 +1,3 @@
 import { ChainId } from "@iov/bcp";
 
-export const mainnetChainId = "iov-mainnet" as ChainId;
+export const mainnetChainId = "grafain-mainnet" as ChainId;

@@ -16,22 +16,15 @@ import {
 } from "@iov/bcp";
 import { QueryString } from "@iov/tendermint-rpc";
 import { As } from "type-tagger";
-export declare type IovBech32Prefix = "iov" | "tiov";
-export declare function addressPrefix(chainId: ChainId): IovBech32Prefix;
-/** Encodes raw bytes into a bech32 address */
-export declare function encodeBnsAddress(prefix: IovBech32Prefix, bytes: Uint8Array): Address;
-/** Decodes a printable address into bech32 object */
-export declare function decodeBnsAddress(
-  address: Address,
-): {
-  readonly prefix: IovBech32Prefix;
-  readonly data: Uint8Array;
-};
+/** Encodes raw bytes into a hex address */
+export declare function encodeGrafainAddress(bytes: Uint8Array): Address;
+/** Decodes a printable address */
+export declare function decodeGrafainAddress(address: Address): Uint8Array;
 /**
  * Creates an IOV address from a given Ed25519 pubkey and
  * a prefix that represents the network kind (i.e. mainnet or testnet)
  */
-export declare function pubkeyToAddress(pubkey: PubkeyBundle, prefix: IovBech32Prefix): Address;
+export declare function pubkeyToAddress(pubkey: PubkeyBundle): Address;
 export declare function identityToAddress(identity: Identity): Address;
 export declare function isValidAddress(address: string): boolean;
 export declare function appendSignBytes(bz: Uint8Array, chainId: ChainId, nonce: Nonce): SignableBytes;

@@ -84,11 +84,9 @@ import {
   Vote,
 } from "./types";
 import {
-  addressPrefix,
   buildQueryString,
-  decodeBnsAddress,
+  decodeGrafainAddress,
   identityToAddress,
-  IovBech32Prefix,
   isConfirmedWithSwapClaimOrAbortTransaction,
   isConfirmedWithSwapOfferTransaction,
 } from "./util";
@@ -224,10 +222,6 @@ export class GrafainConnection implements AtomicSwapConnection {
   // tslint:disable-next-line: readonly-keyword
   private tokensCache: readonly Token[] | undefined;
 
-  private get prefix(): IovBech32Prefix {
-    return addressPrefix(this.chainId());
-  }
-
   /**
    * Private constructor to hide package private types from the public interface
    *
@@ -334,7 +328,6 @@ export class GrafainConnection implements AtomicSwapConnection {
         }
       },
     });
-
     return {
       blockInfo: new ValueAndUpdates(blockInfoProducer),
       transactionId: Encoding.toHex(postResponse.hash).toUpperCase() as TransactionId,
@@ -364,7 +357,7 @@ export class GrafainConnection implements AtomicSwapConnection {
       ? identityToAddress({ chainId: this.chainId(), pubkey: query.pubkey })
       : query.address;
 
-    const response = await this.query("/wallets", decodeBnsAddress(address).data);
+    const response = await this.query("/wallets", decodeGrafainAddress(address));
     const parser = createParser(codecImpl.cash.Set, "cash:");
     const walletDatas = response.results.map(parser).map(iwallet => this.context.wallet(iwallet));
 
@@ -379,7 +372,7 @@ export class GrafainConnection implements AtomicSwapConnection {
     if (isPubkeyQuery(query)) {
       pubkey = query.pubkey;
     } else {
-      const res = await this.query("/auth", decodeBnsAddress(walletAddress).data);
+      const res = await this.query("/auth", decodeGrafainAddress(walletAddress));
       const userDataParser = createParser(codecImpl.sigs.UserData, "sigs:");
       const ipubkeys = res.results.map(userDataParser).map(ud => ud.pubkey);
       const ipubkey = ipubkeys.length >= 1 ? ipubkeys[0] : undefined;
@@ -396,7 +389,7 @@ export class GrafainConnection implements AtomicSwapConnection {
     const address = isPubkeyQuery(query)
       ? identityToAddress({ chainId: this.chainId(), pubkey: query.pubkey })
       : query.address;
-    const response = await this.query("/auth", decodeBnsAddress(address).data);
+    const response = await this.query("/auth", decodeGrafainAddress(address));
     const parser = createParser(codecImpl.sigs.UserData, "sigs:");
     const nonces = response.results
       .map(parser)
@@ -439,9 +432,9 @@ export class GrafainConnection implements AtomicSwapConnection {
       if (isAtomicSwapIdQuery(query)) {
         return this.query("/aswaps", query.id.data);
       } else if (isAtomicSwapSenderQuery(query)) {
-        return this.query("/aswaps/source", decodeBnsAddress(query.sender).data);
+        return this.query("/aswaps/source", decodeGrafainAddress(query.sender));
       } else if (isAtomicSwapRecipientQuery(query)) {
-        return this.query("/aswaps/destination", decodeBnsAddress(query.recipient).data);
+        return this.query("/aswaps/destination", decodeGrafainAddress(query.recipient));
       } else if (isAtomicSwapHashQuery(query)) {
         return this.query("/aswaps/preimage_hash", query.hash);
       } else {
@@ -659,29 +652,29 @@ export class GrafainConnection implements AtomicSwapConnection {
   public async getElectorates(): Promise<readonly Electorate[]> {
     const results = (await this.query("/electorates?prefix", new Uint8Array([]))).results;
     const parser = createParser(codecImpl.gov.Electorate, "electorate:");
-    const electorates = results.map(parser).map(electorate => decodeElectorate(this.prefix, electorate));
+    const electorates = results.map(parser).map(electorate => decodeElectorate(electorate));
     return electorates;
   }
 
   public async getElectionRules(): Promise<readonly ElectionRule[]> {
     const results = (await this.query("/electionrules?prefix", new Uint8Array([]))).results;
     const parser = createParser(codecImpl.gov.ElectionRule, "electnrule:");
-    const rules = results.map(parser).map(rule => decodeElectionRule(this.prefix, rule));
+    const rules = results.map(parser).map(rule => decodeElectionRule(rule));
     return rules;
   }
 
   public async getProposals(): Promise<readonly Proposal[]> {
     const results = (await this.query("/proposals?prefix", new Uint8Array([]))).results;
     const parser = createParser(codecImpl.gov.Proposal, "proposal:");
-    const proposals = results.map(parser).map(proposal => decodeProposal(this.prefix, proposal));
+    const proposals = results.map(parser).map(proposal => decodeProposal(proposal));
     return proposals;
   }
 
   public async getVotes(voter: Address): Promise<readonly Vote[]> {
-    const { data } = decodeBnsAddress(voter);
+    const data = decodeGrafainAddress(voter);
     const { results } = await this.query("/votes/electors?prefix", data);
     const parser = createParser(codecImpl.gov.Vote, "vote:");
-    const votes = results.map(parser).map(vote => decodeVote(this.prefix, vote));
+    const votes = results.map(parser).map(vote => decodeVote(vote));
     return votes;
   }
 
@@ -689,7 +682,7 @@ export class GrafainConnection implements AtomicSwapConnection {
     const results = (await this.query("/artifacts", toUtf8(query.owner))).results;
 
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
-    const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));
+    const artfs = results.map(parser).map(artf => decodeArtifact(artf));
     return artfs;
   }
 
@@ -697,7 +690,7 @@ export class GrafainConnection implements AtomicSwapConnection {
     const results = (await this.query("/artifacts?prefix", Uint8Array.from([]))).results;
 
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
-    const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));
+    const artfs = results.map(parser).map(artf => decodeArtifact(artf));
     return artfs;
   }
 

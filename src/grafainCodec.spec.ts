@@ -14,6 +14,7 @@ import {
   swapClaimTxJson,
   swapOfferTxJson,
 } from "./testdata.spec";
+import { Ed25519HdWallet, HdPaths, UserProfile } from "@iov/keycontrol";
 
 describe("grafainCodec", () => {
   it("properly encodes transactions", () => {
@@ -66,5 +67,24 @@ describe("grafainCodec", () => {
         .withContext(trial.transaction.kind)
         .toEqual(trial);
     }
+  });
+  const myMnenomic =
+    "pupil deliver buzz chair mesh mosquito vacant donor smile climb brand monitor insane indicate puzzle high nominee venue dismiss year beach swift resemble cloud";
+  const testnet = 1;
+  const myAccountPath = HdPaths.bip44Like(testnet, 0);
+
+  it("identityToAddress", async () => {
+    const profile = new UserProfile();
+    const wallet = profile.addWallet(Ed25519HdWallet.fromMnemonic(myMnenomic));
+    const identity = await profile.createIdentity(wallet.id, chainId, myAccountPath);
+    expect(grafainCodec.identityToAddress(identity)).toEqual("3ACEE7C2549E09BDFDE5E036BE9F32424426372C");
+  });
+  it("isValidAddress", async () => {
+    expect(grafainCodec.isValidAddress("3ACEE7C2549E09BDFDE5E036BE9F32424426372C")).toEqual(true);
+    expect(grafainCodec.isValidAddress("3acee7c2549e09bdfde5e036be9f32424426372c")).toEqual(false);
+    expect(grafainCodec.isValidAddress("3ACEE7C2549E09BDFDE5E036BE9F32424426372")).toEqual(false);
+    expect(grafainCodec.isValidAddress("3ACEE7C2549E09BDFDE5E036BE9F32424426372XX")).toEqual(false);
+    expect(grafainCodec.isValidAddress("invalidAddress")).toEqual(false);
+    expect(grafainCodec.isValidAddress("")).toEqual(false);
   });
 });

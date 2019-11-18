@@ -45,7 +45,7 @@ export const grafainCodec: TxCodec = {
     return Encoding.toHex(hash).toUpperCase() as TransactionId;
   },
 
-  // parseBytes will recover bytes from the blockchain into a format we can use
+  // parseBytes will recover bytes from the blockchain into a formaFt we can use
   parseBytes: (bz: PostableBytes, chainId: ChainId): SignedTransaction => {
     const parsed = codecImpl.grafain.Tx.decode(bz);
     return parseTx(parsed, chainId);

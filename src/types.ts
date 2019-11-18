@@ -252,7 +252,7 @@ export interface Vote {
 
 // Artifact
 export interface Artifact {
-  // readonly id: string;
+  readonly id: number;
   readonly owner: Address;
   readonly image: string;
   readonly checksum: string;
