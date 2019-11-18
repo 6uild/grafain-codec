@@ -24,6 +24,7 @@ import {
   CreateEscrowTx,
   CreateMultisignatureTx,
   CreateProposalTx,
+  DeleteArtifactTX,
   isCreateTextResolutionAction,
   isExecuteProposalBatchAction,
   isGrafainTx,
@@ -196,6 +197,15 @@ function buildCreateArtifactTx(tx: CreateArtifactTX): codecImpl.grafain.ITx {
       metadata: { schema: 1 },
       image: tx.image,
       checksum: tx.checksum,
+    },
+  };
+}
+
+function buildDeleteArtifactTx(tx: DeleteArtifactTX): codecImpl.grafain.ITx {
+  return {
+    deleteArtifactMsg: {
+      metadata: { schema: 1 },
+      id: encodeNumericId(tx.id),
     },
   };
 }
@@ -416,6 +426,8 @@ export function buildMsg(tx: UnsignedTransaction): codecImpl.grafain.ITx {
     // Artifact
     case "grafain/create_artifact":
       return buildCreateArtifactTx(tx);
+    case "grafain/delete_artifact":
+      return buildDeleteArtifactTx(tx);
     // BNS: Multisignature contracts
     case "grafain/create_multisignature_contract":
       return buildCreateMultisignatureTx(tx);

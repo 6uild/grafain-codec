@@ -16,7 +16,9 @@ export { grafainSwapQueryTag } from "./tags";
 export {
   Artifact,
   CreateArtifactTX,
+  DeleteArtifactTX,
   isCreateArtifactTX,
+  isDeleteArtifactTX,
   // Multisignature contracts
   Participant,
   CreateMultisignatureTx,

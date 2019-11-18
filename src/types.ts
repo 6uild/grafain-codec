@@ -252,7 +252,7 @@ export interface Vote {
 
 // Artifact
 export interface Artifact {
-  // readonly id: string;
+  readonly id: number;
   readonly owner: Address;
   readonly image: string;
   readonly checksum: string;
@@ -290,6 +290,14 @@ export interface CreateArtifactTX extends LightTransaction {
 
 export function isCreateArtifactTX(tx: LightTransaction): tx is CreateArtifactTX {
   return tx.kind === "grafain/create_artifact";
+}
+export interface DeleteArtifactTX extends LightTransaction {
+  readonly kind: "grafain/delete_artifact";
+  readonly id: number;
+}
+
+export function isDeleteArtifactTX(tx: LightTransaction): tx is DeleteArtifactTX {
+  return tx.kind === "grafain/delete_artifact";
 }
 
 // Transactions: Multisignature contracts
@@ -414,6 +422,7 @@ export type GrafainTx =
   | SwapAbortTransaction
   // Artifact
   | CreateArtifactTX
+  | DeleteArtifactTX
   // BNS: Multisignature contracts
   | CreateMultisignatureTx
   | UpdateMultisignatureTx
