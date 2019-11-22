@@ -43,7 +43,7 @@ import {
   VoteOption,
   VoteTx,
 } from "./types";
-import { decodeBnsAddress, identityToAddress } from "./util";
+import { decodeGrafainAddress, identityToAddress } from "./util";
 
 function encodeInt(intNumber: number): number | null {
   if (!Number.isInteger(intNumber)) {
@@ -126,7 +126,7 @@ export function encodeParticipants(
 ): codecImpl.multisig.IParticipant[] {
   return participants.map(
     (participant): codecImpl.multisig.IParticipant => ({
-      signature: decodeBnsAddress(participant.address).data,
+      signature: decodeGrafainAddress(participant.address),
       weight: participant.weight,
     }),
   );
@@ -142,8 +142,8 @@ function buildSendTransaction(tx: SendTransaction & WithCreator): codecImpl.graf
   return {
     cashSendMsg: codecImpl.cash.SendMsg.create({
       metadata: { schema: 1 },
-      source: decodeBnsAddress(tx.sender).data,
-      destination: decodeBnsAddress(tx.recipient).data,
+      source: decodeGrafainAddress(tx.sender),
+      destination: decodeGrafainAddress(tx.recipient),
       amount: encodeAmount(tx.amount),
       memo: encodeMemo(tx.memo),
     }),
@@ -160,9 +160,9 @@ function buildSwapOfferTx(tx: SwapOfferTransaction & WithCreator): codecImpl.gra
   return {
     aswapCreateMsg: codecImpl.aswap.CreateMsg.create({
       metadata: { schema: 1 },
-      source: decodeBnsAddress(identityToAddress(tx.creator)).data,
+      source: decodeGrafainAddress(identityToAddress(tx.creator)),
       preimageHash: tx.hash,
-      destination: decodeBnsAddress(tx.recipient).data,
+      destination: decodeGrafainAddress(tx.recipient),
       amount: tx.amounts.map(encodeAmount),
       timeout: encodeInt(tx.timeout.timestamp),
       memo: encodeMemo(tx.memo),
@@ -231,9 +231,9 @@ function buildCreateEscrowTx(tx: CreateEscrowTx): codecImpl.grafain.ITx {
   return {
     escrowCreateMsg: {
       metadata: { schema: 1 },
-      source: decodeBnsAddress(tx.sender).data,
-      arbiter: decodeBnsAddress(tx.arbiter).data,
-      destination: decodeBnsAddress(tx.recipient).data,
+      source: decodeGrafainAddress(tx.sender),
+      arbiter: decodeGrafainAddress(tx.arbiter),
+      destination: decodeGrafainAddress(tx.recipient),
       amount: tx.amounts.map(encodeAmount),
       timeout: encodeInt(tx.timeout.timestamp),
       memo: encodeMemo(tx.memo),
@@ -269,9 +269,9 @@ function buildUpdateEscrowPartiesTx(tx: UpdateEscrowPartiesTx): codecImpl.grafai
     escrowUpdatePartiesMsg: {
       metadata: { schema: 1 },
       escrowId: encodeNumericId(tx.escrowId),
-      source: tx.sender && decodeBnsAddress(tx.sender).data,
-      arbiter: tx.arbiter && decodeBnsAddress(tx.arbiter).data,
-      destination: tx.recipient && decodeBnsAddress(tx.recipient).data,
+      source: tx.sender && decodeGrafainAddress(tx.sender),
+      arbiter: tx.arbiter && decodeGrafainAddress(tx.arbiter),
+      destination: tx.recipient && decodeGrafainAddress(tx.recipient),
     },
   };
 }
@@ -313,8 +313,8 @@ function buildCreateProposalTx(tx: CreateProposalTx): codecImpl.grafain.ITx {
           return {
             sendMsg: {
               metadata: { schema: 1 },
-              source: decodeBnsAddress(message.sender).data,
-              destination: decodeBnsAddress(message.recipient).data,
+              source: decodeGrafainAddress(message.sender),
+              destination: decodeGrafainAddress(message.recipient),
               amount: encodeAmount(message.amount),
               memo: encodeMemo(message.memo),
             },
@@ -343,7 +343,7 @@ function buildCreateProposalTx(tx: CreateProposalTx): codecImpl.grafain.ITx {
         metadata: { schema: 1 },
         electorateId: encodeNumericId(action.electorateId),
         diffElectors: Object.entries(action.diffElectors).map(([address, { weight }]) => ({
-          address: decodeBnsAddress(address as Address).data,
+          address: decodeGrafainAddress(address as Address),
           weight: weight,
         })),
       },
@@ -370,7 +370,7 @@ function buildCreateProposalTx(tx: CreateProposalTx): codecImpl.grafain.ITx {
       description: tx.description,
       electionRuleId: encodeNumericId(tx.electionRuleId),
       startTime: tx.startTime,
-      author: decodeBnsAddress(tx.author).data,
+      author: decodeGrafainAddress(tx.author),
     },
   };
 }
@@ -452,7 +452,7 @@ export function buildUnsignedTx(tx: UnsignedTransaction): codecImpl.grafain.ITx 
     if (firstContract === undefined) throw new Error("Empty multisig arrays are currently unsupported");
     feePayer = conditionToWeaveAddress(buildMultisignatureCondition(firstContract));
   } else {
-    feePayer = decodeBnsAddress(identityToAddress(tx.creator)).data;
+    feePayer = decodeGrafainAddress(identityToAddress(tx.creator));
   }
 
   return codecImpl.grafain.Tx.create({

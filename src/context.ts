@@ -14,7 +14,7 @@ import {
 import { asIntegerNumber, decodeAmount, ensure } from "./decode";
 import * as codecImpl from "./generated/codecimpl";
 import { Keyed } from "./types";
-import { addressPrefix, encodeBnsAddress, identityToAddress } from "./util";
+import { encodeGrafainAddress, identityToAddress } from "./util";
 
 /**
  * All the queries of immutable data we do on initialization to be reused by later calls
@@ -40,7 +40,7 @@ export class Context {
 
   public wallet(acct: codecImpl.cash.ISet & Keyed): WalletData {
     return {
-      address: encodeBnsAddress(addressPrefix(this.chainData.chainId), acct._id),
+      address: encodeGrafainAddress(acct._id),
       balance: ensure(acct.coins).map(c => decodeAmount(c)),
     };
   }
@@ -52,15 +52,14 @@ export class Context {
       throw new Error("Hash must be 32 bytes (sha256)");
     }
 
-    const prefix = addressPrefix(this.chainData.chainId);
     return {
       kind: SwapProcessState.Open,
       data: {
         id: {
           data: swap._id as SwapIdBytes,
         },
-        sender: encodeBnsAddress(prefix, ensure(swap.source, "source")),
-        recipient: encodeBnsAddress(prefix, ensure(swap.destination, "destination")),
+        sender: encodeGrafainAddress(ensure(swap.source, "source")),
+        recipient: encodeGrafainAddress(ensure(swap.destination, "destination")),
         hash: hash as Hash,
         // amounts: ensure(swap.amount).map(coin => decodeAmount(coin)),
         // TODO: read this is a second query

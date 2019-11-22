@@ -200,12 +200,13 @@ export interface Vote {
   readonly selection: VoteOption;
 }
 export interface Artifact {
+  readonly id: number;
   readonly owner: Address;
   readonly image: string;
   readonly checksum: string;
 }
-export interface ArtifactByOwnerQuery {
-  readonly owner: Address;
+export interface ArtifactByChecksumQuery {
+  readonly checksum: string;
 }
 export declare type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;
 export interface PrivkeyBundle {
@@ -228,6 +229,11 @@ export interface CreateArtifactTX extends LightTransaction {
   readonly checksum: string;
 }
 export declare function isCreateArtifactTX(tx: LightTransaction): tx is CreateArtifactTX;
+export interface DeleteArtifactTX extends LightTransaction {
+  readonly kind: "grafain/delete_artifact";
+  readonly id: Uint8Array;
+}
+export declare function isDeleteArtifactTX(tx: LightTransaction): tx is DeleteArtifactTX;
 export interface Participant {
   readonly address: Address;
   readonly weight: number;
@@ -306,6 +312,7 @@ export declare type GrafainTx =
   | SwapClaimTransaction
   | SwapAbortTransaction
   | CreateArtifactTX
+  | DeleteArtifactTX
   | CreateMultisignatureTx
   | UpdateMultisignatureTx
   | CreateEscrowTx

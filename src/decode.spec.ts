@@ -237,15 +237,15 @@ describe("Decode", () => {
         totalElectorateWeight: 6,
       };
 
-      expect(decodeElectorate("tiov", electorate)).toEqual({
+      expect(decodeElectorate(electorate)).toEqual({
         id: 5,
         version: 3,
-        admin: "tiov124242e5gwuqpzqq3qqgsqygqzyqpzqq350k5np" as Address,
+        admin: "5555556688770011001100110011001100110011" as Address,
         title: "A committee",
         electors: {
-          tiov1zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3scsw6l: { weight: 1 },
-          tiov1yg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zl94gjg: { weight: 2 },
-          tiov1xvenxvenxvenxvenxvenxvenxvenxvendmz486: { weight: 3 },
+          "1111111111111111111111111111111111111111": { weight: 1 },
+          "2222222222222222222222222222222222222222": { weight: 2 },
+          "3333333333333333333333333333333333333333": { weight: 3 },
         },
         totalWeight: 6,
       });
@@ -271,10 +271,10 @@ describe("Decode", () => {
           denominator: 4,
         },
       };
-      expect(decodeElectionRule("tiov", rule)).toEqual({
+      expect(decodeElectionRule(rule)).toEqual({
         id: 2,
         version: 3,
-        admin: "tiov124242e5gwuqpzqq3qqgsqygqzyqpzqq350k5np" as Address,
+        admin: "5555556688770011001100110011001100110011" as Address,
         electorateId: 7,
         title: "This is how it works",
         votingPeriod: 11223344556677,
@@ -326,7 +326,7 @@ describe("Decode", () => {
         executorResult: codecImpl.gov.Proposal.ExecutorResult.PROPOSAL_EXECUTOR_RESULT_NOT_RUN,
       };
 
-      expect(decodeProposal("tiov", proposal)).toEqual({
+      expect(decodeProposal(proposal)).toEqual({
         id: 4785220636355259,
         title: "This will happen next",
         action: {
@@ -345,7 +345,7 @@ describe("Decode", () => {
         votingStartTime: 42424242,
         votingEndTime: 42424243,
         submissionTime: 3003,
-        author: "tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt" as Address,
+        author: "0011223344556677889900112233445566778899" as Address,
         state: {
           totalYes: 1,
           totalNo: 2,
@@ -419,8 +419,8 @@ describe("Decode", () => {
           fractionalDigits: 9,
           tokenTicker: "CASH" as TokenTicker,
         },
-        sender: "tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3" as Address,
-        recipient: "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address,
+        sender: "6E1114F57410D8E7BCD910A568C9196EFC1479E4" as Address,
+        recipient: "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address,
         memo: undefined,
         multisig: [112516402455057],
       });
@@ -439,9 +439,9 @@ describe("Decode", () => {
       },
     };
 
-    const defaultSender = "tiov1dcg3fat5zrvw00xezzjk3jgedm7pg70y222af3" as Address;
-    const defaultRecipient = "tiov1k898u78hgs36uqw68dg7va5nfkgstu5z0fhz3f" as Address;
-    const defaultArbiter = "tiov17yp0mh3yxwv6yxx386mxyfzlqnhe6q58edka6r" as Address;
+    const defaultSender = "6E1114F57410D8E7BCD910A568C9196EFC1479E4" as Address;
+    const defaultRecipient = "B1CA7E78F74423AE01DA3B51E676934D9105F282" as Address;
+    const defaultArbiter = "F102FDDE243399A218D13EB662245F04EF9D0287" as Address;
     const defaultEscrowId = fromHex("0000000000000004");
     const defaultAmount: Amount = {
       quantity: "1000000001",
@@ -560,15 +560,15 @@ describe("Decode", () => {
       ];
       const participants: readonly Participant[] = [
         {
-          address: "tiov1zg69v7yszg69v7yszg69v7yszg69v7ysy7xxgy" as Address,
+          address: "1234567890123456789012345678901234567890" as Address,
           weight: 4,
         },
         {
-          address: "tiov140x77qfr40x77qfr40x77qfr40x77qfrj4zpp5" as Address,
+          address: "ABCDEF0123ABCDEF0123ABCDEF0123ABCDEF0123" as Address,
           weight: 1,
         },
         {
-          address: "tiov1nxvenxvenxvenxvenxvenxvenxvenxverxe7mm" as Address,
+          address: "9999999999999999999999999999999999999999" as Address,
           weight: 1,
         },
       ];
@@ -606,15 +606,15 @@ describe("Decode", () => {
       ];
       const participants: readonly Participant[] = [
         {
-          address: "tiov1zg69v7yszg69v7yszg69v7yszg69v7ysy7xxgy" as Address,
+          address: "1234567890123456789012345678901234567890" as Address,
           weight: 4,
         },
         {
-          address: "tiov140x77qfr40x77qfr40x77qfr40x77qfrj4zpp5" as Address,
+          address: "ABCDEF0123ABCDEF0123ABCDEF0123ABCDEF0123" as Address,
           weight: 1,
         },
         {
-          address: "tiov1nxvenxvenxvenxvenxvenxvenxvenxverxe7mm" as Address,
+          address: "9999999999999999999999999999999999999999" as Address,
           weight: 1,
         },
       ];
@@ -762,7 +762,7 @@ describe("Decode", () => {
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
 
       it("works with ExecuteProposalBatch action with array of Send actions", () => {
@@ -834,7 +834,7 @@ describe("Decode", () => {
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
 
       it("works with ReleaseGuaranteeFunds action", () => {
@@ -873,7 +873,7 @@ describe("Decode", () => {
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
 
       it("works with SetValidators action", () => {
@@ -912,7 +912,7 @@ describe("Decode", () => {
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
 
       it("works for UpdateElectionRule action", () => {
@@ -961,7 +961,7 @@ describe("Decode", () => {
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
 
       it("works with UpdateElectorate action", () => {
@@ -995,13 +995,13 @@ describe("Decode", () => {
           kind: ActionKind.UpdateElectorate,
           electorateId: 5,
           diffElectors: {
-            tiov1lugjyv6y24n80zyeqqgjyv6y24n80zyedknaqd: { weight: 8 },
+            FF11223344556677889900112233445566778899: { weight: 8 },
           },
         });
         expect(parsed.description).toEqual("foo bar");
         expect(parsed.electionRuleId).toEqual(806595967999);
         expect(parsed.startTime).toEqual(42424242);
-        expect(parsed.author).toEqual("tiov1qqgjyv6y24n80zyeqqgjyv6y24n80zyed9d6mt");
+        expect(parsed.author).toEqual("0011223344556677889900112233445566778899");
       });
     });
 

@@ -46,17 +46,18 @@ import { asArray, firstEvent, lastValue, toListPromise } from "@iov/stream";
 import BN from "bn.js";
 import Long from "long";
 
-import { CreateArtifactTX } from "../types";
 import { decodeNumericId } from "./decode";
 import { grafainCodec } from "./grafainCodec";
 import { GrafainConnection } from "./grafainConnection";
 import { grafainSwapQueryTag } from "./tags";
 import {
   ActionKind,
+  CreateArtifactTX,
   CreateEscrowTx,
   CreateMultisignatureTx,
   CreateProposalTx,
   CreateTextResolutionAction,
+  DeleteArtifactTX,
   isCreateArtifactTX,
   isCreateEscrowTx,
   isCreateMultisignatureTx,
@@ -75,7 +76,7 @@ import {
   VoteOption,
   VoteTx,
 } from "./types";
-import { encodeBnsAddress, identityToAddress } from "./util";
+import { encodeGrafainAddress, identityToAddress } from "./util";
 
 const { fromHex, toHex } = Encoding;
 
@@ -101,7 +102,7 @@ function getRandomInteger(min: number, max: number): number {
 }
 
 async function randomBnsAddress(): Promise<Address> {
-  return encodeBnsAddress("tiov", Random.getBytes(20));
+  return encodeGrafainAddress(Random.getBytes(20));
 }
 
 function matchId(id: SwapId): (swap: AtomicSwap) => boolean {
@@ -116,7 +117,7 @@ const bash = "BASH" as TokenTicker;
 const cash = "CASH" as TokenTicker;
 const blockTime = 1000;
 
-describe("BnsConnection", () => {
+describe("GrafainConnection", () => {
   const defaultAmount: Amount = {
     quantity: "1000000001",
     fractionalDigits: 9,
@@ -130,9 +131,7 @@ describe("BnsConnection", () => {
     tokenTicker: cash,
   };
 
-  // Generated using https://github.com/nym-zone/bech32
-  // bech32 -e -h tiov 010101020202030303040404050505050A0A0A0A
-  const unusedAddress = "tiov1qyqszqszqgpsxqcyqszq2pg9q59q5zs2fx9n6s" as Address;
+  const unusedAddress = "010101020202030303040404050505050A0A0A0A" as Address;
 
   const unusedPubkey: PubkeyBundle = {
     algo: Algorithm.Ed25519,
@@ -149,7 +148,7 @@ describe("BnsConnection", () => {
   // Dev admin
   // path: m/44'/234'/0'
   // pubkey: 418f88ff4876d33a3d6e2a17d0fe0e78dc3cb5e4b42c6c156ed1b8bfce5d46d1
-  // IOV address: tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea
+  // IOV address: A4F97447E7DF55B6EF0D6209EBEF2A7B22625376
   // Same mnemonic as faucet.
   // This account has money in the genesis file (see scripts/grafaind/README.md).
   const adminPath = HdPaths.iov(0);
@@ -696,7 +695,7 @@ describe("BnsConnection", () => {
       })().catch(done.fail);
     });
 
-    it("can create an artifact", async () => {
+    it("can create and delete an artifact", async () => {
       pendingWithoutGrafaind();
       const connection = await GrafainConnection.establish(grafaindTendermintUrl);
       const registryChainId = connection.chainId();
@@ -723,7 +722,7 @@ describe("BnsConnection", () => {
 
       const response = await connection.postTx(grafainCodec.bytesToPost(signed));
       const blockInfo = await response.blockInfo.waitFor(info => !isBlockInfoPending(info));
-      expect(blockInfo.state).toEqual(TransactionState.Succeeded);
+      if (!isBlockInfoSucceeded(blockInfo)) throw new Error("Transaction did not succeed");
 
       await tendermintSearchIndexUpdated();
 
@@ -737,6 +736,19 @@ describe("BnsConnection", () => {
       expect(firstSearchResultTransaction.image).toEqual(myImage);
       expect(firstSearchResultTransaction.checksum).toEqual("anyValidChecksum");
 
+      const artifactID = blockInfo.result || fromHex("");
+      const delArtifact = await connection.withDefaultFee<DeleteArtifactTX & WithCreator>({
+        kind: "grafain/delete_artifact",
+        creator: identity,
+        id: artifactID,
+      });
+
+      const nonce2 = await connection.getNonce({ pubkey: identity.pubkey });
+      const delSigned = await profile.signTransaction(delArtifact, grafainCodec, nonce2);
+
+      const delResponse = await connection.postTx(grafainCodec.bytesToPost(delSigned));
+      const delBlockInfo = await delResponse.blockInfo.waitFor(info => !isBlockInfoPending(info));
+      expect(delBlockInfo.state).toEqual(TransactionState.Succeeded);
       connection.disconnect();
     });
 
@@ -950,8 +962,8 @@ describe("BnsConnection", () => {
           kind: "grafain/create_escrow",
           creator: sender,
           sender: senderAddress,
-          arbiter: encodeBnsAddress("tiov", fromHex("0000000000000000000000000000000000000000")),
-          recipient: encodeBnsAddress("tiov", fromHex("0000000000000000000000000000000000000000")),
+          arbiter: encodeGrafainAddress(fromHex("0000000000000000000000000000000000000000")),
+          recipient: encodeGrafainAddress(fromHex("0000000000000000000000000000000000000000")),
           amounts: [defaultAmount],
           timeout: { timestamp: timeout },
         });
@@ -1873,12 +1885,12 @@ describe("BnsConnection", () => {
       expect(electorates[0]).toEqual({
         id: 1,
         version: 1,
-        admin: "tiov1qkz3ujh7fwpjy88tc3xnc70xr8xfh703pm8r85" as Address,
+        admin: "05851E4AFE4B83221CEBC44D3C79E619CC9BF9F1" as Address,
         title: "Default electorate",
         electors: {
-          tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea: { weight: 9 },
-          tiov12shyht3pvvacvyee36w5844jkfh5s0mf4gszp9: { weight: 10 },
-          tiov18mgvcwg4339w40ktv0hmmln80ttvza2n6hjaxh: { weight: 11 },
+          A4F97447E7DF55B6EF0D6209EBEF2A7B22625376: { weight: 9 },
+          "542E4BAE21633B8613398E9D43D6B2B26F483F69": { weight: 10 },
+          "3ED0CC39158C4AEABECB63EFBDFE677AD6C17553": { weight: 11 },
         },
         totalWeight: 30,
       });
@@ -1897,7 +1909,7 @@ describe("BnsConnection", () => {
       expect(rules[0]).toEqual({
         id: 1,
         version: 1,
-        admin: "tiov1qkz3ujh7fwpjy88tc3xnc70xr8xfh703pm8r85" as Address,
+        admin: "05851E4AFE4B83221CEBC44D3C79E619CC9BF9F1" as Address,
         electorateId: 1,
         title: "fooo",
         votingPeriod: 1 * 3600,
@@ -1910,7 +1922,7 @@ describe("BnsConnection", () => {
       expect(rules[1]).toEqual({
         id: 2,
         version: 1,
-        admin: "tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z" as Address,
+        admin: "B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22" as Address,
         electorateId: 2,
         title: "barr",
         votingPeriod: 10,
@@ -1926,7 +1938,7 @@ describe("BnsConnection", () => {
       expect(rules[2]).toEqual({
         id: 3,
         version: 1,
-        admin: "tiov1k0dp2fmdunscuwjjusqtk6mttx5ufk3z0mmp0z" as Address,
+        admin: "B3DA15276DE4E18E3A52E400BB6B6B59A9C4DA22" as Address,
         electorateId: 2,
         title: "frontend",
         votingPeriod: 10 * 3600,

@@ -61,7 +61,7 @@ import {
   VoteOption,
   VoteTx,
 } from "./types";
-import { addressPrefix, encodeBnsAddress, IovBech32Prefix } from "./util";
+import { encodeGrafainAddress } from "./util";
 
 function decodeString(input: string | null | undefined): string {
   // weave encodes empty strings as null
@@ -111,14 +111,11 @@ function decodeVersionedIdArray(versionedId: Uint8Array): VersionedId {
   };
 }
 
-export function decodeArtifact(
-  artf: codecImpl.artifact.IArtifact, // & Keyed,
-  registryChainId: ChainId,
-): Artifact {
+export function decodeArtifact(artf: codecImpl.artifact.IArtifact & Keyed): Artifact {
   const rawOwnerAddress = ensure(artf.owner, "owner");
   return {
-    // id: fromUtf8(nft._id),
-    owner: encodeBnsAddress(addressPrefix(registryChainId), rawOwnerAddress),
+    id: decodeNumericId(artf._id),
+    owner: encodeGrafainAddress(rawOwnerAddress),
     image: ensure(artf.image, "image"),
     checksum: ensure(artf.checksum, "checksum"),
   };
@@ -215,27 +212,23 @@ export function decodeCashConfiguration(config: codecImpl.cash.IConfiguration): 
 }
 
 export function decodeParticipants(
-  prefix: IovBech32Prefix,
   // tslint:disable-next-line:readonly-array
   maybeParticipants?: codecImpl.multisig.IParticipant[] | null,
 ): readonly Participant[] {
   const participants = ensure(maybeParticipants, "participants");
   return participants.map((participant, i) => ({
     weight: ensure(participant.weight, `participants.$${i}.weight`),
-    address: encodeBnsAddress(prefix, ensure(participant.signature, `participants.$${i}.signature`)),
+    address: encodeGrafainAddress(ensure(participant.signature, `participants.$${i}.signature`)),
   }));
 }
 
-export function decodeElectorate(
-  prefix: IovBech32Prefix,
-  electorate: codecImpl.gov.IElectorate & Keyed,
-): Electorate {
+export function decodeElectorate(electorate: codecImpl.gov.IElectorate & Keyed): Electorate {
   const { id } = decodeVersionedIdArray(electorate._id);
 
   // tslint:disable-next-line: readonly-keyword
   const electors: { [index: string]: ElectorProperties } = {};
   ensure(electorate.electors).forEach((elector, i) => {
-    const address = encodeBnsAddress(prefix, ensure(elector.address, `electors.$${i}.address`));
+    const address = encodeGrafainAddress(ensure(elector.address, `electors.$${i}.address`));
     // tslint:disable-next-line: no-object-mutation
     electors[address] = {
       weight: ensure(elector.weight, `electors.$${i}.weight`),
@@ -245,7 +238,7 @@ export function decodeElectorate(
   return {
     id: id,
     version: asIntegerNumber(ensure(electorate.version, "version")),
-    admin: encodeBnsAddress(prefix, ensure(electorate.admin, "admin")),
+    admin: encodeGrafainAddress(ensure(electorate.admin, "admin")),
     title: ensure(electorate.title, "title"), // must not be an empty string
     electors: electors,
     totalWeight: asIntegerNumber(electorate.totalElectorateWeight),
@@ -261,15 +254,12 @@ function decodeFraction(fraction: codecImpl.gov.IFraction): Fraction {
   return { numerator: numerator, denominator: denominator };
 }
 
-export function decodeElectionRule(
-  prefix: IovBech32Prefix,
-  rule: codecImpl.gov.IElectionRule & Keyed,
-): ElectionRule {
+export function decodeElectionRule(rule: codecImpl.gov.IElectionRule & Keyed): ElectionRule {
   const { id } = decodeVersionedIdArray(rule._id);
   return {
     id: id,
     version: asIntegerNumber(ensure(rule.version, "version")),
-    admin: encodeBnsAddress(prefix, ensure(rule.admin, "admin")),
+    admin: encodeGrafainAddress(ensure(rule.admin, "admin")),
     electorateId: decodeNumericId(ensure(rule.electorateId, "electorateId")),
     title: ensure(rule.title, "title"), // must not be an empty string
     votingPeriod: asIntegerNumber(ensure(rule.votingPeriod, "votingPeriod")),
@@ -278,10 +268,10 @@ export function decodeElectionRule(
   };
 }
 
-function decodeElectors(prefix: IovBech32Prefix, electors: readonly codecImpl.gov.IElector[]): Electors {
+function decodeElectors(electors: readonly codecImpl.gov.IElector[]): Electors {
   const map: Electors = {};
   return electors.reduce((accumulator, elector) => {
-    const address = encodeBnsAddress(prefix, ensure(elector.address, "address"));
+    const address = encodeGrafainAddress(ensure(elector.address, "address"));
     return {
       ...accumulator,
       [address]: { weight: ensure(elector.weight, "weight") },
@@ -289,9 +279,9 @@ function decodeElectors(prefix: IovBech32Prefix, electors: readonly codecImpl.go
   }, map);
 }
 
-function decodeElector(prefix: IovBech32Prefix, elector: codecImpl.gov.IElector): Elector {
+function decodeElector(elector: codecImpl.gov.IElector): Elector {
   return {
-    address: encodeBnsAddress(prefix, ensure(elector.address, "address")),
+    address: encodeGrafainAddress(ensure(elector.address, "address")),
     weight: ensure(elector.weight, "weight"),
   };
 }
@@ -355,7 +345,7 @@ function decodeValidators(validators: readonly codecImpl.weave.IValidatorUpdate[
   }, initialValidators);
 }
 
-function decodeRawProposalOption(prefix: IovBech32Prefix, rawOption: Uint8Array): ProposalAction {
+function decodeRawProposalOption(rawOption: Uint8Array): ProposalAction {
   const option = codecImpl.grafain.ProposalOptions.decode(rawOption);
   if (option.govCreateTextResolutionMsg) {
     return {
@@ -377,8 +367,8 @@ function decodeRawProposalOption(prefix: IovBech32Prefix, rawOption: Uint8Array)
         }
         const messageWithoutMemo: SendAction = {
           kind: ActionKind.Send,
-          sender: encodeBnsAddress(prefix, ensure(message.sendMsg.source, "source")),
-          recipient: encodeBnsAddress(prefix, ensure(message.sendMsg.destination, "destination")),
+          sender: encodeGrafainAddress(ensure(message.sendMsg.source, "source")),
+          recipient: encodeGrafainAddress(ensure(message.sendMsg.destination, "destination")),
           amount: decodeAmount(ensure(message.sendMsg.amount, "amount")),
         };
 
@@ -408,10 +398,7 @@ function decodeRawProposalOption(prefix: IovBech32Prefix, rawOption: Uint8Array)
     return {
       kind: ActionKind.UpdateElectorate,
       electorateId: decodeNumericId(ensure(option.govUpdateElectorateMsg.electorateId, "electorateId")),
-      diffElectors: decodeElectors(
-        prefix,
-        ensure(option.govUpdateElectorateMsg.diffElectors, "diffElectors"),
-      ),
+      diffElectors: decodeElectors(ensure(option.govUpdateElectorateMsg.diffElectors, "diffElectors")),
     };
   } else if (option.validatorsApplyDiffMsg) {
     return {
@@ -425,19 +412,19 @@ function decodeRawProposalOption(prefix: IovBech32Prefix, rawOption: Uint8Array)
   }
 }
 
-export function decodeProposal(prefix: IovBech32Prefix, proposal: codecImpl.gov.IProposal & Keyed): Proposal {
+export function decodeProposal(proposal: codecImpl.gov.IProposal & Keyed): Proposal {
   const voteState = ensure(proposal.voteState, "voteState");
   return {
     id: decodeNumericId(proposal._id),
     title: ensure(proposal.title, "title"),
-    action: decodeRawProposalOption(prefix, ensure(proposal.rawOption, "rawOption")),
+    action: decodeRawProposalOption(ensure(proposal.rawOption, "rawOption")),
     description: ensure(proposal.description, "description"),
     electionRule: decodeVersionedId(ensure(proposal.electionRuleRef, "electionRuleRef")),
     electorate: decodeVersionedId(ensure(proposal.electorateRef, "electorateRef")),
     votingStartTime: asIntegerNumber(ensure(proposal.votingStartTime, "votingStartTime")),
     votingEndTime: asIntegerNumber(ensure(proposal.votingEndTime, "votingEndTime")),
     submissionTime: asIntegerNumber(ensure(proposal.submissionTime, "submissionTime")),
-    author: encodeBnsAddress(prefix, ensure(proposal.author, "author")),
+    author: encodeGrafainAddress(ensure(proposal.author, "author")),
     state: {
       totalYes: asIntegerNumber(voteState.totalYes),
       totalNo: asIntegerNumber(voteState.totalNo),
@@ -456,12 +443,11 @@ function parseSendTransaction(
   base: UnsignedTransaction,
   msg: codecImpl.cash.ISendMsg,
 ): SendTransaction & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "bcp/send",
-    sender: encodeBnsAddress(prefix, ensure(msg.source, "source")),
-    recipient: encodeBnsAddress(prefix, ensure(msg.destination, "destination")),
+    sender: encodeGrafainAddress(ensure(msg.source, "source")),
+    recipient: encodeGrafainAddress(ensure(msg.destination, "destination")),
     amount: decodeAmount(ensure(msg.amount)),
     memo: msg.memo || undefined,
   };
@@ -477,12 +463,11 @@ function parseSwapOfferTx(
   if (hash.length !== 32) {
     throw new Error("Hash must be 32 bytes (sha256)");
   }
-  const prefix = addressPrefix(base.creator.chainId);
   const parsed = {
     ...base,
     kind: "bcp/swap_offer" as const,
     hash: hash as Hash,
-    recipient: encodeBnsAddress(prefix, ensure(msg.destination, "destination")),
+    recipient: encodeGrafainAddress(ensure(msg.destination, "destination")),
     timeout: { timestamp: asIntegerNumber(ensure(msg.timeout, "timeout")) },
     amounts: (msg.amount || []).map(decodeAmount),
   };
@@ -534,11 +519,10 @@ function parseCreateMultisignatureTx(
   base: UnsignedTransaction,
   msg: codecImpl.multisig.ICreateMsg,
 ): CreateMultisignatureTx & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "grafain/create_multisignature_contract",
-    participants: decodeParticipants(prefix, msg.participants),
+    participants: decodeParticipants(msg.participants),
     activationThreshold: ensure(msg.activationThreshold, "activationThreshold"),
     adminThreshold: ensure(msg.adminThreshold, "adminThreshold"),
   };
@@ -548,12 +532,11 @@ function parseUpdateMultisignatureTx(
   base: UnsignedTransaction,
   msg: codecImpl.multisig.IUpdateMsg,
 ): UpdateMultisignatureTx & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "grafain/update_multisignature_contract",
     contractId: ensure(msg.contractId, "contractId"),
-    participants: decodeParticipants(prefix, msg.participants),
+    participants: decodeParticipants(msg.participants),
     activationThreshold: ensure(msg.activationThreshold, "activationThreshold"),
     adminThreshold: ensure(msg.adminThreshold, "adminThreshold"),
   };
@@ -565,13 +548,12 @@ function parseCreateEscrowTx(
   base: UnsignedTransaction,
   msg: codecImpl.escrow.ICreateMsg,
 ): CreateEscrowTx & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "grafain/create_escrow",
-    sender: encodeBnsAddress(prefix, ensure(msg.source, "source")),
-    arbiter: encodeBnsAddress(prefix, ensure(msg.arbiter, "arbiter")),
-    recipient: encodeBnsAddress(prefix, ensure(msg.destination, "destination")),
+    sender: encodeGrafainAddress(ensure(msg.source, "source")),
+    arbiter: encodeGrafainAddress(ensure(msg.arbiter, "arbiter")),
+    recipient: encodeGrafainAddress(ensure(msg.destination, "destination")),
     amounts: ensure(msg.amount, "amount").map(decodeAmount),
     timeout: { timestamp: asIntegerNumber(ensure(msg.timeout, "timeout")) },
     memo: msg.memo !== null ? msg.memo : undefined,
@@ -605,14 +587,13 @@ function parseUpdateEscrowPartiesTx(
   base: UnsignedTransaction,
   msg: codecImpl.escrow.IUpdatePartiesMsg,
 ): UpdateEscrowPartiesTx & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "grafain/update_escrow_parties",
     escrowId: decodeNumericId(ensure(msg.escrowId, "escrowId")),
-    sender: msg.source ? encodeBnsAddress(prefix, msg.source) : undefined,
-    arbiter: msg.arbiter ? encodeBnsAddress(prefix, msg.arbiter) : undefined,
-    recipient: msg.destination ? encodeBnsAddress(prefix, msg.destination) : undefined,
+    sender: msg.source ? encodeGrafainAddress(msg.source) : undefined,
+    arbiter: msg.arbiter ? encodeGrafainAddress(msg.arbiter) : undefined,
+    recipient: msg.destination ? encodeGrafainAddress(msg.destination) : undefined,
   };
 }
 
@@ -622,16 +603,15 @@ function parseCreateProposalTx(
   base: UnsignedTransaction,
   msg: codecImpl.gov.ICreateProposalMsg,
 ): CreateProposalTx & WithCreator {
-  const prefix = addressPrefix(base.creator.chainId);
   return {
     ...base,
     kind: "grafain/create_proposal",
     title: ensure(msg.title, "title"),
-    action: decodeRawProposalOption(prefix, ensure(msg.rawOption, "rawOption")),
+    action: decodeRawProposalOption(ensure(msg.rawOption, "rawOption")),
     description: ensure(msg.description, "description"),
     electionRuleId: decodeNumericId(ensure(msg.electionRuleId, "electionRuleId")),
     startTime: asIntegerNumber(ensure(msg.startTime, "startTime")),
-    author: encodeBnsAddress(prefix, ensure(msg.author, "author")),
+    author: encodeGrafainAddress(ensure(msg.author, "author")),
   };
 }
 
@@ -650,22 +630,19 @@ function decodeVoteOption(option: codecImpl.gov.VoteOption): VoteOption {
   }
 }
 
-function decodeVoteId(
-  prefix: IovBech32Prefix,
-  id: Uint8Array,
-): { readonly voterAddress: Address; readonly proposalId: number } {
+function decodeVoteId(id: Uint8Array): { readonly voterAddress: Address; readonly proposalId: number } {
   return {
-    voterAddress: encodeBnsAddress(prefix, id.slice(0, 20)),
+    voterAddress: encodeGrafainAddress(id.slice(0, 20)),
     proposalId: decodeNumericId(id.slice(20)),
   };
 }
 
-export function decodeVote(prefix: IovBech32Prefix, vote: codecImpl.gov.IVote & Keyed): Vote {
-  const { proposalId } = decodeVoteId(prefix, vote._id);
+export function decodeVote(vote: codecImpl.gov.IVote & Keyed): Vote {
+  const { proposalId } = decodeVoteId(vote._id);
   return {
     proposalId: proposalId,
     selection: decodeVoteOption(ensure(vote.voted, "voted")),
-    elector: decodeElector(prefix, ensure(vote.elector, "elector")),
+    elector: decodeElector(ensure(vote.elector, "elector")),
   };
 }
 

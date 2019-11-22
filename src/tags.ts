@@ -8,7 +8,7 @@ import {
 } from "@iov/bcp";
 import { Encoding } from "@iov/encoding";
 
-import { bucketKey, decodeBnsAddress, indexKey } from "./util";
+import { bucketKey, decodeGrafainAddress, indexKey } from "./util";
 
 export function grafainSwapQueryTag(query: AtomicSwapQuery, set = true): QueryTag {
   let binKey: Uint8Array;
@@ -17,9 +17,9 @@ export function grafainSwapQueryTag(query: AtomicSwapQuery, set = true): QueryTa
   if (isAtomicSwapIdQuery(query)) {
     binKey = Uint8Array.from([...bucketKey(bucket), ...query.id.data]);
   } else if (isAtomicSwapSenderQuery(query)) {
-    binKey = Uint8Array.from([...indexKey(bucket, "source"), ...decodeBnsAddress(query.sender).data]);
+    binKey = Uint8Array.from([...indexKey(bucket, "source"), ...decodeGrafainAddress(query.sender)]);
   } else if (isAtomicSwapRecipientQuery(query)) {
-    binKey = Uint8Array.from([...indexKey(bucket, "destination"), ...decodeBnsAddress(query.recipient).data]);
+    binKey = Uint8Array.from([...indexKey(bucket, "destination"), ...decodeGrafainAddress(query.recipient)]);
   } else if (isAtomicSwapHashQuery(query)) {
     binKey = Uint8Array.from([...indexKey(bucket, "preimage_hash"), ...query.hash]);
   } else {

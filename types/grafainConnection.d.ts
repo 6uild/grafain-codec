@@ -27,7 +27,7 @@ import {
 import { Stream } from "xstream";
 import {
   Artifact,
-  ArtifactByOwnerQuery,
+  ArtifactByChecksumQuery,
   ElectionRule,
   Electorate,
   GrafainTx,
@@ -54,7 +54,6 @@ export declare class GrafainConnection implements AtomicSwapConnection {
   private readonly chainData;
   private readonly context;
   private tokensCache;
-  private readonly prefix;
   /**
    * Private constructor to hide package private types from the public interface
    *
@@ -117,7 +116,7 @@ export declare class GrafainConnection implements AtomicSwapConnection {
   getElectionRules(): Promise<readonly ElectionRule[]>;
   getProposals(): Promise<readonly Proposal[]>;
   getVotes(voter: Address): Promise<readonly Vote[]>;
-  getArtifacts(query: ArtifactByOwnerQuery): Promise<readonly Artifact[]>;
+  getArtifacts(query: ArtifactByChecksumQuery): Promise<readonly Artifact[]>;
   getAllArtifacts(): Promise<readonly Artifact[]>;
   getFeeQuote(transaction: UnsignedTransaction): Promise<Fee>;
   withDefaultFee<T extends UnsignedTransaction>(transaction: T): Promise<T>;

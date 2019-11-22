@@ -252,14 +252,14 @@ export interface Vote {
 
 // Artifact
 export interface Artifact {
-  // readonly id: string;
+  readonly id: number;
   readonly owner: Address;
   readonly image: string;
   readonly checksum: string;
 }
 
-export interface ArtifactByOwnerQuery {
-  readonly owner: Address;
+export interface ArtifactByChecksumQuery {
+  readonly checksum: string;
 }
 // Rest
 

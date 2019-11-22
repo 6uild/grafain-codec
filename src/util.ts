@@ -20,36 +20,19 @@ import {
   WithCreator,
 } from "@iov/bcp";
 import { Sha256 } from "@iov/crypto";
-import { Bech32, Encoding } from "@iov/encoding";
+import { Encoding } from "@iov/encoding";
 import { QueryString } from "@iov/tendermint-rpc";
 import Long from "long";
 import { As } from "type-tagger";
 
-import * as constants from "./constants";
-
-export type IovBech32Prefix = "iov" | "tiov";
-
-export function addressPrefix(chainId: ChainId): IovBech32Prefix {
-  return chainId === constants.mainnetChainId ? "iov" : "tiov";
+/** Encodes raw bytes into a hex address */
+export function encodeGrafainAddress(bytes: Uint8Array): Address {
+  return Encoding.toHex(bytes).toUpperCase() as Address;
 }
 
-/** Encodes raw bytes into a bech32 address */
-export function encodeBnsAddress(prefix: IovBech32Prefix, bytes: Uint8Array): Address {
-  return Bech32.encode(prefix, bytes) as Address;
-}
-
-/** Decodes a printable address into bech32 object */
-export function decodeBnsAddress(
-  address: Address,
-): { readonly prefix: IovBech32Prefix; readonly data: Uint8Array } {
-  const { prefix, data } = Bech32.decode(address);
-  if (prefix !== "iov" && prefix !== "tiov") {
-    throw new Error("Invalid bech32 prefix. Must be iov or tiov.");
-  }
-  if (data.length !== 20) {
-    throw new Error("Invalid data length. Expected 20 bytes.");
-  }
-  return { prefix: prefix, data: data };
+/** Decodes a printable address */
+export function decodeGrafainAddress(address: Address): Uint8Array {
+  return Encoding.fromHex(address);
 }
 
 function algoToPrefix(algo: Algorithm): Uint8Array {
@@ -71,23 +54,25 @@ function keyToIdentifier(key: PubkeyBundle): Uint8Array {
  * Creates an IOV address from a given Ed25519 pubkey and
  * a prefix that represents the network kind (i.e. mainnet or testnet)
  */
-export function pubkeyToAddress(pubkey: PubkeyBundle, prefix: IovBech32Prefix): Address {
+export function pubkeyToAddress(pubkey: PubkeyBundle): Address {
   if (pubkey.algo !== Algorithm.Ed25519) {
     throw new Error("Public key must be Ed25519");
   }
 
   const bytes = new Sha256(keyToIdentifier(pubkey)).digest().slice(0, 20);
-  return encodeBnsAddress(prefix, bytes);
+  return encodeGrafainAddress(bytes);
 }
 
 export function identityToAddress(identity: Identity): Address {
-  const prefix = addressPrefix(identity.chainId);
-  return pubkeyToAddress(identity.pubkey, prefix);
+  return pubkeyToAddress(identity.pubkey);
 }
 
 export function isValidAddress(address: string): boolean {
   try {
-    decodeBnsAddress(address as Address);
+    if (address === undefined || address.length !== 40 || address.toUpperCase() !== address) {
+      return false;
+    }
+    decodeGrafainAddress(address as Address);
     return true;
   } catch {
     return false;
@@ -157,14 +142,14 @@ export function isConfirmedWithSwapClaimOrAbortTransaction(
 }
 
 function sentFromOrToTag(addr: Address): string {
-  const id = Uint8Array.from([...Encoding.toAscii("cash:"), ...decodeBnsAddress(addr).data]);
+  const id = Uint8Array.from([...Encoding.toAscii("cash:"), ...decodeGrafainAddress(addr)]);
   const key = Encoding.toHex(id).toUpperCase();
   const value = "s"; // "s" for "set"
   return `${key}='${value}'`;
 }
 
 function signedByTag(addr: Address): string {
-  const id = Uint8Array.from([...Encoding.toAscii("sigs:"), ...decodeBnsAddress(addr).data]);
+  const id = Uint8Array.from([...Encoding.toAscii("sigs:"), ...decodeGrafainAddress(addr)]);
   const key = Encoding.toHex(id).toUpperCase();
   const value = "s"; // "s" for "set"
   return `${key}='${value}'`;

@@ -1,30 +1,30 @@
 {
   "artifacts": [
-      {
-        "image":    "alpetest/grafain:manual",
-        "owner":    "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
-        "checksum": "anyValidChecksum"
-      },
-      {
-        "image":    "alpetest/grafain:latest",
-        "owner":    "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
-        "checksum": "anyValidChecksum"
-      },
-      {
-        "image":    "alpetest/grafain:v0.2.1",
-        "owner":    "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
-        "checksum": "anyValidChecksum"
-      },
-      {
-        "image":    "traefik@sha256:71277423c9a133eb747a2c14796e594a4228f151d286279c7b98f66b4239a8ca",
-        "owner":    "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
-        "checksum": "sha256:71277423c9a133eb747a2c14796e594a4228f151d286279c7b98f66b4239a8ca"
-      }
-    ],
+    {
+      "image": "alpetest/grafain:manual",
+      "owner": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+      "checksum": "anyValidChecksum"
+    },
+    {
+      "image": "alpetest/grafain:latest",
+      "owner": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+      "checksum": "anyValidChecksum"
+    },
+    {
+      "image": "alpetest/grafain:v0.2.1",
+      "owner": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+      "checksum": "anyValidChecksum"
+    },
+    {
+      "image": "traefik@sha256:71277423c9a133eb747a2c14796e594a4228f151d286279c7b98f66b4239a8ca",
+      "owner": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+      "checksum": "sha256:71277423c9a133eb747a2c14796e594a4228f151d286279c7b98f66b4239a8ca"
+    }
+  ],
   "//cash": "support fees in tests although they are not used on testnets",
   "cash": [
     {
-      "address": "bech32:tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea",
+      "address": "hex:A4F97447E7DF55B6EF0D6209EBEF2A7B22625376",
       "coins": ["123456789 CASH"]
     },
     {
@@ -32,15 +32,15 @@
       "coins": ["1000000 CASH", "2000000 BASH"]
     },
     {
-      "address": "bech32:tiov1xwvnaxahzcszkvmk362m7vndjkzumv8ufmzy3m",
+      "address": "hex:33993E9BB716202B33768E95BF326D9585CDB0FC",
       "coins": ["4000 CASH"]
     },
     {
-      "address": "bech32:tiov1qrw95py2x7fzjw25euuqlj6dq6t0jahe7rh8wp",
+      "address": "hex:00DC5A048A3792293954CF380FCB4D0696F976F9",
       "coins": ["4000 BASH"]
     },
     {
-      "address": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+      "address": "hex:0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
       "coins": ["1000000 CASH", "2000000 BASH"]
     }
   ],
@@ -66,15 +66,15 @@
         "electors": [
           {
             "weight": 9,
-            "address": "bech32:tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea"
+            "address": "hex:A4F97447E7DF55B6EF0D6209EBEF2A7B22625376"
           },
           {
             "weight": 10,
-            "address": "bech32:tiov12shyht3pvvacvyee36w5844jkfh5s0mf4gszp9"
+            "address": "hex:542E4BAE21633B8613398E9D43D6B2B26F483F69"
           },
           {
             "weight": 11,
-            "address": "bech32:tiov18mgvcwg4339w40ktv0hmmln80ttvza2n6hjaxh"
+            "address": "hex:3ED0CC39158C4AEABECB63EFBDFE677AD6C17553"
           }
         ]
       },
@@ -84,7 +84,7 @@
         "electors": [
           {
             "weight": 10,
-            "address": "bech32:tiov15nuhg3l8ma2mdmcdvgy7hme20v3xy5mkxcezea"
+            "address": "hex:A4F97447E7DF55B6EF0D6209EBEF2A7B22625376"
           }
         ]
       },
@@ -94,7 +94,7 @@
         "electors": [
           {
             "weight": 10,
-            "address": "bech32:tiov18mgvcwg4339w40ktv0hmmln80ttvza2n6hjaxh"
+            "address": "hex:3ED0CC39158C4AEABECB63EFBDFE677AD6C17553"
           }
         ]
       }
@@ -140,109 +140,107 @@
       }
     ]
   },
-    "multisig": [
-      {
-        "activation_threshold": 3,
-        "admin_threshold": 3,
-        "//name": "admin multisig",
-        "participants": [
-          {
-            "signature": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
-            "weight": 3
-          }
-        ]
-      }
-    ],
-    "update_validators": {
-      "addresses": [
-        "cond:multisig/usage/0000000000000001"
+  "multisig": [
+    {
+      "activation_threshold": 3,
+      "admin_threshold": 3,
+      "//name": "admin multisig",
+      "participants": [
+        {
+          "signature": "0E95C039EF14EE329D0E09D84F909CF9EB5EF472",
+          "weight": 3
+        }
       ]
+    }
+  ],
+  "update_validators": {
+    "addresses": ["cond:multisig/usage/0000000000000001"]
+  },
+  "conf": {
+    "cash": {
+      "owner": "cond:multisig/usage/0000000000000001",
+      "collector_address": "cond:gov/rule/0000000000000002",
+      "minimal_fee": "0.01 CASH",
+      "//minimal_fee": "support tests cases. no fees on testnets"
     },
-    "conf": {
-      "cash": {
-        "owner": "cond:multisig/usage/0000000000000001",
-        "collector_address": "cond:gov/rule/0000000000000002",
-        "minimal_fee": "0.01 CASH",
-        "//minimal_fee": "support tests cases. no fees on testnets"
-      },
-      "migration": {
-        "admin": "cond:multisig/usage/0000000000000001",
-        "//admin": "owned by admin multisig"
-      }
+    "migration": {
+      "admin": "cond:multisig/usage/0000000000000001",
+      "//admin": "owned by admin multisig"
+    }
+  },
+  "msgfee": [],
+  "initialize_schema": [
+    {
+      "pkg": "artifact",
+      "ver": 1
     },
-    "msgfee": [],
-    "initialize_schema": [
-      {
-        "pkg": "artifact",
-        "ver": 1
-      },
-      {
-        "pkg": "aswap",
-        "ver": 1
-      },
-      {
-        "pkg": "batch",
-        "ver": 1
-      },
-      {
-        "pkg": "cash",
-        "ver": 1
-      },
-      {
-        "pkg": "cron",
-        "ver": 1
-      },
-      {
-        "pkg": "currency",
-        "ver": 1
-      },
-      {
-        "pkg": "distribution",
-        "ver": 1
-      },
-      {
-        "pkg": "escrow",
-        "ver": 1
-      },
-      {
-        "pkg": "gov",
-        "ver": 1
-      },
-      {
-        "pkg": "hashlock",
-        "ver": 1
-      },
-      {
-        "pkg": "msgfee",
-        "ver": 1
-      },
-      {
-        "pkg": "multisig",
-        "ver": 1
-      },
-      {
-        "pkg": "namecoin",
-        "ver": 1
-      },
-      {
-        "pkg": "username",
-        "ver": 1
-      },
-      {
-        "pkg": "paychan",
-        "ver": 1
-      },
-      {
-        "pkg": "sigs",
-        "ver": 1
-      },
-      {
-        "pkg": "utils",
-        "ver": 1
-      },
-      {
-        "pkg": "validators",
-        "ver": 1
-      }
-    ]
+    {
+      "pkg": "aswap",
+      "ver": 1
+    },
+    {
+      "pkg": "batch",
+      "ver": 1
+    },
+    {
+      "pkg": "cash",
+      "ver": 1
+    },
+    {
+      "pkg": "cron",
+      "ver": 1
+    },
+    {
+      "pkg": "currency",
+      "ver": 1
+    },
+    {
+      "pkg": "distribution",
+      "ver": 1
+    },
+    {
+      "pkg": "escrow",
+      "ver": 1
+    },
+    {
+      "pkg": "gov",
+      "ver": 1
+    },
+    {
+      "pkg": "hashlock",
+      "ver": 1
+    },
+    {
+      "pkg": "msgfee",
+      "ver": 1
+    },
+    {
+      "pkg": "multisig",
+      "ver": 1
+    },
+    {
+      "pkg": "namecoin",
+      "ver": 1
+    },
+    {
+      "pkg": "username",
+      "ver": 1
+    },
+    {
+      "pkg": "paychan",
+      "ver": 1
+    },
+    {
+      "pkg": "sigs",
+      "ver": 1
+    },
+    {
+      "pkg": "utils",
+      "ver": 1
+    },
+    {
+      "pkg": "validators",
+      "ver": 1
+    }
+  ]
 }

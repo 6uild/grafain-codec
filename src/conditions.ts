@@ -3,7 +3,7 @@ import { Sha256 } from "@iov/crypto";
 import { Encoding, Uint64 } from "@iov/encoding";
 import { As } from "type-tagger";
 
-import { addressPrefix, encodeBnsAddress } from "./util";
+import { encodeGrafainAddress } from "./util";
 
 /** A Weave condition */
 export type Condition = Uint8Array & As<"Condition">;
@@ -33,14 +33,17 @@ function buildElectionRuleCondition(id: number): Condition {
   return buildCondition("gov", "rule", Uint64.fromNumber(id).toBytesBigEndian());
 }
 
+export function buildPubKeyCondition(pubKey: Uint8Array): Condition {
+  return buildCondition("sigs", "ed25519", pubKey);
+}
+
 export function conditionToWeaveAddress(cond: Condition): Uint8Array {
   return new Sha256(cond).digest().slice(0, 20);
 }
 
 export function conditionToAddress(chainId: ChainId, cond: Condition): Address {
-  const prefix = addressPrefix(chainId);
   const bytes = conditionToWeaveAddress(cond);
-  return encodeBnsAddress(prefix, bytes);
+  return encodeGrafainAddress(bytes);
 }
 
 export function swapToAddress(chainId: ChainId, swap: { readonly id: SwapId; readonly hash: Hash }): Address {
