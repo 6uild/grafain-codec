@@ -66,16 +66,20 @@ import {
   decodeUserData,
   decodeVote,
 } from "./decode";
+import { encodeNumericId } from "./encode";
 import * as codecImpl from "./generated/codecimpl";
 import { grafainCodec } from "./grafainCodec";
 import { grafainSwapQueryTag } from "./tags";
 import {
   Artifact,
   ArtifactByOwnerQuery,
+  ArtifactQuery,
   Decoder,
   ElectionRule,
   Electorate,
   GrafainTx,
+  isArtifactByIDQuery,
+  isArtifactByImageQuery,
   isGrafainTx,
   Keyed,
   Proposal,
@@ -699,6 +703,27 @@ export class GrafainConnection implements AtomicSwapConnection {
     const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
     const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));
     return artfs;
+  }
+
+  public async getArtifact(query: ArtifactQuery): Promise<Artifact | undefined> {
+    let path: string;
+    let data: Uint8Array;
+    if (isArtifactByIDQuery(query)) {
+      path = "/artifacts";
+      data = encodeNumericId(query.id);
+    } else if (isArtifactByImageQuery(query)) {
+      path = "/artifacts/image";
+      data = toUtf8(query.image);
+    } else {
+      throw new Error("Received unsupported query.");
+    }
+    const results = (await this.query(path, data)).results;
+    if (results.length === 0) {
+      return undefined;
+    }
+    const parser = createParser(codecImpl.artifact.Artifact, "artifact:");
+    const artfs = results.map(parser).map(artf => decodeArtifact(artf, this.chainId()));
+    return artfs[0];
   }
 
   public async getFeeQuote(transaction: UnsignedTransaction): Promise<Fee> {

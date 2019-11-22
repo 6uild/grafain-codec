@@ -19,6 +19,9 @@ export {
   DeleteArtifactTX,
   isCreateArtifactTX,
   isDeleteArtifactTX,
+  isArtifactByImageQuery,
+  isArtifactByIDQuery,
+  ArtifactQuery,
   // Multisignature contracts
   Participant,
   CreateMultisignatureTx,

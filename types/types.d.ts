@@ -205,9 +205,18 @@ export interface Artifact {
   readonly image: string;
   readonly checksum: string;
 }
+export declare type ArtifactQuery = ArtifactByIDQuery | ArtifactByImageQuery;
+export interface ArtifactByIDQuery {
+  readonly id: number;
+}
+export interface ArtifactByImageQuery {
+  readonly image: string;
+}
 export interface ArtifactByOwnerQuery {
   readonly owner: Address;
 }
+export declare function isArtifactByIDQuery(query: ArtifactQuery): query is ArtifactByIDQuery;
+export declare function isArtifactByImageQuery(query: ArtifactQuery): query is ArtifactByImageQuery;
 export declare type PrivkeyBytes = Uint8Array & As<"privkey-bytes">;
 export interface PrivkeyBundle {
   readonly algo: Algorithm;
