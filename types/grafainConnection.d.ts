@@ -28,6 +28,7 @@ import { Stream } from "xstream";
 import {
   Artifact,
   ArtifactByOwnerQuery,
+  ArtifactQuery,
   ElectionRule,
   Electorate,
   GrafainTx,
@@ -119,6 +120,7 @@ export declare class GrafainConnection implements AtomicSwapConnection {
   getVotes(voter: Address): Promise<readonly Vote[]>;
   getArtifacts(query: ArtifactByOwnerQuery): Promise<readonly Artifact[]>;
   getAllArtifacts(): Promise<readonly Artifact[]>;
+  getArtifact(query: ArtifactQuery): Promise<Artifact | undefined>;
   getFeeQuote(transaction: UnsignedTransaction): Promise<Fee>;
   withDefaultFee<T extends UnsignedTransaction>(transaction: T): Promise<T>;
   protected query(path: string, data: Uint8Array): Promise<QueryResponse>;

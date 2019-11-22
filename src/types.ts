@@ -258,8 +258,26 @@ export interface Artifact {
   readonly checksum: string;
 }
 
+export declare type ArtifactQuery = ArtifactByIDQuery | ArtifactByImageQuery;
+
+export interface ArtifactByIDQuery {
+  readonly id: number;
+}
+
+export interface ArtifactByImageQuery {
+  readonly image: string;
+}
+
 export interface ArtifactByOwnerQuery {
   readonly owner: Address;
+}
+
+export function isArtifactByIDQuery(query: ArtifactQuery): query is ArtifactByIDQuery {
+  return (query as ArtifactByIDQuery).id !== undefined;
+}
+
+export function isArtifactByImageQuery(query: ArtifactQuery): query is ArtifactByImageQuery {
+  return (query as ArtifactByImageQuery).image !== undefined;
 }
 // Rest
 
