@@ -31,7 +31,7 @@ export declare function asIntegerNumber(maybeLong: Long | number | null | undefi
 export declare function ensure<T>(maybe: T | null | undefined, msg?: string): T;
 export declare function decodeNumericId(id: Uint8Array): number;
 export declare function decodeArtifact(
-  artf: codecImpl.artifact.IArtifact, // & Keyed,
+  artf: codecImpl.artifact.IArtifact & Keyed,
   registryChainId: ChainId,
 ): Artifact;
 export declare function decodeNonce(sequence: Long | number | null | undefined): Nonce;

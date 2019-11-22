@@ -34,6 +34,7 @@ import {
   CreateEscrowTx,
   CreateMultisignatureTx,
   CreateProposalTx,
+  DeleteArtifactTX,
   ElectionRule,
   Elector,
   Electorate,
@@ -112,12 +113,12 @@ function decodeVersionedIdArray(versionedId: Uint8Array): VersionedId {
 }
 
 export function decodeArtifact(
-  artf: codecImpl.artifact.IArtifact, // & Keyed,
+  artf: codecImpl.artifact.IArtifact & Keyed,
   registryChainId: ChainId,
 ): Artifact {
   const rawOwnerAddress = ensure(artf.owner, "owner");
   return {
-    // id: fromUtf8(nft._id),
+    id: decodeNumericId(artf._id),
     owner: encodeBnsAddress(addressPrefix(registryChainId), rawOwnerAddress),
     image: ensure(artf.image, "image"),
     checksum: ensure(artf.checksum, "checksum"),
@@ -527,6 +528,16 @@ function parseCreateArtifactTX(
     checksum: ensure(msg.checksum, "checksum"),
   };
 }
+function parseDeleteArtifactTX(
+  base: UnsignedTransaction,
+  msg: codecImpl.artifact.IDeleteArtifactMsg,
+): DeleteArtifactTX & WithCreator {
+  return {
+    ...base,
+    kind: "grafain/delete_artifact",
+    id: decodeNumericId(ensure(msg.id, "id")),
+  };
+}
 
 // Multisignature contracts
 
@@ -687,7 +698,9 @@ export function parseMsg(base: UnsignedTransaction, tx: codecImpl.grafain.ITx): 
   if (tx.aswapReleaseMsg) return parseSwapClaimTx(base, tx.aswapReleaseMsg);
   if (tx.aswapReturnMsg) return parseSwapAbortTransaction(base, tx.aswapReturnMsg);
 
+  // artifact
   if (tx.createArtifactMsg) return parseCreateArtifactTX(base, tx.createArtifactMsg);
+  if (tx.deleteArtifactMsg) return parseDeleteArtifactTX(base, tx.deleteArtifactMsg);
 
   // Multisignature contracts
   if (tx.multisigCreateMsg) return parseCreateMultisignatureTx(base, tx.multisigCreateMsg);
